@@ -1,0 +1,64 @@
+exclude:
+  domains:
+    - automation
+    - camera
+    - group
+    - history_graph
+    - input_number
+    - input_select
+    - media_player
+    - script
+
+  entities:
+    - binary_sensor.living_room_thermostat_is_locked
+    - binary_sensor.living_room_thermostat_is_using_emergency_heat
+    - binary_sensor.living_room_thermostat_has_leaf
+    - binary_sensor.living_room_thermostat_fan
+    - binary_sensor.living_room_thermostat_online
+    - binary_sensor.workday_sensor
+    - binary_sensor.vacation_monitor
+
+    - climate.living_room
+
+    - cover.den_volume_control
+    - cover.living_room_volume
+
+    - sensor.den_motion_out
+    - sensor.garage_motion_out
+    - sensor.living_rm_motion_out
+    - sensor.den_sound
+    - sensor.den_sound_out
+    - sensor.garage_sound
+    - sensor.garage_sound_out
+    - sensor.living_room_sound
+    - sensor.living_rm_sound_out
+    - sensor.garage_status_abbr
+    - sensor.garage_status
+    - sensor.garage_temperature
+    - sensor.nasf34bde_status
+    - sensor.nas_uptime
+    - sensor.current_ps4_id
+    - sensor.time
+    - sensor.date
+    - sensor.speedtest
+    - sensor.vacation_monitor
+    - sensor.yr_symbol
+    - sensor.moon
+    - sensor.weather_symbol
+    - sensor.weather_cloudiness
+    - sensor.weather_precipitation
+    - sensor.weather_wind_direction
+    - sensor.weather_wind_speed
+    - sensor.weather_pressure
+    - sensor.atmospheric_press
+    - sensor.last_boot
+    - sensor.ipv4_address_wlp3s0
+#    - sensor.ssl_cert_expiry
+    - sensor.living_room_thermostat_hvac_state
+    - sensor.living_room_thermostat_operation_mode
+
+    - switch.den_camera_recording
+    - switch.living_rm_camera_recording
+    - switch.garage_camera_recording
+
+    - sun.sun

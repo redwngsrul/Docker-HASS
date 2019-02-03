@@ -1,0 +1,18 @@
+- host: 192.168.1.101
+  name: Living
+  username: admin
+  password: !secret amcrest_pw
+  sensors:
+    - motion_detector
+  switches:
+    - motion_detection
+    - motion_recording
+- host: 192.168.1.118
+  name: Front Porch
+  username: admin
+  password: !secret amcrest_pw
+  sensors:
+    - motion_detector
+  switches:
+    - motion_detection
+    - motion_recording

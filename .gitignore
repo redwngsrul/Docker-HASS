@@ -1,0 +1,14 @@
+# ensures everything will be ignored
+*
+
+# whitelist folders with !, these will not be ignored
+!*.yaml
+!README.md
+!.gitignore
+!automation
+
+#ignore these files
+secrets.yaml
+known_devices.yaml
+entity_registry.yaml
+

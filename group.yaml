@@ -1,0 +1,263 @@
+####################################
+
+default_view:
+  name: Main
+  view: yes
+  icon: mdi:home-outline
+  entities:
+    - group.garage_door
+    - group.thermostat
+    - sun.sun
+    - binary_sensor.vacation_monitor
+    - sensor.moon
+    - sensor.weather_temperature
+#    - sensor.living_room_thermostat_temperature
+    - sensor.weather_symbol
+    - sensor.garage_status_abbr
+    - device_tracker.pixelxl_pixelxl
+    - group.weather
+    - group.video_cameras
+    
+######################################
+
+Lights:
+  name: Lights
+  view: yes
+  icon: mdi:lightbulb-outline
+  entities:
+    - switch.dining_room_light
+    - switch.kitchen_christmas_light
+    - switch.bedroom
+    - switch.laundry_light
+    - switch.desktop
+    - group.den_switches
+    - group.living_room
+    - camera.den_video
+    
+######################################
+
+chromecasts:
+  name: Chromecasts
+  view: yes
+  icon: mdi:cast
+  entities:
+    - media_player.plex_web_chrome
+    - group.video_ccs
+    - group.audio_ccs
+    - group.goog_homes
+    - group.chromecasts_off
+    
+#######################################
+
+RaspPi:
+  name: Home Assistant PC
+  view: yes
+  icon: mdi:laptop-windows
+  entities:
+    - group.rasppisysmon
+    - group.speedtest
+    - group.datetime
+    - group.nassysmon
+
+######################################
+
+Camera_Controls:
+  name: Camera Controls
+  view: yes
+  icon: mdi:camera-enhance
+  entities:
+    - switch.den_camera_recording
+    - switch.living_rm_camera_recording
+    - switch.garage_camera_recording
+    - group.cam_sensors
+    - camera.den_video
+    - camera.garage_video
+    #- camera.den_2_cam
+    
+#######################################
+
+Settings:
+  name: Settings
+  view: yes
+  icon: mdi:settings
+  entities:
+    - automation.bottle_lamp_on_workdays
+    - automation.dining_light_on_workdays
+    - automation.garage_offline_notify
+    - automation.garage_open_notify
+    - automation.laundry_light_on_workdays
+    - automation.den_lamp_on
+    - automation.den_lamp_off
+    - automation.den_lamp_vaca_off
+    - automation.den_lamp_vaca_on
+    - automation.neons_off
+    - automation.nest_away_mode
+    - automation.nest_home_mode
+    - automation.fish_tank_lights_on
+    - automation.no_fish_lights_at_bedtime
+    - automation.tank_lights_on_in_morning
+    - automation.christmas_lights_on
+    - automation.christmas_lights_off
+    - input_boolean.vacation
+    - script.motion_sensing
+    - script.chromecast_off_tmr
+    - script.music_in_den
+    - script.open_garage
+    - script.picture_on_remote
+    - script.play_playstation4
+    - script.play_turn_off
+    - script.update_hass
+    - script.reboot_pi
+    - script.living_room_tv_on
+    - script.living_room_tv_off
+    - script.sleep_tmr
+    
+#############################################
+
+Video_Cameras:
+  name: Video Cameras
+  control: hidden
+  view: no
+  entities:
+    #- camera.den_2_cam
+    - camera.den_video
+    
+Den_Switches:
+  name: Den
+  control: hidden
+  view: no
+  entities:
+    - switch.den_light
+    - switch.fireplace_light
+    - switch.neons
+    - switch.subwoofer
+#    - binary_sensor.desktop
+    - switch.playstation4
+    - sensor.current_ps4_app
+    - switch.game_equipment
+    - script.music_in_den
+    - switch.fishes
+#    - script.play_playstation4
+#    - script.play_turn_off
+#    - cover.den_volume_control
+
+Thermostat:
+  name: Home Thermostat
+  control: hidden
+  view: no
+  entities:
+    - sensor.living_room_thermostat_temperature
+    - sensor.living_room_thermostat_target
+    - sensor.living_room_thermostat_humidity
+    - sensor.living_room_thermostat_operation_mode
+    - sensor.living_room_thermostat_hvac_state
+    - binary_sensor.living_room_thermostat_fan
+    - camera.living
+    - camera.front_porch
+   
+Living_Room:
+  name: Living Room
+  control: hidden
+  view: no
+  entities:
+    - switch.bottle_lamp
+    - script.living_room_tv_on
+    - script.living_room_tv_off
+#    - cover.living_room_volume
+    - camera.living_room_video
+   
+Cam_Sensors:
+  name: Camera Sensors
+  view: no
+  control: hidden
+  entities:
+    - binary_sensor.den_camera_recording
+    - binary_sensor.garage_camera_recording
+    - binary_sensor.living_room_camera_recording
+    - sensor.garage_motion_out
+    - sensor.den_motion_out
+    - sensor.living_rm_motion_out
+    - sensor.garage_sound_out
+    - sensor.den_sound_out
+    - sensor.living_rm_sound_out
+    - camera.living_room_video
+
+Video_CCs:
+  name: Video Chromecasts
+  entities:
+    - media_player.alexs_bedroom
+    - media_player.alexs_living_room
+    - media_player.den_cc_ultra
+
+Audio_CCs:
+  name: Audio Chromecasts
+  entities:
+    - media_player.garage_audio
+    - media_player.den_audio
+    - media_player.all_speakers
+
+Goog_Homes:
+  name: Google Homes
+  entities:
+    - media_player.alexs_google_home
+    - media_player.den_home
+    - media_player.bedroom_home
+
+Speedtest:
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+
+DateTime:
+  name: Date & Time
+  entities:
+    - sensor.date
+    - sensor.time
+    - history_graph.temperature_graph
+
+garage_door:
+  name: Garage Door
+  entities:
+    - cover.garage
+    - sensor.garage_status
+    - binary_sensor.garage_control_online
+    - sensor.garage_temperature
+    - camera.garage_video
+
+chromecasts_off:
+  name: Chromecast Sleep Timer
+  entities:
+    - input_select.select_cast_off
+    - input_number.off_tmr_slider
+    - script.chromecast_off_tmr
+  
+RaspPiSysMon:
+  name: Home Assistant PC Monitor
+  entities:
+    - sensor.processor_use
+    - sensor.memory_use_percent
+    - sensor.disk_use_percent
+    - sensor.ipv4_address_eth1
+    - sensor.last_boot
+    - history_graph.hass_pc_monitor
+#    - sensor.ssl_cert_expiry
+#    - camera.alexs_map_card
+
+NASSysMon:
+  name: QNAP System Monitor
+  entities:
+    - sensor.nasf34bde_status
+    - sensor.nas_uptime
+    - sensor.nasf34bde_volume_used_datavol1
+    - sensor.nasf34bde_volume_used_datavol2
+    - sensor.nasf34bde_cpu_usage
+    - sensor.nasf34bde_memory_usage
+
+Weather:
+  name: Weather
+  entities:
+    - sensor.weather_humidity
+    - sensor.atmospheric_press
+    - sensor.weather_cloudiness
+

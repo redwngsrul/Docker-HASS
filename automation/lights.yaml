@@ -1,0 +1,203 @@
+#turn on dining light @ 5am weekdays
+- alias: 'Dining Light ON Workdays'
+  initial_state: true
+  trigger:
+    - platform: time
+      at: '05:00:00'
+  condition:
+    condition: or
+    conditions: 
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: 'on'
+      - condition: and
+        conditions:
+          - condition: state
+            entity_id: input_boolean.vacation
+            state: 'on'
+          - condition: state
+            entity_id: binary_sensor.workday_sensor
+            state: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.dining_room_light
+
+#turn off dining light weekdays    
+- alias: 'Dining Light OFF'
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: device_tracker.pixelxl_pixelxl
+      from: "home"
+    - platform: time
+      at: '07:59:45'
+  condition:
+    condition: state
+    entity_id: switch.dining_room_light
+    state: 'on'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.dining_room_light
+
+#turn on bottle lamp @ 5am weekdays
+- alias: 'Bottle Lamp ON Workdays'
+  initial_state: true
+  trigger:
+    - platform: time
+      at: '05:00:00'
+    - platform: sun
+      event: sunset
+      offset: '-00:30:00'
+  condition:
+    condition: or
+    conditions: 
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: 'on'
+      - condition: and
+        conditions:
+          - condition: state
+            entity_id: input_boolean.vacation
+            state: 'on'
+          - condition: state
+            entity_id: binary_sensor.workday_sensor
+            state: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.bottle_lamp
+
+#turn off bottle light @ 6am weekdays    
+- alias: 'Bottle Lamp OFF'
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: device_tracker.pixelxl_pixelxl
+      from: "home"
+    - platform: time
+      at: '07:59:45'
+    - platform: time
+      at: '22:00:00'
+  condition:
+    condition: state
+    entity_id: switch.bottle_lamp
+    state: 'on'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.bottle_lamp
+      
+#turn on laundry light @ 545am weekdays
+- alias: 'Laundry Light ON Workdays'
+  initial_state: true
+  trigger:
+    platform: time
+    at: '05:30:00'
+  condition:
+    condition: or
+    conditions: 
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: 'on'
+      - condition: and
+        conditions:
+          - condition: state
+            entity_id: input_boolean.vacation
+            state: 'on'
+          - condition: state
+            entity_id: binary_sensor.workday_sensor
+            state: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.laundry_light
+
+#turn off laundry light @ 610am weekdays    
+- alias: 'Laundry Light OFF'
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: device_tracker.pixelxl_pixelxl
+      from: "home"
+    - platform: time
+      at: '07:59:45'
+  condition:
+    condition: state
+    entity_id: switch.laundry_light
+    state: 'on'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.laundry_light
+
+# den lamp on 
+- alias: 'Den Lamp Vaca ON'
+  initial_state: false
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:30:00'
+  condition: 
+    condition: state
+    entity_id: input_boolean.vacation
+    state: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.den_light
+
+#turn off den lamp
+- alias: 'Den Lamp Vaca OFF'
+  initial_state: false
+  trigger:
+    - platform: state
+      entity_id: device_tracker.pixelxl_pixelxl
+      from: "home"
+    - platform: time
+      at: '20:00:00'
+  condition:
+    condition: state
+    entity_id: switch.den_light
+    state: 'on'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.den_light
+    - service: switch.turn_on
+      entity_id: switch.neons
+
+#turn off neons
+- alias: 'Neons OFF'
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: device_tracker.pixelxl_pixelxl
+      from: "home"
+    - platform: time
+      at: '22:00:00'
+  condition:
+    condition: state
+    entity_id: switch.neons
+    state: 'on'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.neons
+
+#turn on christmas lights
+- alias: 'Christmas Lights ON'
+  initial_state: true
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:30:00'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.kitchen_christmas_light
+    - service: switch.turn_on
+      entity_id: switch.living_room_christmas_light
+
+#turn off christmas lights
+- alias: 'Christmas Lights OFF'
+  initial_state: true
+  trigger:
+    - platform: time
+      at: '22:30:00'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.kitchen_christmas_light
+    - service: switch.turn_off
+      entity_id: switch.living_room_christmas_light

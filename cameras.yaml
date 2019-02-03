@@ -1,0 +1,16 @@
+- platform: foscam
+  name: Den Video
+  ip: 192.168.1.97
+  port: 88
+  username: !secret cam_un
+  password: !secret cam_pw
+
+- platform: foscam
+  name: Garage Video
+  ip: 192.168.1.98
+  port: 88
+  username: !secret cam_un
+  password: !secret cam_pw
+
+- platform: amcrest
+

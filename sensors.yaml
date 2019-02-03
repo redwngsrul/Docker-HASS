@@ -1,0 +1,160 @@
+- platform: yr
+  name: "Weather"
+  monitored_conditions:
+    - cloudiness
+    - humidity
+    - precipitation
+    - pressure
+    - symbol
+    - temperature
+    - windDirection
+    - windSpeed
+
+- platform: moon
+
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+
+- platform: speedtest
+  monitored_conditions:
+    - ping
+    - upload
+    - download
+  hour:
+    - 7
+    - 15
+    - 23
+  minute: 0
+
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /
+    - type: memory_use_percent
+    - type: last_boot
+    - type: ipv4_address
+      arg: eth1
+    - type: processor_use
+
+- platform: qnap
+  host: 192.168.1.100
+  username: !secret qnap_user
+  password: !secret qnap_pw
+  monitored_conditions:
+    - status
+    - cpu_usage
+    - memory_percent_used
+    - volume_percentage_used
+
+- platform: mqtt
+  state_topic: "/Garage/Temp/Temperature"
+  name: "Garage Temp"
+  unit_of_measurement: "°F"
+  qos: 1
+
+- platform: command_line
+  name: Den Motion
+  command: !secret den_motion_alm
+  scan_interval: 2
+  
+- platform: command_line
+  name: Garage Motion
+  command: !secret garage_motion_alm
+  scan_interval: 2
+
+- platform: command_line
+  name: Den Sound
+  command: !secret den_sound_alm
+  scan_interval: 2
+  
+- platform: command_line
+  name: Garage Sound
+  command: !secret garage_sound_alm
+  scan_interval: 2
+
+- platform: template
+  sensors:
+    atmospheric_press:
+      friendly_name: 'Atmospheric Pressure'
+      value_template: '{{ ((states.sensor.weather_pressure.state | float) / 33.864) | round(1) }}'
+      unit_of_measurement: 'inHg'
+    garage_temperature:
+      friendly_name: 'Garage Temperature'
+      value_template: '{{ (states.sensor.garage_temp.state | float) | round(1) }}'
+      unit_of_measurement: '°F'
+    garage_status:
+      friendly_name: 'Garage Status'
+      value_template: '{{ states.cover.garage.state }}'
+    garage_status_abbr:
+      friendly_name: 'Garage'
+      value_template: '{% if is_state("sensor.garage_status", "closed") %} CL {% else %} OP {% endif %}'
+    nas_uptime:
+      friendly_name: 'NAS Run Time'
+      value_template: '{{ states.sensor.nasf34bde_status.attributes.Uptime }}'
+    phone_batt:
+      friendly_name: 'Phone Battery'
+      value_template: '{{ states.device_tracker.pixelxl_pixelxl.attributes.battery }}'
+      unit_of_measurement: '%'
+    den_sound_out:
+      friendly_name: 'Den Sound'
+      value_template: >-
+                       {% if is_state("sensor.den_sound", "0") %}
+                       Disabled
+                       {% elif is_state("sensor.den_sound", "1") %}
+                       No Sound Detected
+                       {% elif is_state("sensor.den_sound", "2") %}
+                       Sound Alarm!
+                       {% endif %}
+    garage_sound_out:
+      friendly_name: 'Garage Sound'
+      value_template: >-
+                       {% if is_state("sensor.garage_sound", "0") %}
+                       Disabled
+                       {% elif is_state("sensor.garage_sound", "1") %}
+                       No Sound Detected
+                       {% elif is_state("sensor.garage_sound", "2") %}
+                       Sound Alarm!
+                       {% endif %}
+    den_motion_out:
+      friendly_name: 'Den Motion'
+      value_template: >-
+                       {% if is_state("sensor.den_motion", "0") %}
+                       Disabled
+                       {% elif is_state("sensor.den_motion", "1") %}
+                       No Motion Detected
+                       {% elif is_state("sensor.den_motion", "2") %}
+                       Motion Alarm!
+                       {% endif %}
+    garage_motion_out:
+      friendly_name: 'Garage Motion'
+      value_template: >-
+                       {% if is_state("sensor.garage_motion", "0") %}
+                       Disabled
+                       {% elif is_state("sensor.garage_motion", "1") %}
+                       No Motion Detected
+                       {% elif is_state("sensor.garage_motion", "2") %}
+                       Motion Alarm!
+                       {% endif %}
+    moonphases:
+      friendly_name: 'Moon Phases'
+      value_template: '{{ states.sensor.moon.state }}'
+      entity_picture_template: >
+        {% if is_state('sensor.moon', 'new_moon') %}
+          /local/moonphases/new.jpg
+        {% elif is_state('sensor.moon', 'waxing_crescent') %}
+          /local/moonphases/waxing_crescent.jpg
+        {% elif is_state('sensor.moon', 'first_quarter') %}
+          /local/moonphases/first_quarter.jpg
+        {% elif is_state('sensor.moon', 'waxing_gibbous') %}
+          /local/moonphases/waxing_gibbous.jpg
+        {% elif is_state('sensor.moon', 'full_moon') %}
+          /local/moonphases/full.jpg
+        {% elif is_state('sensor.moon', 'waning_gibbous') %}
+          /local/moonphases/waning_gibbous.jpg
+        {% elif is_state('sensor.moon', 'last_quarter') %}
+          /local/moonphases/last.jpg
+        {% elif is_state('sensor.moon', 'waning_crescent') %}
+          /local/moonphases/waning_crescent.jpg
+        {% endif %}
