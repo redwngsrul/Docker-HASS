@@ -17,61 +17,21 @@
   payload_on: "1"
   payload_off: "0"
   retain: true
-
-#DINING ROOM LIGHT
-- platform: tplink
-  name: Dining Room Light
-  host: 192.168.1.106
-
-#BEDROOM
-- platform: tplink
-  name: Bedroom
-  host: 192.168.1.109
-  
-#LAUNDRY LIGHT
-- platform: tplink
-  name: Laundry Light
-  host: 192.168.1.108
- 
-#FIREPLACE LIGHT 
-- platform: tplink
-  name: Fireplace Light
-  host: 192.168.1.113
-
-#Subwoofer
-- platform: tplink
-  name: Subwoofer
-  host: 192.168.1.105
-  
-#Fish Tank Lights 
-- platform: tplink
-  name: Fishes
-  host: 192.168.1.114
   
 #PLAYSTATION 4  
-- platform: command_line
-  switches:
-    playstation4:
-      command_on: 'ps4-waker'
-      command_off: 'ps4-waker standby'
-      command_state: 'nc -z -w 5 192.168.1.66 9295'
-      friendly_name: "PlayStation 4"
+#- platform: command_line
+#  switches:
+#    playstation4:
+#      command_on: 'ps4-waker'
+#      command_off: 'ps4-waker standby'
+#      command_state: 'nc -z -w 5 192.168.1.66 9295'
+#      friendly_name: "PlayStation 4"
 
 #Family Room LIGHT
 - platform: mqtt
   name: Living Room Light
   state_topic: "/Home_Lamp/relay/state"
   command_topic: "/Home_Lamp/gpio/12"
-  qos: 1
-  payload_on: "1"
-  payload_off: "0"
-  retain: true
-  
-#NEON LIGHT DUAL SONOFF
-- platform: mqtt
-  name: Neons
-  state_topic: "dual/neons/relay1"
-  command_topic: "dual/neons/relay1/set"
   qos: 1
   payload_on: "1"
   payload_off: "0"
@@ -84,6 +44,41 @@
   host: "DESKTOP-PBK1QHJ"
   turn_off:
     service: shell_command.turn_off_desktop
+
+#DINING ROOM LIGHT
+#- platform: tplink
+#  name: Dining Room Light
+#  host: 192.168.1.106
+
+#BEDROOM
+#- platform: tplink
+#  name: Bedroom
+#  host: 192.168.1.109
+  
+#LAUNDRY LIGHT
+#- platform: tplink
+#  name: Laundry Light
+#  host: 192.168.1.108
+ 
+#FIREPLACE LIGHT 
+#- platform: tplink
+#  name: Fireplace Light
+#  host: 192.168.1.113
+
+#Subwoofer
+#- platform: tplink
+#  name: Subwoofer
+#  host: 192.168.1.105
+  
+#Fish Tank Lights 
+#- platform: tplink
+#  name: Fishes
+#  host: 192.168.1.114
+  
+#NEON LIGHT DUAL SONOFF
+#- platform: tplink
+#  name: Neons
+#  host: 192.168.1.65
   
 #FISH TANK WHITE
 - platform: mqtt

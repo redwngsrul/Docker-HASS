@@ -9,9 +9,9 @@
 #    platform: state
 #    entity_id: 
   action:
-    - service: nest.set_mode
+    - service: nest.set_away_mode
       data:
-        home_mode: away
+        away_mode: away
 
 #set nest home
 - alias: "Nest HOME Mode"
@@ -21,6 +21,6 @@
     entity_id: device_tracker.pixelxl_pixelxl
     to: "home"
   action:
-    - service: nest.set_mode
+    - service: nest.set_away_mode
       data:
-        home_mode: home
+        away_mode: home

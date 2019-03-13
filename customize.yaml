@@ -8,7 +8,7 @@ switch.dining_room_light:
   icon: mdi:food-fork-drink
 switch.bedroom:
   icon: mdi:ceiling-light
-switch.playstation4:
+media_player.playstation_4:
   icon: mdi:playstation
 switch.laundry_light:
   icon: mdi:washing-machine

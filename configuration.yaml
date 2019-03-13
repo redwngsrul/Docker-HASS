@@ -58,7 +58,7 @@ logger:
 map:
 
 media_player:
-  - platform: cast
+#  - platform: cast
 
 mqtt: !include mqtt.yaml
 
@@ -84,9 +84,32 @@ sensor: !include sensors.yaml
 
 shell_command: !include shell_commands.yaml
 
+speedtestdotnet:
+  monitored_conditions:
+    - ping
+    - upload
+    - download
+  scan_interval:
+    days: 0
+    hours: 8
+    minutes: 0
+
 switch: !include switch.yaml
 
 sun:
+
+system_health:
+
+tplink:
+  discovery: false
+  switch:
+    - host: 192.168.1.106
+    - host: 192.168.1.109
+    - host: 192.168.1.108
+    - host: 192.168.1.113
+    - host: 192.168.1.105
+    - host: 192.168.1.114
+    - host: 192.168.1.65
 
 tts:
   - platform: google

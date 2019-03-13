@@ -1,7 +1,7 @@
 - platform: command_line
   command: 'ping -c 1 192.168.1.99 | grep "1 received" | wc -l'
   name: 'Garage Control Online'
-  sensor_class: connectivity
+  device_class: connectivity
   payload_on: 1
   payload_off: 0
   

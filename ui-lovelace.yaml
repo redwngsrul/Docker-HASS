@@ -228,7 +228,7 @@ views:
             entities:
               - sensor.memory_use_percent
               - sensor.processor_use
-              - sensor.disk_use_percent_
+              - sensor.disk_use_percent
 
           - type: entities
             title: HASS System

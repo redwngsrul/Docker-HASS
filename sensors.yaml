@@ -17,17 +17,6 @@
     - 'time'
     - 'date'
 
-- platform: speedtest
-  monitored_conditions:
-    - ping
-    - upload
-    - download
-  hour:
-    - 7
-    - 15
-    - 23
-  minute: 0
-
 - platform: systemmonitor
   resources:
     - type: disk_use_percent
