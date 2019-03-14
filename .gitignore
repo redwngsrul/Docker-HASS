@@ -6,9 +6,10 @@
 !README.md
 !.gitignore
 !automation
+!bedroom_lircd.conf
+!den_lircd.conf
 
 #ignore these files
 secrets.yaml
 known_devices.yaml
 entity_registry.yaml
-
