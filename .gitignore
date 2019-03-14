@@ -8,6 +8,7 @@
 !automation
 !bedroom_lircd.conf
 !den_lircd.conf
+!living_room_lircd.conf
 
 #ignore these files
 secrets.yaml
