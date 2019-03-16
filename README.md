@@ -1,6 +1,8 @@
 # redwngsrul's Home Assistant
-###### Readme is a Work in progress
+###### Readme is always a work in progress
 
+#### Since I had a NAS running as a Plex server, I recently moved my Home Assistant over to my QNAP NAS running in a 
+#### docker container. I found the process very easy to get up an running and it's pretty easy to manage and update. 
 
 ### Active HASS Components
 - Automation
@@ -29,6 +31,7 @@
 - MQTT
 - Notifier
   - SMTP
+- Playstation 4
 - Script
 - Secret
 - Sensor
@@ -40,10 +43,12 @@
   - speedtest
   - system monitor
   - template
-- Shell Command
+- Shell Commands
+  - for Lirc IR
 - Switch
   - mqtt
   - command line
+  - TPLink
 - Vacuum
   - Roomba
 - Zones
@@ -52,12 +57,13 @@
 - 2 Foscam C1 cameras
   - capture info from the built in motion/sound sensors
   - QNAP NAS FTP storage for recording cameras
+- 2 Amcrest cameras
 - Custom garage control board
   - Programmed with ESPEasy for MQTT control and status updates
   - DS18B20 temperature sensor and magnetic door switch state sensor
 - 4 Sonoff switch devices flashed with ESPEasy
-- NodeMCU board with custom built IR blaster/receiver circuit board
-  - Uses LIRC to control my TV's/projector and stereo equipment
+- 2 WiFi Raspberry Pi boards with custom built IR blaster/receiver circuit board
+  - Uses shell commands to LIRC to control my TV's/projector and stereo equipment
 - 3 Chromecasts
 - 2 Chromecast Audio
 
