@@ -18,8 +18,6 @@
   - command line
 - Device Tracker
   - Owntracks HTTP
-- Emulated Hue
-  - Google Home
 - Frontend (themes)
 - Google Assistant
 - History Graph
