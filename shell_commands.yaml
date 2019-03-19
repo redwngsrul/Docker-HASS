@@ -30,13 +30,13 @@ projector_vga1: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE OPTOMA VGA1
 projector_vga2: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE OPTOMA VGA2
 projector_video: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE OPTOMA VIDEO
 
-#google_tv_power_on: ssh 192.168.1.95 irsend SEND_ONCE --count=2 GOOGLE_TV POWER_ON
-#google_tv_power_off: ssh 192.168.1.95 irsend SEND_ONCE --count=2 GOOGLE_TV POWER_OFF
+google_tv_power_on: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=4 GOOGLE_TV POWER_ON
+google_tv_power_off: ssh redwngsrul@92.168.1.91 irsend SEND_ONCE --count=4 GOOGLE_TV POWER_OFF
 
-#soundbar_power_toggle: ssh 192.168.1.95 irsend SEND_ONCE SOUNDBAR POWER_TOGGLE
-#soundbar_volume_up: ssh 192.168.1.95 irsend SEND_ONCE SOUNDBAR VOL_UP
-#soundbar_volume_down: ssh 192.168.1.95 irsend SEND_ONCE SOUNDBAR VOL_DOWN
-#soundbar_mute: ssh 192.168.1.95 irsend SEND_ONCE SOUNDBAR MUTE
-#soundbar_next_input: ssh 192.168.1.95 irsend SEND_ONCE SOUNDBAR NEXT_INPUT
+soundbar_power_toggle: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR POWER_TOGGLE
+soundbar_volume_up: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR VOL_UP
+soundbar_volume_down: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR VOL_DOWN
+soundbar_mute: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR MUTE
+soundbar_next_input: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR NEXT_INPUT
 
 bedroom_power_toggle: ssh redwngsrul@192.168.1.95 irsend SEND_ONCE --count=2 sharp.lircd.conf power
