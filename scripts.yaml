@@ -63,6 +63,26 @@ play_playstation4:
       data:
         entity_id: input_boolean.game_equipment
     
+den_video:
+  alias: "Den Video"
+  sequence:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.subwoofer
+    - service: shell_command.receiver_power_on
+    - service: shell_command.projector_power_on
+    - service: shell_command.receiver_power_on
+    - delay:
+        seconds: 1
+    - service: shell_command.projector_power_on
+    - service: shell_command.receiver_power_on
+    - delay:
+        seconds: 8
+    - service: shell_command.receiver_input_dvd
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.game_equipment
+
 play_turn_off:
   alias: "Turn Off Game Equipment"
   sequence:
@@ -106,6 +126,11 @@ bedroom_tv_on:
   alias: "Bedroom TV"
   sequence:
     - service: shell_command.bedroom_power_toggle
+    
+living_room_tv_on:
+  alias: "Living Room TV"
+  sequence:
+    - service: shell_command.google_tv_power_on
     
 depart_work:
   alias: "Leaving for Work"

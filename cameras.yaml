@@ -1,16 +1,15 @@
-- platform: foscam
+- platform: generic
   name: Den Video
-  ip: 192.168.1.97
-  port: 88
+  still_image_url: !secret den_stream_jpg
+  stream_source: !secret den_stream
   username: !secret cam_un
   password: !secret cam_pw
 
-- platform: foscam
+- platform: generic
   name: Garage Video
-  ip: 192.168.1.98
-  port: 88
+  still_image_url: !secret garage_stream_jpg
+  stream_source: !secret garage_stream
   username: !secret cam_un
   password: !secret cam_pw
 
 - platform: amcrest
-

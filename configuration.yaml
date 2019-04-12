@@ -94,6 +94,8 @@ speedtestdotnet:
     hours: 8
     minutes: 0
 
+stream:
+
 switch: !include switch.yaml
 
 sun:

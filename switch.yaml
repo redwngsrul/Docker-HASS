@@ -32,7 +32,7 @@
 - platform: wake_on_lan
   mac_address: !secret desktop_mac_addr
   name: Desktop
-  host: "DESKTOP-PBK1QHJ"
+  host: "Master-Desktop"
   turn_off:
     service: shell_command.turn_off_desktop
   

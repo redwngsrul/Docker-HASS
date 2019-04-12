@@ -1,0 +1,44 @@
+#Motion Alarm Notifier
+- alias: "Front Porch Motion Alarm Notify"
+  trigger:
+    - platform: state
+      entity_id: sensor.front_porch_motion_detected
+      from: 'False'
+#      for:
+#        minutes: 5
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: device_tracker.pixelxl_pixelxl
+        state: not_home
+#        for:
+#          minutes: 2
+      - condition: state
+        entity_id: device_tracker.pixelxl_pixelxl
+        state: "Zach's"
+#        for:
+#          minutes: 2
+      - condition: state
+        entity_id: device_tracker.pixelxl_pixelxl
+        state: Work
+#        for:
+#          minutes: 2
+      - condition: state
+        entity_id: device_tracker.pixelxl_pixelxl
+        state: "Mom & Dad's"
+#        for:
+#          minutes: 2
+      - condition: state
+        entity_id: device_tracker.pixelxl_pixelxl
+        state: "Derek & Ruby's"
+#        for:
+#          minutes: 2
+  action:
+      service: notify.gmail
+      data:
+        title: 'Front porch motion detected!'
+        message: 'Motion detected at the front door.'
+        data:
+          photo:
+            - url: http://192.168.1.93/cgi-bin/mjpg/video.cgi

@@ -11,67 +11,76 @@ entity_config:
     name: Den Subwoofer
     aliases: 
       - woofer
-#    type: switch
+      - subwoofer
+    room: Den
   switch.den_light:
     expose: true
     name: Den Lamp
-#    type: light
+    room: Den
   switch.bottle_lamp:
     expose: true
     name: Bottle Lamp
-#    type: light
+    room: Living Room
   switch.bedroom:
     expose: true
     name: Bedroom Light
+    room: Bedroom
   switch.dining_room_light:
     expose: true
     name: Dining Light
     aliases: 
-      - dining lamp
-#    type: light
+      - Dining Lamp
+    room: Dining Room
   switch.playstation4:
     expose: true
     name: Playstation 4
     aliases: 
       - ps4
-#    type: switch
+    room: Den
   switch.laundry_light:
     expose: true
     name: Laundry
-#    type: light
+    room: Laundry Room
   switch.fireplace_light:
     expose: true
     name: Fireplace
-#    type: light
+    room: Den
   switch.living_room_light:
     expose: true
     name: Home Lamp
-#    type: light
+    room: Living Room
   switch.desktop:
     expose: true
     name: Desktop
-#    type: switch
+    room: Office
   switch.neons:
     expose: true
     name: Neons
-#    type: light
+    room: Den
   switch.fishes:
     expose: true
     name: Fish Tank
-#    type: light
-#  switch.fish_tank_white_light:
-#    expose: true
-#    name: Tank Whites
-#    type: light
+    room: Fish Tank
   switch.game_equipment:
     expose: true
     name: Game Equipment
-#    type: switch
+    room: Den
 
   script.bedroom_tv_on:
     expose: true
     name: Bedroom TV
 #    type: switch
+    room: Bedroom
+  script.den_video:
+    expose: true
+    name: Den Video
+#    type: switch
+    room: Den
+  script.living_room_tv_on:
+    expose: true
+    name: Living Room TV
+#    type: switch
+    room: Living Room
   script.depart_work:
     expose: true
     name: Leaving for Work
@@ -87,4 +96,4 @@ entity_config:
   cover.garage:
     expose: true
     name: Garage
-#    type: cover
+    room: Garage
