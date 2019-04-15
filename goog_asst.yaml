@@ -97,3 +97,10 @@ entity_config:
     expose: true
     name: Garage
     room: Garage
+
+  media_player.playstation_4:
+    expose: true
+    name: Playstation 4
+    aliases:
+      - ps4
+    room: Den

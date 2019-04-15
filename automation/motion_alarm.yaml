@@ -35,10 +35,11 @@
 #        for:
 #          minutes: 2
   action:
-      service: notify.gmail
+    - service: shell_command.front_porch_snapshot
+    - service: notify.gmail
       data:
         title: 'Front porch motion detected!'
         message: 'Motion detected at the front door.'
         data:
-          photo:
-            - url: http://192.168.1.93/cgi-bin/mjpg/video.cgi
+          images: 
+            - /config/www/front_porch_motion.jpg
