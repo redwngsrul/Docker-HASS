@@ -68,6 +68,8 @@ nest:
 
 notify: !include notifiers.yaml
 
+owntracks:
+
 panel_iframe:
   configurator:
     title: 'Yaml Editor'
@@ -114,7 +116,8 @@ tplink:
     - host: 192.168.1.65
 
 tts:
-  - platform: google
+  - platform: google_translate
+    service_name: google_say
 
 updater:
 

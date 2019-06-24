@@ -36,6 +36,9 @@
 #          minutes: 2
   action:
     - service: shell_command.front_porch_snapshot
+    - service: shell_command.living_room_snapshot
+    - service: shell_command.garage_snapshot
+    - service: shell_command.den_snapshot
     - service: notify.gmail
       data:
         title: 'Front porch motion detected!'
@@ -43,3 +46,6 @@
         data:
           images: 
             - /config/www/front_porch_motion.jpg
+            - /config/www/living_room_motion.jpg
+            - /config/www/garage_motion.jpg
+            - /config/www/den_motion.jpg

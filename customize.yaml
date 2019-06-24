@@ -29,16 +29,14 @@ switch.den_camera_recording:
 switch.garage_camera_recording:
   icon: mdi:camera-enhance
 switch.game_equipment:
-  friendly_name: "Game Equipment"
+  friendly_name: Game Equipment
   icon: mdi:projector-screen
-  
 script.picture_on_main:
   icon: mdi:camera
 script.picture_on_remote:
   icon: mdi:camera-enhance
 script.music_in_den:
   icon: mdi:music
-
 sensor.speedtest_download:
   icon: mdi:download
 sensor.speedtest_upload:
@@ -77,7 +75,6 @@ sensor.living_room_thermostat_operation_mode:
   icon: mdi:air-conditioner
 sensor.living_room_thermostat_hvac_state:
   icon: mdi:adjust
-
 binary_sensor.garage_control_online:
   icon: mdi:link-variant
 binary_sensor.den_camera_recording:
@@ -88,13 +85,11 @@ binary_sensor.garage_camera_recording:
   icon: mdi:video
 binary_sensor.living_room_thermostat_fan:
   icon: mdi:fan
-#binary_sensor.desktop:
-#  icon: mdi:windows
-
 input_number.off_tmr_slider:
   icon: mdi:timelapse
-  
 cover.den_volume_control:
   icon: mdi:volume-high
 cover.living_room_volume:
   icon: mdi:volume-high
+device_tracker.pixelxl_pixelxl_2:
+  picture: /www/pic3.jpg

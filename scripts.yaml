@@ -49,13 +49,11 @@ play_playstation4:
     - service: switch.turn_on
       data:
         entity_id: switch.subwoofer
-    - service: shell_command.receiver_power_on
+    - service: shell_command.receiver_power_toggle
     - service: shell_command.projector_power_on
-    - service: shell_command.receiver_power_on
     - delay:
         seconds: 1
     - service: shell_command.projector_power_on
-    - service: shell_command.receiver_power_on
     - delay:
         seconds: 8
     - service: shell_command.receiver_input_bd
@@ -69,13 +67,11 @@ den_video:
     - service: switch.turn_on
       data:
         entity_id: switch.subwoofer
-    - service: shell_command.receiver_power_on
+    - service: shell_command.receiver_power_toggle
     - service: shell_command.projector_power_on
-    - service: shell_command.receiver_power_on
     - delay:
         seconds: 1
     - service: shell_command.projector_power_on
-    - service: shell_command.receiver_power_on
     - delay:
         seconds: 8
     - service: shell_command.receiver_input_dvd
@@ -86,17 +82,10 @@ den_video:
 play_turn_off:
   alias: "Turn Off Game Equipment"
   sequence:
-    - service: media_player.turn_off
-      data:
-        entity_id: media_player.playstation_4
     - service: switch.turn_off
       data:
         entity_id: switch.subwoofer
-    - service: shell_command.receiver_power_off
-    - service: shell_command.projector_power_off
-    - delay:
-        seconds: 1
-    - service: shell_command.receiver_power_off
+    - service: shell_command.receiver_power_toggle
     - service: shell_command.projector_power_off
     - delay:
         seconds: 1
@@ -104,6 +93,12 @@ play_turn_off:
     - delay:
         seconds: 1
     - service: shell_command.projector_power_off
+    - delay:
+        seconds: 1
+    - service: shell_command.projector_power_off
+    - service: media_player.turn_off
+      data:
+        entity_id: media_player.playstation_4
     - service: input_boolean.turn_off
       data:
         entity_id: input_boolean.game_equipment
