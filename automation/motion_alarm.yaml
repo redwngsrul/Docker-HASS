@@ -10,27 +10,27 @@
     condition: or
     conditions:
       - condition: state
-        entity_id: device_tracker.pixelxl_pixelxl
+        entity_id: device_tracker.pixelxl_pixelxl_2
         state: not_home
 #        for:
 #          minutes: 2
       - condition: state
-        entity_id: device_tracker.pixelxl_pixelxl
+        entity_id: device_tracker.pixelxl_pixelxl_2
         state: "Zach's"
 #        for:
 #          minutes: 2
       - condition: state
-        entity_id: device_tracker.pixelxl_pixelxl
+        entity_id: device_tracker.pixelxl_pixelxl_2
         state: Work
 #        for:
 #          minutes: 2
       - condition: state
-        entity_id: device_tracker.pixelxl_pixelxl
+        entity_id: device_tracker.pixelxl_pixelxl_2
         state: "Mom & Dad's"
 #        for:
 #          minutes: 2
       - condition: state
-        entity_id: device_tracker.pixelxl_pixelxl
+        entity_id: device_tracker.pixelxl_pixelxl_2
         state: "Derek & Ruby's"
 #        for:
 #          minutes: 2

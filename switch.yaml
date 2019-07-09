@@ -37,24 +37,24 @@
     service: shell_command.turn_off_desktop
   
 #FISH TANK WHITE
-- platform: mqtt
-  name: Fish Tank White Light
-  state_topic: "home-assistant/fish-tank/white"
-  command_topic: "home-assistant/fish-tank"
-  qos: 1
-  payload_on: "WHITE"
-  payload_off: "OFF"
-  retain: true
+#- platform: mqtt
+#  name: Fish Tank White Light
+#  state_topic: "home-assistant/fish-tank/white"
+#  command_topic: "home-assistant/fish-tank"
+#  qos: 1
+#  payload_on: "WHITE"
+#  payload_off: "OFF"
+#  retain: true
   
 #FISH TANK BLUE
-- platform: mqtt
-  name: Fish Tank Blue Light
-  state_topic: "home-assistant/fish-tank/blue"
-  command_topic: "home-assistant/fish-tank"
-  qos: 1
-  payload_on: "BLUE"
-  payload_off: "OFF"
-  retain: true
+#- platform: mqtt
+#  name: Fish Tank Blue Light
+#  state_topic: "home-assistant/fish-tank/blue"
+#  command_topic: "home-assistant/fish-tank"
+#  qos: 1
+#  payload_on: "BLUE"
+#  payload_off: "OFF"
+#  retain: true
  
 #DEN Camera Motion
 - platform: command_line

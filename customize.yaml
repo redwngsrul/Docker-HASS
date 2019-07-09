@@ -92,4 +92,4 @@ cover.den_volume_control:
 cover.living_room_volume:
   icon: mdi:volume-high
 device_tracker.pixelxl_pixelxl_2:
-  picture: /www/pic3.jpg
+  entity_picture: /local/pic3.jpg

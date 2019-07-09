@@ -3,7 +3,7 @@
   initial_state: true
   trigger: 
     platform: state
-    entity_id: device_tracker.pixelxl_pixelxl
+    entity_id: device_tracker.pixelxl_pixelxl_2
     from: "home"
 #  condition:
 #    platform: state
@@ -18,7 +18,7 @@
   initial_state: true
   trigger:
     platform: state
-    entity_id: device_tracker.pixelxl_pixelxl
+    entity_id: device_tracker.pixelxl_pixelxl_2
     to: "home"
   action:
     - service: nest.set_away_mode

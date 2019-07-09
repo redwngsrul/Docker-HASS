@@ -2,7 +2,7 @@
 - alias: "Camera Recordings ON"
   trigger:
     - platform: state
-      entity_id: device_tracker.pixelxl_pixelxl
+      entity_id: device_tracker.pixelxl_pixelxl_2
       from: 'home'
   action:
     - service: switch.turn_on
@@ -18,7 +18,7 @@
 - alias: "Camera Recordings OFF"
   trigger:
     - platform: state
-      entity_id: device_tracker.pixelxl_pixelxl
+      entity_id: device_tracker.pixelxl_pixelxl_2
       to: 'home'
       for:
         minutes: 3
