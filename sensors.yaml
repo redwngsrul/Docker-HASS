@@ -24,7 +24,7 @@
     - type: memory_use_percent
     - type: last_boot
     - type: ipv4_address
-      arg: eth1
+      arg: eth0
     - type: processor_use
 
 - platform: qnap

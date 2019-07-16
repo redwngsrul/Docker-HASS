@@ -1,0 +1,34 @@
+##### Cast #####
+
+title: Cast
+panel: false
+background: radial-gradient(blue, white)
+path: cast
+cards:
+
+  - type: media-control
+    entity: media_player.alex_s_bedroom
+
+  - type: media-control
+    entity: media_player.alex_s_google_home
+
+  - type: media-control
+    entity: media_player.alex_s_living_room
+
+  - type: media-control
+    entity: media_player.bedroom_home
+
+  - type: media-control
+    entity: media_player.den_cc_ultra
+
+  - type: media-control
+    entity: media_player.den_home
+
+  - type: media-control
+    entity: media_player.garage_audio
+
+  - type: media-control
+    entity: media_player.all_speakers
+
+  - type: media-control
+    entity: media_player.playstation_4

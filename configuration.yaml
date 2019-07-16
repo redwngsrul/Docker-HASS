@@ -55,6 +55,9 @@ logger:
   logs:
     homeassistant.components.camera: error
 
+lovelace:
+  mode: yaml
+  
 map:
 
 media_player:

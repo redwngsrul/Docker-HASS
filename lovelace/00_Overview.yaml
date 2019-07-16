@@ -1,0 +1,182 @@
+title: Overview
+panel: false
+background: radial-gradient(red, white)
+path: overview
+badges:
+  - sun.sun
+  - sensor.moonphases
+  - sensor.weather_symbol
+  - device_tracker.pixelxl_pixelxl_2
+  - sensor.garage_temperature
+  - sensor.weather_temperature
+  - sensor.atmospheric_press
+  - sensor.weather_humidity
+
+cards: 
+
+################################################
+############## VERTICAL STACK #1 ###############
+################################################
+
+  - type: vertical-stack
+    cards:
+
+      - type: picture-glance
+        camera_image: camera.front_porch
+        entities:
+          - binary_sensor.front_porch_motion_detected
+
+      - type: picture-glance
+        camera_image: camera.living
+        entities:
+          - binary_sensor.living_motion_detected
+
+################################################
+############## VERTICAL STACK #2 ###############
+################################################
+
+  - type: vertical-stack
+    cards:
+
+      - type: picture-entity
+        entity: camera.den_video
+        show_name: false
+        show_state: false
+
+      - type: horizontal-stack
+        cards:
+
+          - type: custom:button-card
+            entity: switch.den_light
+            name: Den Light
+            color: rgb(242,203,12)
+            color_off: rgb(220,220,220)
+
+          - type: custom:button-card
+            entity: switch.fireplace_light
+            name: Fireplace
+            color: rgb(242,119,12)
+            color_off: rgb(220,220,220)
+
+          - type: custom:button-card
+            entity: switch.neons
+            name: Neons
+            color: rgb(219,12,242)
+            color_off: rgb(220,220,220)
+
+          - type: custom:button-card
+            entity: switch.fishes
+            name: Fish Tank
+            color: rgb(83,221,249)
+            color_off: rgb(220,220,220)
+
+      - type: horizontal-stack
+        cards:
+
+          - type: entity-button
+            entity: switch.game_equipment
+            name: Projector
+            tap_action: 
+              action: toggle
+            hold_action: 
+              action: more-info
+
+          - type: entity-button
+            entity: script.den_video
+            icon: mdi:television-classic
+            name: Den Video
+            tap_action: 
+              action: toggle
+
+          - type: entity-button
+            entity: switch.subwoofer
+            tap_action: 
+              action: toggle
+            hold_action: 
+              action: more-info
+
+          - type: entity-button
+            entity: media_player.playstation_4
+            tap_action: 
+              action: toggle
+            hold_action: 
+              action: more-info
+
+      - type: horizontal-stack
+        cards:
+
+          - type: custom:button-card
+            entity: switch.laundry_light
+            name: Laundry
+            color: rgb(102,240,52)
+            color_off: rgb(220,220,220)
+
+          - type: custom:button-card
+            entity: switch.living_room_light
+            name: Living Rm
+            color: rgb(102,240,52)
+            color_off: rgb(220,220,220)
+
+          - type: entity-button
+            entity: switch.bottle_lamp
+            tap_action: 
+              action: toggle
+            hold_action: 
+              action: more-info
+
+          - type: entity-button
+            entity: switch.dining_room_light
+            tap_action: 
+              action: toggle
+            hold_action: 
+              action: more-info
+
+      - type: horizontal-stack
+        cards: 
+
+          - type: entity-button
+            entity: vacuum.roomba
+            tap_action: 
+              action: toggle
+            hold_action: 
+              action: more-info
+
+          - type: custom:button-card
+            entity: switch.bedroom
+            name: Bedroom Light
+            color: rgb(249,217,87)
+            color_off: rgb(220,220,220)
+            
+          - type: custom:button-card
+            entity: binary_sensor.garage_control_online
+            name: Garage Online
+            color: rgb(12,242,96)
+            color_off: rgb(220,220,220)
+
+          - type: entity-button
+            entity: cover.garage
+            tap_action: 
+              action: call-service
+              service: cover.stop_cover
+              service_data:
+                entity_id: cover.garage
+            hold_action: 
+              action: more-info
+
+################################################
+############## VERTICAL STACK #3 ###############
+################################################
+
+  - type: vertical-stack
+    cards:
+
+      - type: picture-entity
+        entity: camera.garage_video
+        show_name: false
+        show_state: false
+
+      - type: custom:simple-thermostat
+        entity: climate.living_room
+        icon: mdi:thermostat
+        name: Thermostat
+        decimals: 0

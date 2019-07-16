@@ -1,0 +1,137 @@
+##### Systems #####
+
+title: Systems
+panel: false
+background: radial-gradient(green, white)
+path: systems
+cards:
+
+  - type: vertical-stack
+    cards:
+
+    #   - type: history-graph
+    #     title: Home Assistant
+    #     entities:
+    #       - sensor.memory_use_percent
+    #       - sensor.processor_use
+    #       - sensor.disk_use_percent
+
+      - type: "custom:mini-graph-card"
+        entities:
+        - entity: sensor.memory_use_percent
+          name: Memory Use
+          color: '#e52222'
+        - entity: sensor.processor_use
+          name: CPU Use
+          color: '#11923C'
+        - entity: sensor.disk_use_percent
+          name: Disk Use
+          color: '#F29E0C'
+        show:
+          icon: false
+          state: false
+          fill: true
+          labels: true
+        line_width: 3
+        name: Home Assistant
+        decimals: 1
+        points_per_hour: 30
+        height: 200
+        style: |
+          ha-card {
+          margin-right: 5px;
+          margin-bottom: 5px;
+          }
+
+      - type: entities
+        show_header_toggle: false
+        title: HASS System
+        entities:
+          - sensor.ipv4_address_eth0
+          - sensor.last_boot
+          - type: section
+            label: Speedtest
+          - sensor.speedtest_download
+          - sensor.speedtest_upload
+          - sensor.speedtest_ping
+
+  - type: vertical-stack
+    cards:
+
+    #   - type: history-graph
+    #     title: QNAP
+    #     entities:
+    #       - sensor.nasf34bde_cpu_usage
+    #       - sensor.nasf34bde_memory_usage
+
+      - type: "custom:mini-graph-card"
+        entities:
+        - entity: sensor.nasf34bde_cpu_usage
+          name: CPU
+          color: '#e52222'
+        - entity: sensor.nasf34bde_memory_usage
+          name: Memory
+          color: '#11923C'
+        show:
+          icon: false
+          state: false
+          fill: true
+          labels: true
+        name: QNAP 
+        line_width: 3
+        decimals: 1
+        points_per_hour: 120
+        height: 200
+        style: |
+          ha-card {
+          margin-right: 5px;
+          margin-bottom: 5px;
+          }
+
+      - type: entities
+        show_header_toggle: false
+        title: QNAP System
+        entities:
+          - sensor.nasf34bde_status
+          - sensor.nas_uptime
+          - sensor.nasf34bde_volume_used_datavol1
+          - sensor.nasf34bde_volume_used_datavol2
+
+#   - type: history-graph
+#     title: Temperature Graph
+#     hours_to_show: 12
+#     entities:
+#       - sensor.weather_temperature
+#       - sensor.garage_temp
+#       - sensor.living_room_thermostat_target
+#       - sensor.living_room_thermostat_temperature
+
+  - type: "custom:mini-graph-card"
+    entities:
+    - entity: sensor.weather_temperature
+      name: Weather
+      color: '#e52222'
+    - entity: sensor.garage_temp
+      name: Garage
+      color: '#11923C'
+    - entity: sensor.living_room_thermostat_target
+      name: Nest Target
+      color: '#F29E0C'
+    - entity: sensor.living_room_thermostat_temperature
+      name: House
+      color: '#914DEB'
+    show:
+      icon: false
+      state: false
+      fill: true
+      labels: true
+    line_width: 3
+    name: Temperatures
+    decimals: 1
+    points_per_hour: 30
+    height: 250
+    style: |
+      ha-card {
+      margin-right: 5px;
+      margin-bottom: 5px;
+      }

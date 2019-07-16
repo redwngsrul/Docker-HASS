@@ -1,0 +1,60 @@
+##### Automations/Scripts #####
+
+title: Automations/Scripts
+panel: false
+background: radial-gradient(orange, white)
+path: autos-scripts
+cards:
+
+  - type: vertical-stack
+    cards:
+
+      - type: entities
+        title: Automations
+        entities:
+          - automation.bottle_lamp_on_workdays
+          - automation.bottle_lamp_off
+          - automation.camera_recordings_on
+          - automation.camera_recordings_off
+          - automation.christmas_lights_on
+          - automation.christmas_lights_off
+          - automation.den_lamp_on
+          - automation.den_lamp_off
+          - automation.den_lamp_vaca_on
+          - automation.den_lamp_vaca_off
+
+  - type: vertical-stack
+    cards:
+
+      - type: entities
+        entities:
+          - automation.dining_light_on_workdays
+          - automation.dining_light_off
+          - automation.fish_tank_lights_on
+          - automation.garage_offline_notify
+          - automation.garage_open_notify
+          - automation.laundry_light_on_workdays
+          - automation.laundry_light_off
+          - automation.neons_off
+          - automation.nest_home_mode
+          - automation.nest_away_mode
+          - automation.no_fish_lights_at_bedtime
+          - type: divider
+          - input_boolean.vacation
+
+  - type: vertical-stack
+    cards:
+
+      - type: entities
+        title: Scripts
+        entities:
+          - script.bedroom_tv_on
+          - script.chromecast_off_tmr
+          - script.den_video
+          - script.depart_work
+          - script.motion_sensing
+          - script.music_in_den
+          - script.open_garage
+          - script.play_playstation4
+          - script.play_turn_off
+          - script.sleep_tmr

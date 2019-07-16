@@ -3,9 +3,13 @@
 
 # whitelist folders with !, these will not be ignored
 !*.yaml
+!*.js
 !README.md
 !.gitignore
 !automation
+!lovelace
+!www
+!www/custom-lovelace
 !bedroom_lircd.conf
 !den_lircd.conf
 !living_room_lircd.conf

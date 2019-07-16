@@ -1,0 +1,39 @@
+##### Cameras #####
+
+title: Cameras
+panel: false
+background: radial-gradient(purple, white)
+path: cameras
+cards:
+
+  - type: vertical-stack
+    cards:
+
+      - type: picture-glance
+        camera_image: camera.living
+        entities:
+          - binary_sensor.living_motion_detected
+
+      - type: picture-glance
+        camera_image: camera.den_video
+        entities:
+          - binary_sensor.den_camera_recording
+          - sensor.den_motion_out
+          - sensor.den_sound_out
+          - switch.den_camera_recording
+
+  - type: vertical-stack
+    cards:
+
+      - type: picture-glance
+        camera_image: camera.garage_video
+        entities:
+          - binary_sensor.garage_camera_recording
+          - sensor.garage_motion_out
+          - sensor.garage_sound_out
+          - switch.garage_camera_recording
+
+      - type: picture-glance
+        camera_image: camera.front_porch
+        entities:
+          - binary_sensor.front_porch_motion_detected
