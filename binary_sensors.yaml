@@ -27,3 +27,7 @@
       friendly_name: 'Vacation Monitor'
       value_template: "{{ is_state('input_boolean.vacation', 'on') }}" 
 
+# dummy sensor for floorplan card
+- platform: mqtt
+  state_topic: dummy/floorplan/sensor
+  name: Floorplan

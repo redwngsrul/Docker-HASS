@@ -5,30 +5,47 @@ panel: false
 background: radial-gradient(blue, white)
 path: cast
 cards:
+    - type: vertical-stack
+      cards:
+          - type: custom:mini-media-player
+            entity: media_player.alex_s_bedroom
+            artwork: full-cover-fit
+              
+          - type: custom:mini-media-player
+            entity: media_player.bedroom_home
+            artwork: full-cover-fit
+        
+          - type: custom:mini-media-player
+            entity: media_player.alex_s_google_home
+            artwork: full-cover-fit
+              
+          - type: custom:mini-media-player
+            entity: media_player.alex_s_living_room
+            artwork: full-cover-fit
+              
+          - type: custom:mini-media-player
+            entity: media_player.all_speakers
+            artwork: full-cover-fit
+            
+    - type: vertical-stack
+      cards:
 
-  - type: media-control
-    entity: media_player.alex_s_bedroom
+          - type: custom:mini-media-player
+            entity: media_player.den_cc_ultra
+            artwork: full-cover-fit
+      
+          - type: custom:mini-media-player
+            entity: media_player.den_home
+            artwork: full-cover-fit
+              
+          - type: custom:mini-media-player
+            entity: media_player.playstation_4
+            artwork: full-cover-fit
+              
+          - type: custom:mini-media-player
+            entity: media_player.firefox_plex
+            artwork: full-cover-fit
 
-  - type: media-control
-    entity: media_player.alex_s_google_home
-
-  - type: media-control
-    entity: media_player.alex_s_living_room
-
-  - type: media-control
-    entity: media_player.bedroom_home
-
-  - type: media-control
-    entity: media_player.den_cc_ultra
-
-  - type: media-control
-    entity: media_player.den_home
-
-  - type: media-control
-    entity: media_player.garage_audio
-
-  - type: media-control
-    entity: media_player.all_speakers
-
-  - type: media-control
-    entity: media_player.playstation_4
+          - type: custom:mini-media-player
+            entity: media_player.garage_audio
+            artwork: full-cover-fit

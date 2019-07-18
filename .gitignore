@@ -10,6 +10,15 @@
 !lovelace
 !www
 !www/custom-lovelace
+!www/custom-lovelace/compact-custom-header
+!www/custom-ui/floorplan/lib
+!www/custom-ui/floorplan/*.*
+!www/custom-ui/*.*
+!www/floorplan/lib
+!www/floorplan
+!www/*.jpg
+!www/moonphases/*.jpg
+!www/ps4cam/*.jpg
 !bedroom_lircd.conf
 !den_lircd.conf
 !living_room_lircd.conf

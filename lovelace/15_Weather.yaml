@@ -1,0 +1,48 @@
+##### Weather #####
+
+title: Weather
+panel: false
+background: 'right/auto linear-gradient(40deg, rgba(246,243,253,1) 0%, rgba(235,229,255,1) 34%, rgba(198,181,255,1) 100%)'
+path: weather
+badges:
+  - sun.sun
+  - sensor.moonphases
+  - sensor.weather_symbol
+  - sensor.garage_temperature
+  - sensor.weather_temperature
+  - sensor.atmospheric_press
+  - sensor.weather_humidity
+cards:
+
+  - type: weather-forecast
+    entity: weather.dark_sky
+
+  - type: "custom:mini-graph-card"
+    entities:
+    - entity: sensor.weather_temperature
+      name: Weather
+      color: '#e52222'
+    - entity: sensor.garage_temp
+      name: Garage
+      color: '#11923C'
+    - entity: sensor.living_room_thermostat_target
+      name: Nest Target
+      color: '#F29E0C'
+    - entity: sensor.living_room_thermostat_temperature
+      name: House
+      color: '#0C04F7'
+    show:
+      icon: false
+      state: false
+      fill: true
+      labels: true
+    line_width: 3
+    name: Temperatures
+    decimals: 1
+    points_per_hour: 30
+    height: 250
+    style: |
+      ha-card {
+      margin-right: 5px;
+      margin-bottom: 5px;
+      }

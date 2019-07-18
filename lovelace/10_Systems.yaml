@@ -2,7 +2,7 @@
 
 title: Systems
 panel: false
-background: radial-gradient(green, white)
+background: 'right/auto linear-gradient(40deg, rgba(246,243,253,1) 0%, rgba(235,229,255,1) 34%, rgba(198,181,255,1) 100%)'
 path: systems
 cards:
 
@@ -105,33 +105,3 @@ cards:
 #       - sensor.garage_temp
 #       - sensor.living_room_thermostat_target
 #       - sensor.living_room_thermostat_temperature
-
-  - type: "custom:mini-graph-card"
-    entities:
-    - entity: sensor.weather_temperature
-      name: Weather
-      color: '#e52222'
-    - entity: sensor.garage_temp
-      name: Garage
-      color: '#11923C'
-    - entity: sensor.living_room_thermostat_target
-      name: Nest Target
-      color: '#F29E0C'
-    - entity: sensor.living_room_thermostat_temperature
-      name: House
-      color: '#914DEB'
-    show:
-      icon: false
-      state: false
-      fill: true
-      labels: true
-    line_width: 3
-    name: Temperatures
-    decimals: 1
-    points_per_hour: 30
-    height: 250
-    style: |
-      ha-card {
-      margin-right: 5px;
-      margin-bottom: 5px;
-      }

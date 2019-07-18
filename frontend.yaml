@@ -1,4 +1,8 @@
+extra_html_url:
+  - /local/custom_ui/state-card-floorplan.html
+
 themes:
+
   darkred:
 #     Main colors that can be changed
     dark-primary-color: "#c66900"
@@ -32,6 +36,7 @@ themes:
     secondary-text-color: "var(--primary-color)"
     table-row-background-color: "var(--paper-card-background-color)"
     table-row-alternative-background-color: "var(--sidebar-text_-_background)"
+    
   darkorange:
     primary-color: "#ff9800"
     light-primary-color: "#ffc947"
@@ -70,6 +75,7 @@ themes:
     label-badge-grey: "var(--paper-grey-500)"
     table-row-background-color: "var(--paper-card-background-color)"
     table-row-alternative-background-color: "var(--sidebar-text_-_background)"
+    
   teal:
       # Main Stuff #
     primary-color: "#1DE9B6" # Primary (most of the UI)
@@ -96,6 +102,7 @@ themes:
     paper-slider-pin-color: "#1DE9B6"
     paper-slider-active-color: "#1DE9B6"
     paper-slider-secondary-color: "#33F2D8"
+    
   solarized:
     primary-color: "#2aa198"
     disabled-text-color: "#859900"
@@ -135,6 +142,7 @@ themes:
     paper-green: "#859900"
     paper-blue: "#268bd2"
     paper-orange: "#cb4b16"
+    
   wood:
     primary-color: "#6B3A1F"
     disabled-text-color: "#A58456"
@@ -175,6 +183,7 @@ themes:
     paper-green: "#A58456"
     paper-blue: "#268BD2"
     paper-orange: "#EDE4D8"
+    
   midnight:
       # Main colors
     primary-color: '#5294E2'                                                        # Header
@@ -231,20 +240,21 @@ themes:
       # Google colors
     google-red-500: '#E45E65'
     google-green-500: '#39E949'
+    
   darkcyan:
       # Main colors that can be changed
     primary-color: "#00bcd4"
     disabled-text-color: "#545454"
     divider-color: "rgba(255, 255, 255, 0.12)"
-    paper-card-background-color: "#4e4e4e"
-    paper-grey-200: "#191919"
+    paper-card-background-color: "#908f8f"
+    paper-grey-200: "#009cb0"
     paper-item-icon-color: "#d3d3d3"
-    paper-listbox-background-color: "#202020"
+    paper-listbox-background-color: "#027685"
     paper-listbox-color: "#FFFFFF"      
-    primary-background-color: "#303030"
-    primary-text-color: "#cfcfcf"      
+    primary-background-color: "#000000"
+    primary-text-color: "#454545"      
     secondary-background-color: "#2b2b2b"
-    secondary-text-color: "#04a7bc"
+    secondary-text-color: "#08545e"
       # Colors based on variables, see above
     label-badge-background-color: "var(--secondary-background-color)"
     label-badge-text-color: "var(--text-primary-color)"
@@ -261,6 +271,7 @@ themes:
     paper-toggle-button-checked-button-color: "var(--primary-color)"
     paper-toggle-button-checked-bar-color: "var(--light-primary-color)"
     paper-toggle-button-unchecked-bar-color: "var(--primary-text-color)"
+
   christmas:
       #Main colors
     primary-color: '#3C8D0D'                                                        # Header

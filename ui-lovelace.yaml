@@ -4,23 +4,29 @@ resources:
   - url: /local/custom-lovelace/button-card.js
     type: module
   - url: /local/custom-lovelace/simple-thermostat.js
-    type: module  
-#   - url: /local/custom-lovelace/compact-custom-header.js #?disable_cch
-#     type: module
+    type: module
+  - url: /local/custom-lovelace/mini-media-player-bundle.js
+    type: module
+  - url: /local/floorplan/floorplan-card.js
+    type: module
+  - url: /local/custom-lovelace/compact-custom-header/compact-custom-header.js #?v=1.3.0 #?disable_cch
+    type: module
 
-# cch:
-#   header: false
-#   default_tab: 0
-#   voice: overflow
-#   notifications: show
-#   options: show
-#   swipe: true
-#   swipe_animate: swipe
+cch:
+#  header: false
+#  default_tab: 0
+  voice: overflow
+  notifications: show
+  options: show
+  swipe: true
+  swipe_animate: flip
 
 title: My Home
 
 views:
   - !include lovelace/00_Overview.yaml
+  - !include lovelace/05_Floorplan.yaml
+  - !include lovelace/15_Weather.yaml
   - !include lovelace/10_Systems.yaml
   - !include lovelace/20_Cast.yaml
   - !include lovelace/30_Automations_Scripts.yaml
