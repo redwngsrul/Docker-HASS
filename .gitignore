@@ -15,12 +15,11 @@
 !www
 !www/custom-lovelace
 !www/custom-lovelace/compact-custom-header
-!www/custom-ui/floorplan/lib
-!www/custom-ui/floorplan
-!www/custom-ui
+!www/custom_ui/floorplan/lib
+!www/custom_ui/floorplan
+!www/custom_ui
 !www/floorplan/lib
 !www/floorplan
-!www
 !www/moonphases
 !www/ps4cam
 !bedroom_lircd.conf
