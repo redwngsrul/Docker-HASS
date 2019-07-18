@@ -4,6 +4,10 @@
 # whitelist folders with !, these will not be ignored
 !*.yaml
 !*.js
+!*.jpg
+!*.css
+!*.svg
+!*.html
 !README.md
 !.gitignore
 !automation
@@ -12,13 +16,13 @@
 !www/custom-lovelace
 !www/custom-lovelace/compact-custom-header
 !www/custom-ui/floorplan/lib
-!www/custom-ui/floorplan/*.*
-!www/custom-ui/*.*
+!www/custom-ui/floorplan
+!www/custom-ui
 !www/floorplan/lib
 !www/floorplan
-!www/*.jpg
-!www/moonphases/*.jpg
-!www/ps4cam/*.jpg
+!www
+!www/moonphases
+!www/ps4cam
 !bedroom_lircd.conf
 !den_lircd.conf
 !living_room_lircd.conf
