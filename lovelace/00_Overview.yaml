@@ -1,6 +1,6 @@
 title: Overview
 panel: false
-background: 'right/auto linear-gradient(23deg, rgba(145,145,145,1) 0%, rgba(195,195,195,1) 34%, rgba(255,255,255,1) 100%)'
+background: 'right/auto linear-gradient(0deg, rgba(246,180,180,1) 0%, rgba(133,100,100,1) 34%, rgba(24,0,0,1) 100%)'
 path: overview
 badges:
   - sun.sun
@@ -8,6 +8,9 @@ badges:
   - sensor.weather_symbol
   - device_tracker.pixelxl_pixelxl_2
   - sensor.garage_status_abbr
+  - binary_sensor.back_door_sensor
+  - binary_sensor.front_door_sensor
+  - binary_sensor.den_multisensor
 
 cards: 
 
@@ -35,10 +38,14 @@ cards:
   - type: vertical-stack
     cards:
 
-      - type: picture-entity
-        entity: camera.den_video
-        show_name: false
-        show_state: false
+
+      - type: picture-glance
+        camera_image: camera.den_video
+        entities:
+          - binary_sensor.den_camera_recording
+          - sensor.den_motion_out
+          - sensor.den_sound_out
+          - switch.den_camera_recording
 
       - type: horizontal-stack
         cards:
@@ -164,13 +171,13 @@ cards:
   - type: vertical-stack
     cards:
 
-      - type: picture-entity
-        entity: camera.garage_video
-        show_name: false
-        show_state: false
+      - type: picture-glance
+        camera_image: camera.garage_video
+        entities:
+          - binary_sensor.garage_camera_recording
+          - sensor.garage_motion_out
+          - sensor.garage_sound_out
+          - switch.garage_camera_recording
 
-      - type: custom:simple-thermostat
+      - type: thermostat
         entity: climate.living_room
-        icon: mdi:thermostat
-        name: Thermostat
-        decimals: 0

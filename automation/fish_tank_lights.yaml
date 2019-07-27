@@ -11,9 +11,13 @@
       entity_id: sun.sun
       to: 'below_horizon'
   condition: 
-    condition: state
-    entity_id: switch.fishes
-    state: 'off'
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.fishes
+        state: 'off'
+      - condition: time
+        before: '22:30:00'
   action:
     - service: switch.turn_on
       entity_id: switch.fishes

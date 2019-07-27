@@ -86,7 +86,7 @@
       value_template: '{{ states.sensor.nasf34bde_status.attributes.Uptime }}'
     phone_batt:
       friendly_name: 'Phone Battery'
-      value_template: '{{ states.device_tracker.pixelxl_pixelxl.attributes.battery }}'
+      value_template: '{{ states.device_tracker.pixelxl_pixelxl_2.attributes.battery_level }}'
       unit_of_measurement: '%'
     den_sound_out:
       friendly_name: 'Den Sound'
@@ -149,3 +149,7 @@
         {% elif is_state('sensor.moon', 'waning_crescent') %}
           /local/moonphases/waning_crescent.jpg
         {% endif %}
+
+- platform: version
+
+- platform: zwave

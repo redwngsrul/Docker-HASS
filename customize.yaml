@@ -1,44 +1,99 @@
-switch.subwoofer:
-  icon: mdi:surround-sound
-switch.den_light:
-  icon: mdi:lamp
-switch.bottle_lamp:
+automation.bottle_lamp_on_workdays:
   icon: mdi:keg
-switch.dining_room_light:
+automation.bottle_lamp_off:
+  icon: mdi:keg
+automation.camera_recordings_on:
+  icon: mdi:camera-enhance
+automation.camera_recordings_off:
+  icon: mdi:camera-enhance
+automation.christmas_lights_on:
+  icon: mdi:pine-tree
+automation.christmas_lights_off:
+  icon: mdi:pine-tree
+automation.den_lamp_on:
+  icon: mdi:lamp
+automation.den_lamp_off:
+  icon: mdi:lamp
+automation.den_lamp_vaca_on:
+  icon: mdi:lamp
+automation.den_lamp_vaca_off:
+  icon: mdi:lamp
+automation.den_motion_alarm_notify:
+  icon: mdi:motion-sensor
+automation.dining_light_on_workdays:
   icon: mdi:food-fork-drink
-switch.bedroom:
-  icon: mdi:ceiling-light
-media_player.playstation_4:
-  icon: mdi:playstation
-switch.laundry_light:
-  icon: mdi:washing-machine
-switch.fireplace_light:
-  icon: mdi:fire
-switch.living_room_light:
-  icon: mdi:lightbulb
-switch.desktop:
-  icon: mdi:windows
-switch.neons:
-  icon: mdi:lava-lamp
-switch.fishes:
+automation.dining_light_off:
+  icon: mdi:food-fork-drink
+automation.fish_tank_lights_on:
   icon: mdi:fish
-switch.living_rm_camera_recording:
-  icon: mdi:camera-enhance
-switch.den_camera_recording:
-  icon: mdi:camera-enhance
-switch.garage_camera_recording:
-  icon: mdi:camera-enhance
-switch.game_equipment:
-  friendly_name: Game Equipment
-  icon: mdi:projector-screen
-
+automation.front_porch_motion_alarm_notify:
+  icon: mdi:motion-sensor
+automation.garage_offline_notify:
+  icon: mdi:garage-alert
+automation.garage_open_notify:
+  icon: mdi:garage-alert
+automation.laundry_light_on_workdays:
+  icon: mdi:washing-machine
+automation.laundry_light_off:
+  icon: mdi:washing-machine
+automation.neons_off:
+  icon: mdi:lava-lamp
+automation.nest_home_mode:
+  icon: mdi:thermostat
+automation.nest_away_mode:
+  icon: mdi:thermostat
+automation.no_fish_lights_at_bedtime:
+  icon: mdi:fish
+binary_sensor.garage_control_online:
+  icon: mdi:link-variant
+binary_sensor.den_camera_recording:
+  icon: mdi:video
+binary_sensor.living_room_camera_recording:
+  icon: mdi:video
+binary_sensor.garage_camera_recording:
+  icon: mdi:video
+binary_sensor.living_room_thermostat_fan:
+  icon: mdi:fan
+binary_sensor.floorplan:
+  custom_ui_state_card: state-card-floorplan
+  config:
+    name: Floorplan
+    image: /local/custom_ui/floorplan/floorplan.svg
+    stylesheet: /local/custom_ui/floorplan/floorplan.css
+    warnings:
+    groups:
+    - name: Switches
+      entities:
+      - switch.den_light
+      - switch.desktop
+      - switch.dining_room_light
+      - switch.fireplace_light
+      - switch.fishes
+      - switch.game_equipment
+      - switch.laundry_light
+      - switch.living_room_light
+      - switch.neons
+      states:
+      - state: 'on'
+        class: switch-on
+      - state: 'off'
+        class: switch-off
+cover.den_volume_control:
+  icon: mdi:volume-high
+cover.living_room_volume:
+  icon: mdi:volume-high
+cover.garage:
+  friendly_name: "Garage"
+device_tracker.pixelxl_pixelxl_2:
+  entity_picture: /local/pic3.jpg
+input_number.off_tmr_slider:
+  icon: mdi:timelapse
 script.picture_on_main:
   icon: mdi:camera
 script.picture_on_remote:
   icon: mdi:camera-enhance
 script.music_in_den:
   icon: mdi:music
-
 sensor.speedtest_download:
   icon: mdi:download
 sensor.speedtest_upload:
@@ -77,28 +132,67 @@ sensor.living_room_thermostat_operation_mode:
   icon: mdi:air-conditioner
 sensor.living_room_thermostat_hvac_state:
   icon: mdi:adjust
+switch.subwoofer:
+  icon: mdi:surround-sound
+switch.den_light:
+  icon: mdi:lamp
+switch.bottle_lamp:
+  icon: mdi:keg
+switch.dining_room_light:
+  icon: mdi:food-fork-drink
+switch.bedroom:
+  icon: mdi:ceiling-light
+media_player.playstation_4:
+  icon: mdi:playstation
+switch.laundry_light:
+  icon: mdi:washing-machine
+switch.fireplace_light:
+  icon: mdi:fire
+switch.living_room_light:
+  icon: mdi:lightbulb
+switch.desktop:
+  icon: mdi:windows
+switch.neons:
+  icon: mdi:lava-lamp
+switch.fishes:
+  icon: mdi:fish
+switch.living_rm_camera_recording:
+  icon: mdi:camera-enhance
+switch.den_camera_recording:
+  icon: mdi:camera-enhance
+switch.garage_camera_recording:
+  icon: mdi:camera-enhance
+switch.game_equipment:
+  friendly_name: Game Equipment
+  icon: mdi:projector-screen
 
-binary_sensor.garage_control_online:
-  icon: mdi:link-variant
-binary_sensor.den_camera_recording:
-  icon: mdi:video
-binary_sensor.living_room_camera_recording:
-  icon: mdi:video
-binary_sensor.garage_camera_recording:
-  icon: mdi:video
-binary_sensor.living_room_thermostat_fan:
-  icon: mdi:fan
-binary_sensor.floorplan:
-  custom_ui_state_card: state-card-floorplan
-  config: !include floorplan.yaml
+sensor.aeon_labs_zw100_multisensor_6_temperature:
+  friendly_name: 'Den Temperature'
+sensor.aeon_labs_zw100_multisensor_6_relative_humidity:
+  friendly_name: 'Den Humidity'
 
-input_number.off_tmr_slider:
-  icon: mdi:timelapse
+sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control:
+  friendly_name: 'Door Sensor #1 Access Ctrl'
+sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_alarm_type:
+  friendly_name: 'Door Sensor #1 Alarm Type'
+sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_alarm_level:
+  friendly_name: 'Door Sensor #1 Alarm Level'
+sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_burglar:
+  friendly_name: 'Door Sensor #1 Burglar'
+binary_sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_sensor:
+  friendly_name: 'Door Sensor #1 Sensor'
+sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_sourcenodeid:
+  friendly_name: 'Door Sensor #1 Src ID'
 
-cover.den_volume_control:
-  icon: mdi:volume-high
-cover.living_room_volume:
-  icon: mdi:volume-high
-
-device_tracker.pixelxl_pixelxl_2:
-  entity_picture: /local/pic3.jpg
+sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control_2:
+  friendly_name: 'Door Sensor #2 Access Ctrl'
+sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_alarm_type_2:
+  friendly_name: 'Door Sensor #2 Alarm Type'
+sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_alarm_level_2:
+  friendly_name: 'Door Sensor #2 Alarm Level'
+sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_burglar_2:
+  friendly_name: 'Door Sensor #2 Burglar'
+binary_sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_sensor_2:
+  friendly_name: 'Door Sensor #2 Sensor'
+sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_sourcenodeid_2:
+  friendly_name: 'Door Sensor #2 Src ID'

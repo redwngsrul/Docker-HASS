@@ -3,3 +3,22 @@ image: /local/custom_ui/floorplan/floorplan.svg
 stylesheet: /local/custom_ui/floorplan/floorplan.css
 
 warnings:
+
+groups:
+
+  - name: Switches
+    entities:
+      - switch.den_light
+      - switch.desktop
+      - switch.dining_room_light
+      - switch.fireplace_light
+      - switch.fishes
+      - switch.game_equipment
+      - switch.laundry_light
+      - switch.living_room_light
+      - switch.neons
+    states:
+      - state: 'on'
+        class: 'switch-on'
+      - state: 'off'
+        class: 'switch-off'

@@ -10,6 +10,7 @@ cards:
     cards:
 
       - type: entities
+        show_header_toggle: false
         title: Automations
         entities:
           - automation.bottle_lamp_on_workdays
@@ -22,15 +23,18 @@ cards:
           - automation.den_lamp_off
           - automation.den_lamp_vaca_on
           - automation.den_lamp_vaca_off
+          - automation.motion_alarm_notify
 
   - type: vertical-stack
     cards:
 
       - type: entities
+        show_header_toggle: false
         entities:
           - automation.dining_light_on_workdays
           - automation.dining_light_off
           - automation.fish_tank_lights_on
+          - automation.front_porch_motion_alarm_notify
           - automation.garage_offline_notify
           - automation.garage_open_notify
           - automation.laundry_light_on_workdays
@@ -39,15 +43,16 @@ cards:
           - automation.nest_home_mode
           - automation.nest_away_mode
           - automation.no_fish_lights_at_bedtime
-          - type: divider
-          - input_boolean.vacation
 
   - type: vertical-stack
     cards:
 
       - type: entities
+        show_header_toggle: false
         title: Scripts
         entities:
+          - input_boolean.vacation
+          - type: divider
           - script.bedroom_tv_on
           - script.chromecast_off_tmr
           - script.den_video
