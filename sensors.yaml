@@ -71,10 +71,10 @@
       friendly_name: 'Atmospheric Pressure'
       value_template: '{{ ((states.sensor.weather_pressure.state | float) / 33.864) | round(1) }}'
       unit_of_measurement: 'inHg'
-    garage_temperature:
-      friendly_name: 'Garage Temperature'
-      value_template: '{{ (states.sensor.garage_temp.state | float) | round(1) }}'
-      unit_of_measurement: '°F'
+    # garage_temperature:
+    #   friendly_name: 'Garage Temperature'
+    #   value_template: '{{ (states.sensor.garage_temp.state | float) | round(1) }}'
+    #   unit_of_measurement: '°F'
     garage_status:
       friendly_name: 'Garage Status'
       value_template: '{{ states.cover.garage.state }}'

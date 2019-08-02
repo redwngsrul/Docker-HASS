@@ -70,13 +70,13 @@
 #### Page 1
 ![Page 1](https://user-images.githubusercontent.com/33060660/61331259-9af0b780-a7ef-11e9-9b85-cd13c94c3506.JPG)
 #### Page 2
-![Page 1](https://user-images.githubusercontent.com/33060660/61331259-9af0b780-a7ef-11e9-9b85-cd13c94c3506.JPG)
+![Page 2](https://user-images.githubusercontent.com/33060660/61331260-9af0b780-a7ef-11e9-92c8-38aa631a446b.JPG)
 #### Page 3
-![Page 3](https://user-images.githubusercontent.com/33060660/61331260-9af0b780-a7ef-11e9-92c8-38aa631a446b.JPG)
+![Page 3](https://user-images.githubusercontent.com/33060660/61331261-9af0b780-a7ef-11e9-979d-10254c07ec57.JPG)
 #### Page 4
-![Page 4](https://user-images.githubusercontent.com/33060660/61331261-9af0b780-a7ef-11e9-979d-10254c07ec57.JPG)
+![Page 4](https://user-images.githubusercontent.com/33060660/61331263-9af0b780-a7ef-11e9-97a2-51b490e1107b.JPG)
 #### Page 5
-![Page 5](https://user-images.githubusercontent.com/33060660/61331263-9af0b780-a7ef-11e9-97a2-51b490e1107b.JPG)
+![Page 5](https://user-images.githubusercontent.com/33060660/61331264-9b894e00-a7ef-11e9-9a9a-2d3fe4c7b994.JPG)
 #### Page 6
 ![Page 6](https://user-images.githubusercontent.com/33060660/61331264-9b894e00-a7ef-11e9-9a9a-2d3fe4c7b994.JPG)
 

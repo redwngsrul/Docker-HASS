@@ -8,8 +8,6 @@ badges:
   - sensor.weather_symbol
   - device_tracker.pixelxl_pixelxl_2
   - sensor.garage_status_abbr
-  - binary_sensor.back_door_sensor
-  - binary_sensor.front_door_sensor
   - binary_sensor.den_multisensor
 
 cards: 
@@ -25,11 +23,13 @@ cards:
         camera_image: camera.front_porch
         entities:
           - binary_sensor.front_porch_motion_detected
+          - binary_sensor.front_door_sensor
 
       - type: picture-glance
         camera_image: camera.living
         entities:
           - binary_sensor.living_motion_detected
+          - binary_sensor.back_door_sensor
 
 ################################################
 ############## VERTICAL STACK #2 ###############
@@ -46,6 +46,7 @@ cards:
           - sensor.den_motion_out
           - sensor.den_sound_out
           - switch.den_camera_recording
+          - switch.desktop
 
       - type: horizontal-stack
         cards:
@@ -178,6 +179,12 @@ cards:
           - sensor.garage_motion_out
           - sensor.garage_sound_out
           - switch.garage_camera_recording
+
+    #   - type: custom:simple-thermostat
+    #     entity: climate.living_room
+    #     icon: mdi:thermostat
+    #     name: Thermostat
+    #     decimals: 0 
 
       - type: thermostat
         entity: climate.living_room

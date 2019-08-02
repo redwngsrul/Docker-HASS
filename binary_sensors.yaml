@@ -29,17 +29,22 @@
 
     den_multisensor:
       friendly_name: 'Den Motion'
-      value_template: "{{ state('sensor.aeon_labs_zw100_multisensor_6_burglar') | int != 0 }}"
+      value_template: "{{ state('sensor.aeon_labs_zw100_multisensor_6_burglar') != 0 }}"
       device_class: motion
 
     front_door_sensor:
       friendly_name: 'Front Door Sensor'
-      value_template: "{{ state('sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control_2') | int != 23 }}"
+      value_template: "{{ state('sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control_2') != 23 }}"
       device_class: door
 
     back_door_sensor:
       friendly_name: 'Back Door Sensor'
-      value_template: "{{ state('sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control') | int != 23 }}"
+      value_template: "{{ state('sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control') != 23 }}"
+      device_class: door
+
+    front_door_motion_sensor:
+      friendly_name: 'Back Door Sensor'
+      value_template: "{{ state('sensor.vision_security_zp3111_multisensor_4in1_alarm_level_2') != 0 }}"
       device_class: door
 
 # dummy sensor for floorplan card
