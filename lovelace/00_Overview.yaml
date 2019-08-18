@@ -49,8 +49,8 @@ cards:
         camera_image: camera.den_video
         entities:
           - binary_sensor.den_camera_recording
-          - sensor.den_motion_out
-          - sensor.den_sound_out
+          - binary_sensor.den_motion_out
+          - binary_sensor.den_sound_out
           - switch.den_camera_recording
           - switch.desktop
 
@@ -182,8 +182,8 @@ cards:
         camera_image: camera.garage_video
         entities:
           - binary_sensor.garage_camera_recording
-          - sensor.garage_motion_out
-          - sensor.garage_sound_out
+          - binary_sensor.garage_motion_out
+          - binary_sensor.garage_sound_out
           - switch.garage_camera_recording
 
     #   - type: custom:simple-thermostat

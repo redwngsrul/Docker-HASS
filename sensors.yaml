@@ -71,10 +71,6 @@
       friendly_name: 'Atmospheric Pressure'
       value_template: '{{ ((states.sensor.weather_pressure.state | float) / 33.864) | round(1) }}'
       unit_of_measurement: 'inHg'
-    # garage_temperature:
-    #   friendly_name: 'Garage Temperature'
-    #   value_template: '{{ (states.sensor.garage_temp.state | float) | round(1) }}'
-    #   unit_of_measurement: '°F'
     garage_status:
       friendly_name: 'Garage Status'
       value_template: '{{ states.cover.garage.state }}'
@@ -88,46 +84,6 @@
       friendly_name: 'Phone Battery'
       value_template: '{{ states.device_tracker.pixelxl_pixelxl_2.attributes.battery_level }}'
       unit_of_measurement: '%'
-    den_sound_out:
-      friendly_name: 'Den Sound'
-      value_template: >-
-                       {% if is_state("sensor.den_sound", "0") %}
-                       Disabled
-                       {% elif is_state("sensor.den_sound", "1") %}
-                       No Sound Detected
-                       {% elif is_state("sensor.den_sound", "2") %}
-                       Sound Alarm!
-                       {% endif %}
-    garage_sound_out:
-      friendly_name: 'Garage Sound'
-      value_template: >-
-                       {% if is_state("sensor.garage_sound", "0") %}
-                       Disabled
-                       {% elif is_state("sensor.garage_sound", "1") %}
-                       No Sound Detected
-                       {% elif is_state("sensor.garage_sound", "2") %}
-                       Sound Alarm!
-                       {% endif %}
-    den_motion_out:
-      friendly_name: 'Den Motion'
-      value_template: >-
-                       {% if is_state("sensor.den_motion", "0") %}
-                       Disabled
-                       {% elif is_state("sensor.den_motion", "1") %}
-                       No Motion Detected
-                       {% elif is_state("sensor.den_motion", "2") %}
-                       Motion Alarm!
-                       {% endif %}
-    garage_motion_out:
-      friendly_name: 'Garage Motion'
-      value_template: >-
-                       {% if is_state("sensor.garage_motion", "0") %}
-                       Disabled
-                       {% elif is_state("sensor.garage_motion", "1") %}
-                       No Motion Detected
-                       {% elif is_state("sensor.garage_motion", "2") %}
-                       Motion Alarm!
-                       {% endif %}
     moonphases:
       friendly_name: 'Moon Phases'
       value_template: '{{ states.sensor.moon.state }}'

@@ -47,6 +47,26 @@
       value_template: "{{ is_state('sensor.vision_security_zp3111_multisensor_4in1_alarm_level_2', '255') }}"
       device_class: motion
 
+    den_sound_out:
+      friendly_name: 'Den Sound'
+      value_template: "{{ is_state('sensor.den_sound', '2') }}"
+      device_class: sound
+
+    garage_sound_out:
+      friendly_name: 'Garage Sound'
+      value_template: "{{ is_state('sensor.garage_sound', '2') }}"
+      device_class: sound
+
+    den_motion_out:
+      friendly_name: 'Den Motion'
+      value_template: "{{ is_state('sensor.den_motion', '2') }}"
+      device_class: motion
+
+    garage_motion_out:
+      friendly_name: 'Garage Motion'
+      value_template: "{{ is_state('sensor.garage_motion', '2') }}"
+      device_class: motion
+
 # dummy sensor for floorplan card
 - platform: mqtt
   state_topic: dummy/floorplan/sensor
