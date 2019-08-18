@@ -22,6 +22,7 @@
 !www/floorplan
 !www/moonphases
 !www/ps4cam
+!yaml
 !bedroom_lircd.conf
 !den_lircd.conf
 !living_room_lircd.conf

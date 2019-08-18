@@ -5,15 +5,15 @@ homeassistant:
   elevation: !secret elevation
   unit_system: imperial
   time_zone: America/Detroit
-  customize: !include customize.yaml
+  customize: !include yaml/customize.yaml
 
-amcrest: !include amcrest.yaml
+amcrest: !include yaml/amcrest.yaml
 
 automation: !include_dir_merge_list automation
 
-binary_sensor: !include binary_sensors.yaml
+binary_sensor: !include yaml/binary_sensors.yaml
 
-camera: !include cameras.yaml
+camera: !include yaml/cameras.yaml
 
 cloud:
 
@@ -21,28 +21,28 @@ config:
 
 conversation:
 
-cover: !include cover.yaml
+cover: !include yaml/cover.yaml
 
-device_tracker: !include device_tracker.yaml
+device_tracker: !include yaml/device_tracker.yaml
 
 discovery:
 
-frontend: !include frontend.yaml
+frontend: !include yaml/frontend.yaml
 
-google_assistant: !include goog_asst.yaml
+google_assistant: !include yaml/goog_asst.yaml
 
-history: !include history.yaml
+history: !include yaml/history.yaml
 
 http:
   ssl_certificate: !secret sslcert 
   ssl_key: !secret sslkey
   base_url: !secret urlname
 
-input_boolean: !include input_boolean.yaml
+input_boolean: !include yaml/input_boolean.yaml
 
-input_number: !include input_slider.yaml
+input_number: !include yaml/input_slider.yaml
 
-input_select: !include input_select.yaml
+input_select: !include yaml/input_select.yaml
 
 logbook:
 
@@ -57,15 +57,14 @@ lovelace:
 map:
 
 media_player:
-#  - platform: cast
 
-mqtt: !include mqtt.yaml
+mqtt: !include yaml/mqtt.yaml
 
 nest:
   client_id: !secret nest_id
   client_secret: !secret nest_secret
 
-notify: !include notifiers.yaml
+notify: !include yaml/notifiers.yaml
 
 owntracks:
 
@@ -79,11 +78,11 @@ recorder:
   purge_interval: 3
   purge_keep_days: 5
 
-script: !include scripts.yaml
+script: !include yaml/scripts.yaml
 
-sensor: !include sensors.yaml
+sensor: !include yaml/sensors.yaml
 
-shell_command: !include shell_commands.yaml
+shell_command: !include yaml/shell_commands.yaml
 
 speedtestdotnet:
   monitored_conditions:
@@ -97,7 +96,7 @@ speedtestdotnet:
 
 stream:
 
-switch: !include switch.yaml
+switch: !include yaml/switch.yaml
 
 sun:
 
@@ -126,9 +125,9 @@ vacuum:
     username: !secret roomba_user
     password: !secret roomba_pw
 
-weather: !include weather.yaml
+weather: !include yaml/weather.yaml
 
-zone: !include zones.yaml
+zone: !include yaml/zones.yaml
 
 zwave: 
   usb_path: /dev/ttyACM0
