@@ -23,9 +23,9 @@ cch:
 title: My Home
 
 views:
-  - !include lovelace/00_Overview.yaml
-#   - !include lovelace/05_Floorplan.yaml
-  - !include lovelace/15_Weather.yaml
-  - !include lovelace/10_Systems.yaml
-  - !include lovelace/20_Cast.yaml
-  - !include lovelace/30_Automations_Scripts.yaml
+  - !include yaml/lovelace/00_Overview.yaml
+#   - !include yaml/lovelace/05_Floorplan.yaml
+  - !include yaml/lovelace/15_Weather.yaml
+  - !include yaml/lovelace/10_Systems.yaml
+  - !include yaml/lovelace/20_Cast.yaml
+  - !include yaml/lovelace/30_Automations_Scripts.yaml

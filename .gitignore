@@ -10,8 +10,10 @@
 !*.html
 !README.md
 !.gitignore
-!yaml/automation
-!lovelace
+!ir_files
+!bedroom_lircd.conf
+!den_lircd.conf
+!living_room_lircd.conf
 !www
 !www/custom-lovelace
 !www/custom-lovelace/compact-custom-header
@@ -23,10 +25,8 @@
 !www/moonphases
 !www/ps4cam
 !yaml
-!ir_files
-!bedroom_lircd.conf
-!den_lircd.conf
-!living_room_lircd.conf
+!yaml/automation
+!yaml/lovelace
 
 #ignore these files
 secrets.yaml
