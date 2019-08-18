@@ -31,11 +31,7 @@ frontend: !include frontend.yaml
 
 google_assistant: !include goog_asst.yaml
 
-# group: !include group.yaml
-
 history: !include history.yaml
-
-# history_graph: !include history_graph.yaml
 
 http:
   ssl_certificate: !secret sslcert 
@@ -136,5 +132,4 @@ zone: !include zones.yaml
 
 zwave: 
   usb_path: /dev/ttyACM0
-  device_config: !include zwave_device_config.yaml
   network_key: !secret zwave_key

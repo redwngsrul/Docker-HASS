@@ -8,10 +8,11 @@
 | | | | | |
 | :---: | :---: | :---: | :---: | :---: |
 | Automation | Binary Sensor | Camera | Climate | Cover |
-| Device Tracker | Frontend (themes) | Google Assistant | History | Input Select |
-| Input Number (slider) | Logbook | Media Player | MQTT | Notifier |
-| Playstation 4 | Script | Secret | Sensor | Speedtest |
-| Shell Commands | Switch | Vacuum | Zones | Z-Wave (NEW) |
+| Custom Lovelace Cards | Device Tracker | Frontend (themes) | Google Assistant | History | 
+| Input Select | Input Number (slider) | Logbook | Media Player | MQTT | 
+| Notifier | Playstation 4 | Script | Secret | Sensor | 
+| Speedtest | Shell Commands | Switch | Vacuum | Zones | 
+| Z-Wave (NEW) |
 
 ### Control Devices in Use
 - 2 Foscam C1 cameras

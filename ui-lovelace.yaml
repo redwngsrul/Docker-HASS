@@ -13,8 +13,6 @@ resources:
     type: module
 
 cch:
-#  header: false
-#  default_tab: 0
   voice: overflow
   notifications: show
   options: clock
