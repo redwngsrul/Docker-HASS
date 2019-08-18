@@ -17,7 +17,8 @@ cch:
 #  default_tab: 0
   voice: overflow
   notifications: show
-  options: show
+  options: clock
+  clock_date: true
   swipe: true
   swipe_animate: flip
 

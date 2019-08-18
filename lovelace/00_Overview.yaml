@@ -23,6 +23,7 @@ cards:
         camera_image: camera.front_porch
         entities:
           - binary_sensor.front_porch_motion_detected
+          - binary_sensor.front_door_motion_sensor
           - binary_sensor.front_door_sensor
 
       - type: picture-glance
@@ -38,6 +39,11 @@ cards:
   - type: vertical-stack
     cards:
 
+    #   - type: glance
+    #     show_name: false
+    #     entities:
+    #       - sensor.time
+    #       - sensor.date
 
       - type: picture-glance
         camera_image: camera.den_video

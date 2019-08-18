@@ -42,6 +42,7 @@ cards:
           - automation.neons_off
           - automation.nest_home_mode
           - automation.nest_away_mode
+          - automation.nest_offline_notify
           - automation.no_fish_lights_at_bedtime
 
   - type: vertical-stack
