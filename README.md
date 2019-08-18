@@ -5,6 +5,7 @@
 
 ### Active HASS Components
 
+| | | | | |
 | :---: | :---: | :---: | :---: | :---: |
 | Automation | Binary Sensor | Camera | Climate | Cover |
 | Device Tracker | Frontend (themes) | Google Assistant | History | Input Select |
