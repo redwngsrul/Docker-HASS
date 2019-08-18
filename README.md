@@ -50,6 +50,7 @@
 - Vacuum
   - Roomba
 - Zones
+- Z-Wave (NEW)
 
 ### Control Devices in Use
 - 2 Foscam C1 cameras
@@ -68,15 +69,13 @@
 
 ### Screenshots
 #### Page 1
-![Page 1](https://user-images.githubusercontent.com/33060660/61331259-9af0b780-a7ef-11e9-9b85-cd13c94c3506.JPG)
+![Page 1](https://user-images.githubusercontent.com/33060660/63227782-4e1a4b00-c1b8-11e9-9e6a-87ef43d33bc8.png)
 #### Page 2
-![Page 2](https://user-images.githubusercontent.com/33060660/61331260-9af0b780-a7ef-11e9-92c8-38aa631a446b.JPG)
+![Page 2](https://user-images.githubusercontent.com/33060660/63227790-5c686700-c1b8-11e9-9b11-444662b78418.png)
 #### Page 3
-![Page 3](https://user-images.githubusercontent.com/33060660/61331261-9af0b780-a7ef-11e9-979d-10254c07ec57.JPG)
+![Page 3](https://user-images.githubusercontent.com/33060660/63227795-67bb9280-c1b8-11e9-94ab-c2ec3f2c0876.png)
 #### Page 4
-![Page 4](https://user-images.githubusercontent.com/33060660/61331263-9af0b780-a7ef-11e9-97a2-51b490e1107b.JPG)
+![Page 4](https://user-images.githubusercontent.com/33060660/63227796-71dd9100-c1b8-11e9-9fd0-350bff83bad2.png)
 #### Page 5
-![Page 5](https://user-images.githubusercontent.com/33060660/61331264-9b894e00-a7ef-11e9-9a9a-2d3fe4c7b994.JPG)
-#### Page 6
-![Page 6](https://user-images.githubusercontent.com/33060660/61331264-9b894e00-a7ef-11e9-9a9a-2d3fe4c7b994.JPG)
+![Page 5](https://user-images.githubusercontent.com/33060660/63227799-7a35cc00-c1b8-11e9-8ace-7c1aec7444c7.png)
 
