@@ -5,52 +5,11 @@
 #### docker container. I found the process very easy to get up an running and it's pretty easy to manage and update. 
 
 ### Active HASS Components
-- Automation
-- Binary Sensor
-  - command line
-- Camera
-  - Foscam
-  - Amcrest
-- Climate
-  - Nest E
-- Cover
-  - mqtt
-  - command line
-- Device Tracker
-  - Owntracks HTTP
-- Frontend (themes)
-- Google Assistant
-- History Graph
-- History
-- Input Select
-- Input Number (slider)
-- Logbook
-- Media Player
-- MQTT
-- Notifier
-  - SMTP
-- Playstation 4
-- Script
-- Secret
-- Sensor
-  - yr (weather)
-  - time/date
-  - moon
-  - command line
-  - QNAP
-  - speedtest
-  - system monitor
-  - template
-- Shell Commands
-  - for Lirc IR
-- Switch
-  - mqtt
-  - command line
-  - TPLink
-- Vacuum
-  - Roomba
-- Zones
-- Z-Wave (NEW)
+| Automation | Binary Sensor | Camera | Climate | Cover |
+| Device Tracker | Frontend (themes) | Google Assistant | History | Input Select |
+| Input Number (slider) | Logbook | Media Player | MQTT | Notifier |
+| Playstation 4 | Script | Secret | Sensor | Speedtest |
+| Shell Commands | Switch | Vacuum | Zones | Z-Wave (NEW) |
 
 ### Control Devices in Use
 - 2 Foscam C1 cameras
