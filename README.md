@@ -1,10 +1,11 @@
 # redwngsrul's Home Assistant
 ###### Readme is always a work in progress
 
-#### Since I had a NAS running as a Plex server, I recently moved my Home Assistant over to my QNAP NAS running in a 
-#### docker container. I found the process very easy to get up an running and it's pretty easy to manage and update. 
+#### Since I had a NAS running as a Plex server, I recently moved my Home Assistant over to my QNAP NAS running in a docker container. I found the process very easy to get up an running and it's pretty easy to manage and update. 
 
 ### Active HASS Components
+| Components |
+| :---: | :---: | :---: | :---: | :---: |
 | Automation | Binary Sensor | Camera | Climate | Cover |
 | Device Tracker | Frontend (themes) | Google Assistant | History | Input Select |
 | Input Number (slider) | Logbook | Media Player | MQTT | Notifier |
