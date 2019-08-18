@@ -10,7 +10,7 @@
 !*.html
 !README.md
 !.gitignore
-!automation
+!yaml/automation
 !lovelace
 !www
 !www/custom-lovelace

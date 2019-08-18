@@ -9,7 +9,7 @@ homeassistant:
 
 amcrest: !include yaml/amcrest.yaml
 
-automation: !include_dir_merge_list automation
+automation: !include_dir_merge_list yaml/automation
 
 binary_sensor: !include yaml/binary_sensors.yaml
 
