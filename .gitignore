@@ -23,6 +23,7 @@
 !www/moonphases
 !www/ps4cam
 !yaml
+!ir_files
 !bedroom_lircd.conf
 !den_lircd.conf
 !living_room_lircd.conf
