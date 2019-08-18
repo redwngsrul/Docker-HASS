@@ -14,20 +14,6 @@
 | Speedtest | Shell Commands | Switch | Vacuum | Zones | 
 | Z-Wave (NEW) |
 
-### Control Devices in Use
-- 2 Foscam C1 cameras
-  - capture info from the built in motion/sound sensors
-  - QNAP NAS FTP storage for recording cameras
-- 2 Amcrest cameras
-- Custom garage control board
-  - Programmed with ESPEasy for MQTT control and status updates
-  - DS18B20 temperature sensor and magnetic door switch state sensor
-- 4 Sonoff switch devices flashed with ESPEasy
-- 2 WiFi Raspberry Pi boards with custom built IR blaster/receiver circuit board
-  - Uses shell commands to LIRC to control my TV's/projector and stereo equipment
-- 3 Chromecasts
-- 2 Chromecast Audio
-
 
 ### Screenshots
 #### Page 1
