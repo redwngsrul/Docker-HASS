@@ -1,4 +1,5 @@
 # redwngsrul's Home Assistant
+![Home Assistant](https://user-images.githubusercontent.com/33060660/63229119-e6b9c680-c1ca-11e9-8e76-659f29b0ed01.png)
 ###### Readme is always a work in progress
 
 #### Since I had a NAS running as a Plex server, I recently moved my Home Assistant over to my QNAP NAS running in a docker container. I found the process very easy to get up an running and it's pretty easy to manage and update. 

@@ -23,8 +23,6 @@ conversation:
 
 cover: !include yaml/cover.yaml
 
-device_tracker: !include yaml/device_tracker.yaml
-
 discovery:
 
 frontend: !include yaml/frontend.yaml

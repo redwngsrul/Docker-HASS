@@ -39,12 +39,6 @@ cards:
   - type: vertical-stack
     cards:
 
-    #   - type: glance
-    #     show_name: false
-    #     entities:
-    #       - sensor.time
-    #       - sensor.date
-
       - type: picture-glance
         camera_image: camera.den_video
         entities:
@@ -192,5 +186,13 @@ cards:
     #     name: Thermostat
     #     decimals: 0 
 
-      - type: thermostat
-        entity: climate.living_room
+      - type: horizontal-stack
+        cards:
+        
+          - type: thermostat
+            entity: climate.living_room
+
+        #   - type: entities
+        #     entities:
+        #       - type: cast
+        #         view: Overview
