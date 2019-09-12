@@ -110,6 +110,7 @@ tplink:
     - host: 192.168.1.105
     - host: 192.168.1.114
     - host: 192.168.1.65
+    - host: 192.168.1.67
 
 tts:
   - platform: google_translate

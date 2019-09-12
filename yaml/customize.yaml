@@ -146,6 +146,8 @@ media_player.playstation_4:
   icon: mdi:playstation
 switch.laundry_light:
   icon: mdi:washing-machine
+switch.fan:
+  icon: mdi:fan
 switch.fireplace_light:
   icon: mdi:fire
 switch.living_room_light:
