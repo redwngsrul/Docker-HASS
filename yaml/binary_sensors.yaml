@@ -4,18 +4,116 @@
   device_class: connectivity
   payload_on: 1
   payload_off: 0
-  
-- platform: command_line
-  command: !secret den_cam_rcrding
-  name: 'Den Camera Recording'
-  payload_on: 1
-  payload_off: 0
 
-- platform: command_line
-  command: !secret garage_cam_rcrding
-  name: 'Garage Camera Recording'
-  payload_on: 1
-  payload_off: 0
+- platform: rest
+  name: "Den Camera Recording"
+  resource: !secret den_address
+  device_class: power
+  scan_interval: 5
+  value_template: >-
+    {%- if "<record>1</record>" in value -%}
+      {{ true }}
+    {%- else -%}
+      {{ false }}
+    {%- endif -%}
+
+- platform: rest
+  name: "Den Motion Recording"
+  resource: !secret den_state
+  device_class: power
+  scan_interval: 5
+  value_template: >-
+    {%- if "<linkage>8</linkage>" in value -%}
+      {{ true }}
+    {%- else -%}
+      {{ false }}
+    {%- endif -%}
+
+- platform: rest
+  name: "Den Motion"
+  resource: !secret den_address
+  device_class: motion
+  scan_interval: 5
+  value_template: >-
+    {%- if "<motionDetectAlarm>2</motionDetectAlarm>" in value -%}
+      {{ true }}
+    {%- else -%}
+      {{ false }}
+    {%- endif -%}
+
+- platform: rest
+  name: "Den Sound"
+  resource: !secret den_address
+  device_class: sound
+  scan_interval: 5
+  value_template: >-
+    {%- if "<soundAlarm>2</soundAlarm>" in value -%}
+      {{ true }}
+    {%- else -%}
+      {{ false }}
+    {%- endif -%}
+    
+###################################################################################
+
+- platform: rest
+  name: "Garage Camera Recording"
+  resource: !secret garage_address
+  device_class: power
+  scan_interval: 5
+  value_template: >-
+    {%- if "<record>1</record>" in value -%}
+      {{ true }}
+    {%- else -%}
+      {{ false }}
+    {%- endif -%}
+
+- platform: rest
+  name: "Garage Motion Recording"
+  resource: !secret garage_state
+  device_class: power
+  scan_interval: 5
+  value_template: >-
+    {%- if "<linkage>8</linkage>" in value -%}
+      {{ true }}
+    {%- else -%}
+      {{ false }}
+    {%- endif -%}
+
+- platform: rest
+  name: "Garage Motion"
+  resource: !secret garage_address
+  device_class: motion
+  scan_interval: 5
+  value_template: >-
+    {%- if "<motionDetectAlarm>2</motionDetectAlarm>" in value -%}
+      {{ true }}
+    {%- else -%}
+      {{ false }}
+    {%- endif -%}
+
+- platform: rest
+  name: "Garage Sound"
+  resource: !secret garage_address
+  device_class: sound
+  scan_interval: 5
+  value_template: >-
+    {%- if "<soundAlarm>2</soundAlarm>" in value -%}
+      {{ true }}
+    {%- else -%}
+      {{ false }}
+    {%- endif -%}
+
+#- platform: command_line
+#  command: !secret den_cam_rcrding
+#  name: 'Den Camera Recording'
+#  payload_on: 1
+#  payload_off: 0
+
+#- platform: command_line
+#  command: !secret garage_cam_rcrding
+#  name: 'Garage Camera Recording'
+#  payload_on: 1
+#  payload_off: 0
 
 - platform: workday
   country: US

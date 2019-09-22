@@ -65,6 +65,9 @@ entity_config:
     expose: true
     name: Game Equipment
     room: Den
+  switch.fan:
+    expose: true
+    name: Fan Plug
 
   script.bedroom_tv_on:
     expose: true

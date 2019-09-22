@@ -45,26 +45,6 @@
   unit_of_measurement: "°F"
   qos: 1
 
-- platform: command_line
-  name: Den Motion
-  command: !secret den_motion_alm
-  scan_interval: 2
-  
-- platform: command_line
-  name: Garage Motion
-  command: !secret garage_motion_alm
-  scan_interval: 2
-
-- platform: command_line
-  name: Den Sound
-  command: !secret den_sound_alm
-  scan_interval: 2
-  
-- platform: command_line
-  name: Garage Sound
-  command: !secret garage_sound_alm
-  scan_interval: 2
-
 - platform: template
   sensors:
     atmospheric_press:

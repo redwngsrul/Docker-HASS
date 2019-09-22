@@ -35,27 +35,7 @@
   host: 192.168.1.83
   turn_off:
     service: shell_command.turn_off_desktop
-  
-#FISH TANK WHITE
-#- platform: mqtt
-#  name: Fish Tank White Light
-#  state_topic: "home-assistant/fish-tank/white"
-#  command_topic: "home-assistant/fish-tank"
-#  qos: 1
-#  payload_on: "WHITE"
-#  payload_off: "OFF"
-#  retain: true
-  
-#FISH TANK BLUE
-#- platform: mqtt
-#  name: Fish Tank Blue Light
-#  state_topic: "home-assistant/fish-tank/blue"
-#  command_topic: "home-assistant/fish-tank"
-#  qos: 1
-#  payload_on: "BLUE"
-#  payload_off: "OFF"
-#  retain: true
- 
+
 #DEN Camera Motion
 - platform: command_line
   switches:
@@ -63,8 +43,6 @@
    den_camera_recording:
      command_on: !secret den_cmd_on
      command_off: !secret den_cmd_off
-     command_state: !secret den_cmd_state
-     value_template: '{{ value == "8" }}'
      friendly_name: Den Cam Record Motion
      
 #Garage Camera Motion
@@ -74,8 +52,6 @@
    garage_camera_recording:
      command_on: !secret garage_cmd_on
      command_off: !secret garage_cmd_off
-     command_state: !secret garage_cmd_state
-     value_template: '{{ value == "8" }}'
      friendly_name: Garage Cam Record Motion
  
 #Template Switch for Den Game Equipment
