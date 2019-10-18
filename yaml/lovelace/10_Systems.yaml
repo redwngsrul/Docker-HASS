@@ -90,3 +90,12 @@ cards:
         entities:
           - sensor.nasf34bde_status
           - sensor.nas_uptime
+
+      - type: entities
+        show_header_toggle: false
+        title: Z-Wave Battery Status
+        entities:
+          - sensor.zwave_frontdooropen_batt
+          - sensor.zwave_frontdooropen_batt
+          - sensor.zwave_backdooropen_batt
+          - sensor.zwave_den_batt

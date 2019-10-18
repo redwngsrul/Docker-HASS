@@ -1,0 +1,33 @@
+#Z-Wave low battery notifier
+- alias: "ZWave Low Battery Notify"
+  trigger:
+    - platform: numeric_state
+      entity_id: zwave.zw_multisensor_1
+      value_template: "{{ states.attributes.battery_level }}"
+      below: 40
+      for:
+        minutes: 10
+    - platform: numeric_state
+      entity_id: zwave.vision_security_zp3111_multisensor_4in1_2
+      value_template: "{{ states.attributes.battery_level }}"
+      below: 40
+      for:
+        minutes: 10
+    - platform: numeric_state
+      entity_id: zwave.hank_electronics_ltd_hkzw_dws01_door_window_sensor_2
+      value_template: "{{ states.attributes.battery_level }}"
+      below: 40
+      for:
+        minutes: 10
+    - platform: numeric_state
+      entity_id: zwave.hank_electronics_ltd_hkzw_dws01_door_window_sensor
+      value_template: "{{ states.attributes.battery_level }}"
+      below: 40
+      for:
+        minutes: 10
+
+  action:
+    - service: notify.gmail
+      data:
+        title: 'Z-Wave Low Battery'
+        message: 'A Z-Wave device has reported a low battery, check devices to see which one.'
