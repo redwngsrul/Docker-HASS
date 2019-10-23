@@ -25,12 +25,12 @@ cards:
     - entity: sensor.vision_security_zp3111_multisensor_4in1_temperature_2
       name: Living Rm ZW
       color: '#eb34e5'
-    - entity: sensor.living_room_thermostat_target
-      name: Nest Target
-      color: '#F29E0C'
-    - entity: sensor.living_room_thermostat_temperature
-      name: House
-      color: '#0C04F7'
+    # - entity: sensor.living_room_thermostat_target
+    #   name: Nest Target
+    #   color: '#F29E0C'
+    # - entity: sensor.living_room_thermostat_temperature
+    #   name: House
+    #   color: '#0C04F7'
     show:
       icon: false
       state: false
@@ -55,9 +55,9 @@ cards:
 
   - type: "custom:mini-graph-card"
     entities:
-    - entity: sensor.living_room_thermostat_humidity
-      name: Thermostat
-      color: '#e52222'
+    # - entity: sensor.living_room_thermostat_humidity
+    #   name: Thermostat
+    #   color: '#e52222'
     - entity: sensor.weather_humidity
       name: Weather
       color: '#11923C'

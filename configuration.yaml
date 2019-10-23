@@ -58,9 +58,9 @@ media_player:
 
 mqtt: !include yaml/mqtt.yaml
 
-nest:
-  client_id: !secret nest_id
-  client_secret: !secret nest_secret
+# nest:
+#   client_id: !secret nest_id
+#   client_secret: !secret nest_secret
 
 notify: !include yaml/notifiers.yaml
 

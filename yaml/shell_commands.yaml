@@ -40,8 +40,3 @@ soundbar_mute: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR M
 soundbar_next_input: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR NEXT_INPUT
 
 bedroom_power_toggle: ssh redwngsrul@192.168.1.95 irsend SEND_ONCE --count=2 sharp.lircd.conf power
-
-front_porch_snapshot: !secret front_porch_snap
-living_room_snapshot: !secret living_room_snap
-garage_snapshot: !secret garage_snap
-den_snapshot: !secret den_snap

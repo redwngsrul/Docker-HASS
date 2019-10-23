@@ -23,7 +23,6 @@ cards:
           - automation.den_lamp_off
           - automation.den_lamp_vaca_on
           - automation.den_lamp_vaca_off
-          - automation.motion_alarm_notify
 
   - type: vertical-stack
     cards:
@@ -39,10 +38,8 @@ cards:
           - automation.garage_open_notify
           - automation.laundry_light_on_workdays
           - automation.laundry_light_off
+          - automation.motion_alarm_notify
           - automation.neons_off
-          - automation.nest_home_mode
-          - automation.nest_away_mode
-          - automation.nest_offline_notify
           - automation.no_fish_lights_at_bedtime
 
   - type: vertical-stack

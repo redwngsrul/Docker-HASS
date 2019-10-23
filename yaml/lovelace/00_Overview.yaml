@@ -44,8 +44,8 @@ cards:
         camera_image: camera.den_video
         entities:
           - binary_sensor.den_camera_recording
-          - binary_sensor.den_motion_out
-          - binary_sensor.den_sound_out
+          - binary_sensor.den_motion
+          - binary_sensor.den_sound
           - switch.den_camera_recording
           - switch.desktop
 
@@ -177,8 +177,8 @@ cards:
         camera_image: camera.garage_video
         entities:
           - binary_sensor.garage_camera_recording
-          - binary_sensor.garage_motion_out
-          - binary_sensor.garage_sound_out
+          - binary_sensor.garage_motion
+          - binary_sensor.garage_sound
           - switch.garage_camera_recording
 
     #   - type: custom:simple-thermostat
@@ -187,11 +187,11 @@ cards:
     #     name: Thermostat
     #     decimals: 0 
 
-      - type: horizontal-stack
-        cards:
+    #   - type: horizontal-stack
+    #     cards:
         
-          - type: thermostat
-            entity: climate.living_room
+    #       - type: thermostat
+    #         entity: climate.living_room
 
         #   - type: entities
         #     entities:
