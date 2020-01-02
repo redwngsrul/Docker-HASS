@@ -17,6 +17,15 @@
     - 'time'
     - 'date'
 
+- platform: cert_expiry
+  name: "Certificate Expiration"
+  host: redwngsrul.duckdns.org
+  port: 8123
+
+# - platform: filesize
+#   file_paths:
+#     - /config/home-assistant_v2.db
+
 - platform: systemmonitor
   resources:
     - type: disk_use_percent
@@ -66,19 +75,19 @@
       unit_of_measurement: '%'
     zwave_den_batt:
       friendly_name: 'Den Z-Wave Battery'
-      value_template: '{{ states.zwave.zw_multisensor_1.attributes.battery_level }}'
+      value_template: "{{ state_attr('zwave.zw_multisensor_1','battery_level') }}"
       unit_of_measurement: '%'
     zwave_frontdoormulti_batt:
       friendly_name: 'Front Door Multi Z-Wave Battery'
-      value_template: '{{ states.zwave.vision_security_zp3111_multisensor_4in1_2.attributes.battery_level }}'
+      value_template: "{{ state_attr('zwave.vision_security_zp3111_multisensor_4in1_2','battery_level') }}"
       unit_of_measurement: '%'
     zwave_frontdooropen_batt:
       friendly_name: 'Front Door Z-Wave Battery'
-      value_template: '{{ states.zwave.hank_electronics_ltd_hkzw_dws01_door_window_sensor_2.attributes.battery_level }}'
+      value_template: "{{ state_attr('zwave.hank_electronics_ltd_hkzw_dws01_door_window_sensor_2','battery_level') }}"
       unit_of_measurement: '%'
     zwave_backdooropen_batt:
       friendly_name: 'Back Door Multi Z-Wave Battery'
-      value_template: '{{ states.zwave.hank_electronics_ltd_hkzw_dws01_door_window_sensor.attributes.battery_level }}'
+      value_template: "{{ state_attr('zwave.hank_electronics_ltd_hkzw_dws01_door_window_sensor','battery_level') }}"
       unit_of_measurement: '%'
     moonphases:
       friendly_name: 'Moon Phases'

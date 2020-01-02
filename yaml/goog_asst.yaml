@@ -13,7 +13,7 @@ entity_config:
       - woofer
       - subwoofer
     room: Den
-  switch.den_light:
+  switch.den_lamp:
     expose: true
     name: Den Lamp
     room: Den

@@ -139,7 +139,7 @@
     state: 'on'
   action:
     - service: switch.turn_on
-      entity_id: switch.den_light
+      entity_id: switch.den_lamp
 
 #turn off den lamp
 - alias: 'Den Lamp Vaca OFF'
@@ -152,11 +152,11 @@
       at: '20:00:00'
   condition:
     condition: state
-    entity_id: switch.den_light
+    entity_id: switch.den_lamp
     state: 'on'
   action:
     - service: switch.turn_off
-      entity_id: switch.den_light
+      entity_id: switch.den_lamp
     - service: switch.turn_on
       entity_id: switch.neons
 
@@ -186,9 +186,7 @@
     offset: '-00:30:00'
   action:
     - service: switch.turn_on
-      entity_id: switch.kitchen_christmas_light
-    - service: switch.turn_on
-      entity_id: switch.living_room_christmas_light
+      entity_id: switch.fan
 
 #turn off christmas lights
 - alias: 'Christmas Lights OFF'
@@ -198,6 +196,4 @@
       at: '22:30:00'
   action:
     - service: switch.turn_off
-      entity_id: switch.kitchen_christmas_light
-    - service: switch.turn_off
-      entity_id: switch.living_room_christmas_light
+      entity_id: switch.fan

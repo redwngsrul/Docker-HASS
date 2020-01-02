@@ -1,0 +1,23 @@
+- alias: 'Link Bedroom Dining Lamp ON'
+  initial_state: false
+  trigger:
+    platform: state
+    entity_id: switch.bedroom, switch.dining_room_light
+    to: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.dining_room_light
+    - service: switch.turn_on
+      entity_id: switch.bedroom
+
+- alias: 'Link Bedroom Dining Lamp OFF'
+  initial_state: false
+  trigger:
+    platform: state
+    entity_id: switch.bedroom, switch.dining_room_light
+    to: 'off'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.dining_room_light
+    - service: switch.turn_off
+      entity_id: switch.bedroom

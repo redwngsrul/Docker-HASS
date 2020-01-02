@@ -64,14 +64,14 @@ binary_sensor.floorplan:
     groups:
     - name: Switches
       entities:
-      - switch.den_light
+      - switch.den_lamp
       - switch.desktop
       - switch.dining_room_light
       - switch.fireplace_light
       - switch.fishes
       - switch.game_equipment
       - switch.laundry_light
-      - switch.living_room_light
+      - switch.living_room
       - switch.neons
       states:
       - state: 'on'
@@ -136,6 +136,10 @@ switch.subwoofer:
   icon: mdi:surround-sound
 switch.den_light:
   icon: mdi:lamp
+switch.den_lamp:
+  icon: mdi:lamp
+switch.living_room:
+  icon: mdi:lightbulb
 switch.bottle_lamp:
   icon: mdi:keg
 switch.dining_room_light:
@@ -144,10 +148,12 @@ switch.bedroom:
   icon: mdi:ceiling-light
 media_player.playstation_4:
   icon: mdi:playstation
+switch.laundry_2:
+  icon: mdi:garage
 switch.laundry_light:
   icon: mdi:washing-machine
 switch.fan:
-  icon: mdi:fan
+  icon: mdi:pine-tree
 switch.fireplace_light:
   icon: mdi:fire
 switch.living_room_light:

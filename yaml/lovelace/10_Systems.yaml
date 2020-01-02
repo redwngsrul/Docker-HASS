@@ -45,6 +45,7 @@ cards:
         entities:
           - sensor.ipv4_address_eth0
           - sensor.last_boot
+          - sensor.certificates
           - type: section
             label: Speedtest
           - sensor.speedtest_download
@@ -96,6 +97,6 @@ cards:
         title: Z-Wave Battery Status
         entities:
           - sensor.zwave_frontdooropen_batt
-          - sensor.zwave_frontdooropen_batt
+          - sensor.zwave_frontdoormulti_batt
           - sensor.zwave_backdooropen_batt
           - sensor.zwave_den_batt

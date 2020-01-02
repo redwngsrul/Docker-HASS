@@ -1,0 +1,15 @@
+#Certificate Expiration Notifier
+- alias: "Certificate Expiring"
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.certificates
+      below: 10
+  action:
+    - service: notify.gmail
+      data:
+        title: 'Certificates are Expiring!!!'
+        message: 'Your certificates have less than 10 days before expiring. Please renew now!'
+    - service: persistent_notification.create
+      data:
+        title: 'Certificates are Expiring!!!'
+        message: 'Your certificates have less than 10 days before expiring. Please renew now!'

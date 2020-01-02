@@ -127,7 +127,7 @@ Den_Switches:
   control: hidden
   view: no
   entities:
-    - switch.den_light
+    - switch.den_lamp
     - switch.fireplace_light
     - switch.neons
     - switch.subwoofer

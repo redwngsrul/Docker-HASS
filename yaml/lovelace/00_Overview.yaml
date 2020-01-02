@@ -53,7 +53,7 @@ cards:
         cards:
 
           - type: custom:button-card
-            entity: switch.den_light
+            entity: switch.den_lamp
             name: Den Light
             color: rgb(242,203,12)
             color_off: rgb(220,220,220)
@@ -111,13 +111,7 @@ cards:
         cards:
 
           - type: custom:button-card
-            entity: switch.laundry_light
-            name: Laundry
-            color: rgb(102,240,52)
-            color_off: rgb(220,220,220)
-
-          - type: custom:button-card
-            entity: switch.living_room_light
+            entity: switch.living_room
             name: Living Rm
             color: rgb(168, 7, 44)
             color_off: rgb(220,220,220)
@@ -130,7 +124,7 @@ cards:
             
           - type: custom:button-card
             entity: switch.fan
-            name: Fan
+            name: Christmas
             color: rgb(12,242,96)
             color_off: rgb(220,220,220)
 
@@ -156,6 +150,21 @@ cards:
             color: rgb(249,217,87)
             color_off: rgb(220,220,220)
 
+      - type: horizontal-stack
+        cards: 
+
+          - type: custom:button-card
+            entity: switch.laundry_light
+            name: Laundry
+            color: rgb(102,240,52)
+            color_off: rgb(220,220,220)
+
+          - type: custom:button-card
+            entity: switch.laundry_2
+            name: Garage Lt
+            color: rgb(210, 160, 100)
+            color_off: rgb(220,220,220)
+
           - type: entity-button
             entity: cover.garage
             tap_action: 
@@ -165,6 +174,7 @@ cards:
                 entity_id: cover.garage
             hold_action: 
               action: more-info
+
 
 ################################################
 ############## VERTICAL STACK #3 ###############
@@ -182,16 +192,16 @@ cards:
           - switch.garage_camera_recording
 
     #   - type: custom:simple-thermostat
-    #     entity: climate.living_room
+    #     entity: climate.thermostat
     #     icon: mdi:thermostat
     #     name: Thermostat
     #     decimals: 0 
 
-    #   - type: horizontal-stack
-    #     cards:
+      - type: horizontal-stack
+        cards:
         
-    #       - type: thermostat
-    #         entity: climate.living_room
+          - type: thermostat
+            entity: climate.thermostat
 
         #   - type: entities
         #     entities:

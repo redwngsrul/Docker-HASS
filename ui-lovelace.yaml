@@ -13,7 +13,7 @@ resources:
     type: module
 
 cch:
-  voice: overflow
+  voice: show
   notifications: show
   options: clock
   clock_date: true
