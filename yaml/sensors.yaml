@@ -22,10 +22,6 @@
   host: redwngsrul.duckdns.org
   port: 8123
 
-# - platform: filesize
-#   file_paths:
-#     - /config/home-assistant_v2.db
-
 - platform: systemmonitor
   resources:
     - type: disk_use_percent
@@ -86,7 +82,7 @@
       value_template: "{{ state_attr('zwave.hank_electronics_ltd_hkzw_dws01_door_window_sensor_2','battery_level') }}"
       unit_of_measurement: '%'
     zwave_backdooropen_batt:
-      friendly_name: 'Back Door Multi Z-Wave Battery'
+      friendly_name: 'Back Door Z-Wave Battery'
       value_template: "{{ state_attr('zwave.hank_electronics_ltd_hkzw_dws01_door_window_sensor','battery_level') }}"
       unit_of_measurement: '%'
     moonphases:
