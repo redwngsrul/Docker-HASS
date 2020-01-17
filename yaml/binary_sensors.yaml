@@ -133,9 +133,9 @@
       value_template: "{{ is_state('sensor.vision_security_zp3111_multisensor_4in1_alarm_level_2', '255') }}"
       device_class: motion
 
-# dummy sensor for floorplan card
-- platform: mqtt
-  state_topic: dummy/floorplan/sensor
-  name: Floorplan
+# # dummy sensor for floorplan card
+# - platform: mqtt
+#   state_topic: dummy/floorplan/sensor
+#   name: Floorplan
 
 - platform: zwave

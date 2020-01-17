@@ -160,7 +160,7 @@ Living_Room:
   control: hidden
   view: no
   entities:
-    - switch.bottle_lamp
+    - switch.bottle_lamp_2
     - script.living_room_tv_on
     - script.living_room_tv_off
 #    - cover.living_room_volume

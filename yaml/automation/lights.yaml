@@ -64,7 +64,7 @@
             state: 'on'
   action:
     - service: switch.turn_on
-      entity_id: switch.bottle_lamp
+      entity_id: switch.bottle_lamp_2
 
 #turn off bottle light @ 6am weekdays    
 - alias: 'Bottle Lamp OFF'
@@ -79,11 +79,11 @@
       at: '22:00:00'
   condition:
     condition: state
-    entity_id: switch.bottle_lamp
+    entity_id: switch.bottle_lamp_2
     state: 'on'
   action:
     - service: switch.turn_off
-      entity_id: switch.bottle_lamp
+      entity_id: switch.bottle_lamp_2
       
 #turn on laundry light @ 545am weekdays
 - alias: 'Laundry Light ON Workdays'
@@ -179,7 +179,7 @@
 
 #turn on christmas lights
 - alias: 'Christmas Lights ON'
-  initial_state: true
+  initial_state: false
   trigger:
     platform: sun
     event: sunset
@@ -190,7 +190,7 @@
 
 #turn off christmas lights
 - alias: 'Christmas Lights OFF'
-  initial_state: true
+  initial_state: false
   trigger:
     - platform: time
       at: '22:30:00'

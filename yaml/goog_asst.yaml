@@ -17,7 +17,7 @@ entity_config:
     expose: true
     name: Den Lamp
     room: Den
-  switch.bottle_lamp:
+  switch.bottle_lamp_2:
     expose: true
     name: Bottle Lamp
     room: Living Room
@@ -45,7 +45,7 @@ entity_config:
     expose: true
     name: Fireplace
     room: Den
-  switch.living_room_light:
+  switch.living_room:
     expose: true
     name: Home Lamp
     room: Living Room
@@ -107,3 +107,8 @@ entity_config:
     aliases:
       - ps4
     room: Den
+
+  light.nanoleaf:
+    expose: true
+    name: Office Leaf
+    room: Office

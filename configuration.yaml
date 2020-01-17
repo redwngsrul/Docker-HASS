@@ -42,6 +42,8 @@ input_number: !include yaml/input_slider.yaml
 
 input_select: !include yaml/input_select.yaml
 
+light: !include yaml/lights.yaml
+
 logbook:
 
 logger:
@@ -114,6 +116,8 @@ tplink:
     - host: 192.168.1.67
     - host: 192.168.1.90
     - host: 192.168.1.93
+    - host: 192.168.1.96
+    - host: 192.168.1.102
 
 tts:
   - platform: google_translate

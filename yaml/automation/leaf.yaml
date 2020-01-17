@@ -1,0 +1,50 @@
+- alias: 'Leaf 75'
+  initial_state: true
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-01:00:00"
+  condition:
+    condition: state
+    entity_id: light.nanoleaf
+    state: 'on'
+  action:
+    service: light.turn_on
+    data:
+      brightness: 175
+      entity_id:
+        - light.nanoleaf
+
+- alias: 'Leaf 50'
+  initial_state: true
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-00:30:00"
+  condition:
+    condition: state
+    entity_id: light.nanoleaf
+    state: 'on'
+  action:
+    service: light.turn_on
+    data:
+      brightness: 124
+      entity_id:
+        - light.nanoleaf
+
+- alias: 'Leaf 33'
+  initial_state: true
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "+00:30:00"
+  condition:
+    condition: state
+    entity_id: light.nanoleaf
+    state: 'on'
+  action:
+    service: light.turn_on
+    data:
+      brightness: 81
+      entity_id:
+        - light.nanoleaf

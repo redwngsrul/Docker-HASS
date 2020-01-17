@@ -138,7 +138,7 @@ depart_work:
         entity_id: switch.dining_room_light
     - service: switch.turn_off
       data:
-        entity_id: switch.bottle_lamp
+        entity_id: switch.bottle_lamp_2
     - service: cover.open_cover
       data:
         entity_id: cover.garage
