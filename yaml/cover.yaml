@@ -11,18 +11,18 @@
   state_open: "0"
   state_closed: "1"
 
-- platform: command_line
-  covers:
-    den_volume:
-      command_open: "ssh raspberrypi2 irsend SEND_ONCE --count=2 PIONEER VOL_UP"
-      command_close: "ssh raspberrypi2 irsend SEND_ONCE --count=2 PIONEER VOL_DOWN"
-      command_stop: "ssh raspberrypi2 irsend SEND_ONCE --count=2 PIONEER MUTE"
-      friendly_name: Den Volume Control
+# - platform: command_line
+#   covers:
+#     den_volume:
+#       command_open: "ssh raspberrypi2 irsend SEND_ONCE --count=2 PIONEER VOL_UP"
+#       command_close: "ssh raspberrypi2 irsend SEND_ONCE --count=2 PIONEER VOL_DOWN"
+#       command_stop: "ssh raspberrypi2 irsend SEND_ONCE --count=2 PIONEER MUTE"
+#       friendly_name: Den Volume Control
 
-- platform: command_line
-  covers:
-    living_room_volume:
-      command_open: "ssh raspberrypi irsend SEND_ONCE SOUNDBAR VOL_UP"
-      command_close: "ssh raspberrypi irsend SEND_ONCE SOUNDBAR VOL_DOWN"
-      command_stop: "ssh raspberrypi irsend SEND_ONCE SOUNDBAR MUTE"
-      friendly_name: Living Room Volume
+# - platform: command_line
+#   covers:
+#     living_room_volume:
+#       command_open: "ssh raspberrypi irsend SEND_ONCE SOUNDBAR VOL_UP"
+#       command_close: "ssh raspberrypi irsend SEND_ONCE SOUNDBAR VOL_DOWN"
+#       command_stop: "ssh raspberrypi irsend SEND_ONCE SOUNDBAR MUTE"
+#       friendly_name: Living Room Volume

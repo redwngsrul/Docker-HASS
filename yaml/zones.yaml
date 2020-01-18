@@ -13,14 +13,20 @@
 - name: Mom & Dad's
   latitude: !secret lat_momdad
   longitude: !secret long_momdad
-  radius: 150
+  radius: 250
   icon: mdi:account-multiple
 
 - name: Zach's
   latitude: !secret lat_zachs
   longitude: !secret long_zachs
-  radius: 150
+  radius: 250
   icon: mdi:account-multiple-outline
+
+- name: Jon's
+  latitude: !secret lat_jons
+  longitude: !secret long_jons
+  radius: 250
+  icon: mdi:account-multiple
 
 - name: Derek & Ruby's
   latitude: !secret d_r_lat
