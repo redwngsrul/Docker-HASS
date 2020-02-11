@@ -1,3 +1,7 @@
+########################################
+############## Automations #############
+########################################
+
 automation.bottle_lamp_on_workdays:
   icon: mdi:keg
 automation.bottle_lamp_off:
@@ -44,6 +48,11 @@ automation.nest_away_mode:
   icon: mdi:thermostat
 automation.no_fish_lights_at_bedtime:
   icon: mdi:fish
+
+########################################
+############## Binary Sensors ##########
+########################################
+
 binary_sensor.garage_control_online:
   icon: mdi:link-variant
 binary_sensor.den_camera_recording:
@@ -78,22 +87,50 @@ binary_sensor.floorplan:
         class: switch-on
       - state: 'off'
         class: switch-off
-cover.den_volume_control:
-  icon: mdi:volume-high
-cover.living_room_volume:
-  icon: mdi:volume-high
+
+########################################
+############## Cover ###################
+########################################
+
 cover.garage:
   friendly_name: "Garage"
+
+########################################
+############## Device Tracker ##########
+########################################
+
 device_tracker.pixelxl_pixelxl_2:
   entity_picture: /local/pic3.jpg
+
+########################################
+############## Input Number ############
+########################################
+
 input_number.off_tmr_slider:
   icon: mdi:timelapse
+
+########################################
+############## Media Player ############
+########################################
+
+media_player.playstation_4:
+  icon: mdi:playstation
+
+########################################
+############## Scripts #################
+########################################
+
 script.picture_on_main:
   icon: mdi:camera
 script.picture_on_remote:
   icon: mdi:camera-enhance
 script.music_in_den:
   icon: mdi:music
+
+########################################
+############## Sensors #################
+########################################
+
 sensor.speedtest_download:
   icon: mdi:download
 sensor.speedtest_upload:
@@ -132,6 +169,11 @@ sensor.living_room_thermostat_operation_mode:
   icon: mdi:air-conditioner
 sensor.living_room_thermostat_hvac_state:
   icon: mdi:adjust
+
+########################################
+############## Switches ################
+########################################
+
 switch.subwoofer:
   icon: mdi:surround-sound
 switch.den_light:
@@ -146,8 +188,6 @@ switch.dining_room_light:
   icon: mdi:food-fork-drink
 switch.bedroom:
   icon: mdi:ceiling-light
-media_player.playstation_4:
-  icon: mdi:playstation
 switch.laundry_2:
   icon: mdi:garage
 switch.laundry_light:
@@ -174,10 +214,16 @@ switch.game_equipment:
   friendly_name: Game Equipment
   icon: mdi:projector-screen
 
+########################################
+############## Z-Wave ##################
+########################################
+
 sensor.aeon_labs_zw100_multisensor_6_temperature:
   friendly_name: 'Den Temperature'
 sensor.aeon_labs_zw100_multisensor_6_relative_humidity:
   friendly_name: 'Den Humidity'
+sensor.aeon_labs_zw100_multisensor_6_luminance:
+  friendly_name: 'Den Brightness'
 
 sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control:
   friendly_name: 'Door Sensor #1 Access Ctrl'
@@ -204,3 +250,6 @@ binary_sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_sensor_2:
   friendly_name: 'Door Sensor #2 Sensor'
 sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_sourcenodeid_2:
   friendly_name: 'Door Sensor #2 Src ID'
+
+sensor.vision_security_zp3111_multisensor_4in1_luminance_2:
+  friendly_name: 'Living Room Brightness'

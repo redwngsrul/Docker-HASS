@@ -138,4 +138,4 @@
 #   state_topic: dummy/floorplan/sensor
 #   name: Floorplan
 
-- platform: zwave
+#- platform: zwave

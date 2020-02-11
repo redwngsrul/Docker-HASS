@@ -109,4 +109,4 @@
 
 - platform: version
 
-- platform: zwave
+#- platform: zwave

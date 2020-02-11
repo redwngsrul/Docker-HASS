@@ -47,11 +47,8 @@ cards:
       margin-bottom: 5px;
       }
 
-  - type: entities
-    entities:
-      - binary_sensor.aeon_labs_zw100_multisensor_6_sensor
-      - sensor.aeon_labs_zw100_multisensor_6_luminance
-      - sensor.vision_security_zp3111_multisensor_4in1_luminance_2
+  - type: weather-forecast
+    entity: weather.dark_sky
 
   - type: "custom:mini-graph-card"
     entities:
@@ -83,5 +80,5 @@ cards:
       margin-bottom: 5px;
       }
 
-  - type: weather-forecast
-    entity: weather.dark_sky
+  - type: picture
+    image: https://radar.weather.gov/lite/N0R/DTX_0.png

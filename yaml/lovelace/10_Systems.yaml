@@ -92,11 +92,20 @@ cards:
           - sensor.nasf34bde_status
           - sensor.nas_uptime
 
+
+  - type: vertical-stack
+    cards:
+    
       - type: entities
         show_header_toggle: false
-        title: Z-Wave Battery Status
+        title: Z-Wave
         entities:
           - sensor.zwave_frontdooropen_batt
           - sensor.zwave_frontdoormulti_batt
           - sensor.zwave_backdooropen_batt
           - sensor.zwave_den_batt
+          - type: section
+            label: Sensors
+          #- binary_sensor.aeon_labs_zw100_multisensor_6_sensor
+          - sensor.aeon_labs_zw100_multisensor_6_luminance
+          - sensor.vision_security_zp3111_multisensor_4in1_luminance_2

@@ -1,5 +1,6 @@
 project_id: !secret goog_proj_id
-api_key: !secret goog_api_key
+#api_key: !secret goog_api_key
+service_account: !include SERVICE_ACCOUNT.json
 expose_by_default: false
 exposed_domains:
   - script
