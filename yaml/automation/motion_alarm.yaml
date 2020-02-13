@@ -10,30 +10,23 @@
     condition: or
     conditions:
       - condition: state
-        entity_id: device_tracker.pixelxl_pixelxl_2
+        entity_id: device_tracker.pixel_3
         state: not_home
-#        for:
-#          minutes: 2
       - condition: state
-        entity_id: device_tracker.pixelxl_pixelxl_2
-        state: "Zach's"
-#        for:
-#          minutes: 2
-      - condition: state
-        entity_id: device_tracker.pixelxl_pixelxl_2
+        entity_id: device_tracker.pixel_3
         state: Work
-#        for:
-#          minutes: 2
       - condition: state
-        entity_id: device_tracker.pixelxl_pixelxl_2
+        entity_id: device_tracker.pixel_3
+        state: "Jon's"
+      - condition: state
+        entity_id: device_tracker.pixel_3
+        state: "Zach's"
+      - condition: state
+        entity_id: device_tracker.pixel_3
         state: "Mom & Dad's"
-#        for:
-#          minutes: 2
       - condition: state
-        entity_id: device_tracker.pixelxl_pixelxl_2
+        entity_id: device_tracker.pixel_3
         state: "Derek & Ruby's"
-#        for:
-#          minutes: 2
   action:
     - service: camera.snapshot
       data:
@@ -84,30 +77,23 @@
     condition: or
     conditions:
       - condition: state
-        entity_id: device_tracker.pixelxl_pixelxl_2
+        entity_id: device_tracker.pixel_3
         state: not_home
-#        for:
-#          minutes: 2
       - condition: state
-        entity_id: device_tracker.pixelxl_pixelxl_2
-        state: "Zach's"
-#        for:
-#          minutes: 2
-      - condition: state
-        entity_id: device_tracker.pixelxl_pixelxl_2
+        entity_id: device_tracker.pixel_3
         state: Work
-#        for:
-#          minutes: 2
       - condition: state
-        entity_id: device_tracker.pixelxl_pixelxl_2
+        entity_id: device_tracker.pixel_3
+        state: "Jon's"
+      - condition: state
+        entity_id: device_tracker.pixel_3
+        state: "Zach's"
+      - condition: state
+        entity_id: device_tracker.pixel_3
         state: "Mom & Dad's"
-#        for:
-#          minutes: 2
       - condition: state
-        entity_id: device_tracker.pixelxl_pixelxl_2
+        entity_id: device_tracker.pixel_3
         state: "Derek & Ruby's"
-#        for:
-#          minutes: 2
   action:
     - service: camera.snapshot
       data:

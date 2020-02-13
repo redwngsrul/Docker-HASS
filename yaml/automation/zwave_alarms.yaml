@@ -31,6 +31,10 @@
       data:
         title: 'Z-Wave Low Battery'
         message: 'A Z-Wave device has reported a low battery, check devices to see which one.'
+    - service: notify.mobile_app_pixel_3
+      data:
+        title: 'Z-Wave Low Battery'
+        message: 'A Z-Wave device has reported a low battery, check devices to see which one.'
     - service: persistent_notification.create
       data:
         title: 'Z-Wave Low Battery'

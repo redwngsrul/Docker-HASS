@@ -25,6 +25,9 @@ cover: !include yaml/cover.yaml
 
 discovery:
 
+ecobee:
+  api_key: !secret ecobee_key
+
 frontend: !include yaml/frontend.yaml
 
 google_assistant: !include yaml/goog_asst.yaml
@@ -57,6 +60,8 @@ lovelace:
 map:
 
 media_player:
+
+mobile_app:
 
 mqtt: !include yaml/mqtt.yaml
 

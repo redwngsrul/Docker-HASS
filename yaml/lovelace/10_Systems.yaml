@@ -6,7 +6,7 @@ background: 'right/auto linear-gradient(10deg, rgba(216, 236, 242,1) 0%, rgba(15
 path: systems
 badges:
   - sensor.current_version
-  - sensor.phone_batt
+  - sensor.battery_level
 cards:
 
   - type: vertical-stack

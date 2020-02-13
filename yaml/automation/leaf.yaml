@@ -2,7 +2,7 @@
   initial_state: true
   trigger:
     - platform: state
-      entity_id: device_tracker.pixelxl_pixelxl_2
+      entity_id: device_tracker.pixel_3
       to: "home"
       for: "00:03:00"
     # - platform: time

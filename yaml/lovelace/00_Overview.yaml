@@ -6,7 +6,7 @@ badges:
   - sun.sun
   - sensor.moonphases
   - sensor.weather_symbol
-  - device_tracker.pixelxl_pixelxl_2
+  - device_tracker.pixel_3
   - sensor.garage_status_abbr
   - binary_sensor.den_multisensor
   - binary_sensor.garage_control_online

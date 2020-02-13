@@ -99,7 +99,8 @@ cover.garage:
 ############## Device Tracker ##########
 ########################################
 
-device_tracker.pixelxl_pixelxl_2:
+device_tracker.pixel_3:
+  friendly_name: "Alex"
   entity_picture: /local/pic3.jpg
 
 ########################################

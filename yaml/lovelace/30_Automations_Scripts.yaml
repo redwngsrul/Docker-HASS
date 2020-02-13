@@ -35,7 +35,6 @@ cards:
           - automation.fish_tank_lights_on
           - automation.front_porch_motion_alarm_notify
           - automation.garage_offline_notify
-          - automation.garage_open_notify
           - automation.laundry_light_on_workdays
           - automation.laundry_light_off
           - automation.motion_alarm_notify
