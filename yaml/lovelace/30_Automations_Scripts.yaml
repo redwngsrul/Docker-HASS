@@ -13,6 +13,9 @@ cards:
         show_header_toggle: false
         title: Automations
         entities:
+          - automation.android_close_garage_when_tapped
+          - automation.android_notify_garage_open
+          - automation.android_notify_motion_detected
           - automation.bottle_lamp_on_workdays
           - automation.bottle_lamp_off
           - automation.camera_recordings_on
