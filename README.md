@@ -18,7 +18,7 @@
 
 ### Screenshots
 #### Page 1
-![Page 1](https://user-images.githubusercontent.com/33060660/74786828-a9b6b580-527b-11ea-93c9-bc3dfece0478.JPG)
+![Page 1](https://user-images.githubusercontent.com/33060660/77239824-3d4e0f80-6bb5-11ea-9969-e2b34a62557c.png)
 #### Page 2
 ![Page 2](https://user-images.githubusercontent.com/33060660/74786829-a9b6b580-527b-11ea-874c-b542cdad57e9.JPG)
 #### Page 3
