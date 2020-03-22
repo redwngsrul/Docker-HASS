@@ -2,13 +2,13 @@
 ![Home Assistant](https://user-images.githubusercontent.com/33060660/63229119-e6b9c680-c1ca-11e9-8e76-659f29b0ed01.png)
 ###### Readme is always a work in progress
 
-#### Since I had a NAS running as a Plex server, I recently moved my Home Assistant over to my QNAP NAS running in a docker container. I found the process very easy to get up an running and it's pretty easy to manage and update. 
+#### I moved my Home Assistant over to my QNAP NAS running in a docker container. I found the process very easy to get up an running and it's pretty easy to manage and update. 
 
 ### Active HASS Components
 
 | | | | | |
 | :---: | :---: | :---: | :---: | :---: |
-| Automation | Android Actionable Notifications | Binary Sensor | Camera | Climate | 
+| Automation | Android App & Notifications | Binary Sensor | Camera | Climate | 
 | Cover |Custom Lovelace Cards | Device Tracker | Frontend (themes) | Google Assistant | 
 | History | Input Select | Input Number (slider) | Logbook | Media Player | 
 | MQTT | Notifier | Playstation 4 | Script | Secret | 

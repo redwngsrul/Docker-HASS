@@ -6,7 +6,7 @@ background: 'right/auto linear-gradient(10deg, rgba(216, 236, 242,1) 0%, rgba(15
 path: systems
 badges:
   - sensor.current_version
-  - sensor.battery_level
+  - sensor.pixel_3_battery_level
 cards:
 
   - type: vertical-stack
@@ -20,9 +20,9 @@ cards:
         - entity: sensor.processor_use
           name: CPU Use
           color: '#11923C'
-        - entity: sensor.disk_use_percent
-          name: Disk Use
-          color: '#F29E0C'
+        # - entity: sensor.disk_use_percent
+        #   name: Disk Use
+        #   color: '#F29E0C'
         show:
           icon: false
           state: false
@@ -63,12 +63,12 @@ cards:
         - entity: sensor.nasf34bde_memory_usage
           name: Memory
           color: '#11923C'
-        - entity: sensor.nasf34bde_volume_used_datavol1
-          name: Vol1 Usage
-          color: '#F29E0C'
-        - entity: sensor.nasf34bde_volume_used_datavol2
-          name: Vol2 Usage
-          color: '#0C04F7'
+        # - entity: sensor.nasf34bde_volume_used_datavol1
+        #   name: Vol1 Usage
+        #   color: '#F29E0C'
+        # - entity: sensor.nasf34bde_volume_used_datavol2
+        #   name: Vol2 Usage
+        #   color: '#0C04F7'
         show:
           icon: false
           state: false
@@ -91,6 +91,8 @@ cards:
         entities:
           - sensor.nasf34bde_status
           - sensor.nas_uptime
+          - sensor.nasf34bde_volume_used_datavol1
+          - sensor.nasf34bde_volume_used_datavol2
 
 
   - type: vertical-stack

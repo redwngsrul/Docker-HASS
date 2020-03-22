@@ -214,6 +214,8 @@ switch.garage_camera_recording:
 switch.game_equipment:
   friendly_name: Game Equipment
   icon: mdi:projector-screen
+switch.spare:
+  icon: mdi:music-box-outline
 
 ########################################
 ############## Z-Wave ##################

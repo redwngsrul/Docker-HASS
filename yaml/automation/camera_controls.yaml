@@ -5,12 +5,14 @@
       entity_id: device_tracker.pixel_3
       from: 'home'
   action:
-    - service: switch.turn_on
-      entity_id: switch.den_camera_recording
     - service: amcrest.enable_motion_recording
       entity_id: camera.living
     - service: amcrest.enable_motion_recording
       entity_id: camera.front_porch
+    - service: amcrest.enable_motion_recording
+      entity_id: camera.den_2
+    - service: amcrest.enable_motion_recording
+      entity_id: camera.back_yard
     - service: switch.turn_on
       entity_id: switch.garage_camera_recording
         
@@ -23,11 +25,13 @@
       for:
         minutes: 3
   action:
-    - service: switch.turn_off
-      entity_id: switch.den_camera_recording
     - service: amcrest.disable_motion_recording
       entity_id: camera.living
     - service: amcrest.disable_motion_recording
       entity_id: camera.front_porch
+    - service: amcrest.disable_motion_recording
+      entity_id: camera.den_2
+    - service: amcrest.disable_motion_recording
+      entity_id: camera.back_yard
     - service: switch.turn_off
       entity_id: switch.garage_camera_recording

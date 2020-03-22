@@ -5,6 +5,8 @@ homeassistant:
   elevation: !secret elevation
   unit_system: imperial
   time_zone: America/Detroit
+  auth_mfa_modules:
+    - type: totp
   customize: !include yaml/customize.yaml
 
 amcrest: !include yaml/amcrest.yaml

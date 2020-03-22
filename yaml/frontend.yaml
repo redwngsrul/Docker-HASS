@@ -7,11 +7,12 @@ themes:
 #     Main colors that can be changed
     dark-primary-color: "#c66900"
     disabled-text-color: "#545454"
+    text-primary-color: "#cfcfcf"
     divider-color: "rgba(255, 255, 255, 0.12)"
     light-primary-color: "#e06c6c"
     paper-card-background-color: "#1d1d1d"
     paper-grey-200: "#191919"
-    paper-item-icon-color: "#d3d3d3"
+    paper-item-icon-color: "#545454"
     paper-listbox-background-color: "#202020"
     primary-background-color: "#303030"
     primary-color: "#d32f2f"
@@ -36,6 +37,7 @@ themes:
     secondary-text-color: "var(--primary-color)"
     table-row-background-color: "var(--paper-card-background-color)"
     table-row-alternative-background-color: "var(--sidebar-text_-_background)"
+    label-badge-text-color: 'var(--paper-grey-200)'
     
   darkorange:
     primary-color: "#ff9800"

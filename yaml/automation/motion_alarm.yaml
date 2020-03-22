@@ -38,8 +38,12 @@
         filename: '/config/www/living_room_motion.jpg'
     - service: camera.snapshot
       data:
-        entity_id: camera.den_video
+        entity_id: camera.den_2
         filename: '/config/www/den_motion.jpg'
+    - service: camera.snapshot
+      data:
+        entity_id: camera.back_yard
+        filename: '/config/www/back_yard.jpg'
     - service: camera.snapshot
       data:
         entity_id: camera.garage_video
@@ -54,8 +58,71 @@
             - /config/www/living_room_motion.jpg
             - /config/www/garage_motion.jpg
             - /config/www/den_motion.jpg
+            - /config/www/back_yard.jpg
 
-#Den Motion Alarm Notifier
+#Back Yard Motion Alarm Notifier
+- alias: "Back Yard Motion Alarm Notify"
+  trigger:
+    - platform: state
+      entity_id: sensor.back_yard_motion_detected
+      from: 'False'
+#      for:
+#        minutes: 5
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: device_tracker.pixel_3
+        state: not_home
+      - condition: state
+        entity_id: device_tracker.pixel_3
+        state: Work
+      - condition: state
+        entity_id: device_tracker.pixel_3
+        state: "Jon's"
+      - condition: state
+        entity_id: device_tracker.pixel_3
+        state: "Zach's"
+      - condition: state
+        entity_id: device_tracker.pixel_3
+        state: "Mom & Dad's"
+      - condition: state
+        entity_id: device_tracker.pixel_3
+        state: "Derek & Ruby's"
+  action:
+    - service: camera.snapshot
+      data:
+        entity_id: camera.front_porch
+        filename: '/config/www/front_porch_motion.jpg'
+    - service: camera.snapshot
+      data:
+        entity_id: camera.living
+        filename: '/config/www/living_room_motion.jpg'
+    - service: camera.snapshot
+      data:
+        entity_id: camera.den_2
+        filename: '/config/www/den_motion.jpg'
+    - service: camera.snapshot
+      data:
+        entity_id: camera.back_yard
+        filename: '/config/www/back_yard.jpg'
+    - service: camera.snapshot
+      data:
+        entity_id: camera.garage_video
+        filename: '/config/www/garage_motion.jpg'
+    - service: notify.gmail
+      data:
+        title: 'Front porch motion detected!'
+        message: 'Motion detected at the front door.'
+        data:
+          images: 
+            - /config/www/front_porch_motion.jpg
+            - /config/www/living_room_motion.jpg
+            - /config/www/garage_motion.jpg
+            - /config/www/den_motion.jpg
+            - /config/www/back_yard.jpg
+
+#Inside Motion Alarm Notifier
 - alias: "Motion Alarm Notify"
   trigger:
     - platform: state
@@ -105,8 +172,12 @@
         filename: '/config/www/living_room_motion.jpg'
     - service: camera.snapshot
       data:
-        entity_id: camera.den_video
+        entity_id: camera.den_2
         filename: '/config/www/den_motion.jpg'
+    - service: camera.snapshot
+      data:
+        entity_id: camera.back_yard
+        filename: '/config/www/back_yard.jpg'
     - service: camera.snapshot
       data:
         entity_id: camera.garage_video
@@ -121,4 +192,5 @@
             - /config/www/living_room_motion.jpg
             - /config/www/garage_motion.jpg
             - /config/www/den_motion.jpg
+            - /config/www/back_yard.jpg
 

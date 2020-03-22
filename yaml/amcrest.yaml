@@ -2,6 +2,7 @@
   name: Living
   username: admin
   password: !secret amcrest_pw
+  stream_source: snapshot
   binary_sensors:
     - motion_detected
 
@@ -9,5 +10,22 @@
   name: Front Porch
   username: admin
   password: !secret amcrest_pw
+  stream_source: snapshot
+  binary_sensors:
+    - motion_detected
+
+- host: 192.168.1.110
+  name: Back Yard
+  username: admin
+  password: !secret amcrest_pw
+  stream_source: snapshot
+  binary_sensors:
+    - motion_detected
+
+- host: 192.168.1.84
+  name: "Den 2"
+  username: admin
+  password: !secret amcrest_pw
+  stream_source: snapshot
   binary_sensors:
     - motion_detected

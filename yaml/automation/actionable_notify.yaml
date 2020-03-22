@@ -39,10 +39,14 @@
         title: 'GARAGE OFFLINE ALERT!!!'
         message: 'The garage went offline.'
 
+#Motion Actionable Notifier
 - alias: Android Notify Motion Detected
   trigger:
     - platform: state
       entity_id: sensor.front_porch_motion_detected
+      from: 'False'
+    - platform: state
+      entity_id: sensor.back_yard_motion_detected
       from: 'False'
     - platform: state
       entity_id: sensor.aeon_labs_zw100_multisensor_6_burglar

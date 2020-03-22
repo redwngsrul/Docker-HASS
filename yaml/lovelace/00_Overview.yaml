@@ -9,7 +9,6 @@ badges:
   - device_tracker.pixel_3
   - sensor.garage_status_abbr
   - binary_sensor.den_multisensor
-  - binary_sensor.garage_control_online
 
 cards: 
 
@@ -26,12 +25,14 @@ cards:
           - binary_sensor.front_porch_motion_detected
           - binary_sensor.front_door_motion_sensor
           - binary_sensor.front_door_sensor
+          - binary_sensor.front_porch_cam_recording
 
       - type: picture-glance
         camera_image: camera.living
         entities:
           - binary_sensor.living_motion_detected
           - binary_sensor.back_door_sensor
+          - binary_sensor.living_rm_cam_recording
 
 ################################################
 ############## VERTICAL STACK #2 ###############
@@ -41,14 +42,12 @@ cards:
     cards:
 
       - type: picture-glance
-        camera_image: camera.den_video
+        camera_image: camera.den_2
         entities:
-          - binary_sensor.den_camera_recording
-          - binary_sensor.den_motion
-          - binary_sensor.den_sound
-          - switch.den_camera_recording
+          - binary_sensor.den_2_motion_detected
           - switch.desktop
-
+          - binary_sensor.den_cam_recording
+          
       - type: horizontal-stack
         cards:
 
@@ -68,12 +67,6 @@ cards:
             entity: switch.neons
             name: Neons
             color: rgb(219,12,242)
-            color_off: rgb(220,220,220)
-
-          - type: custom:button-card
-            entity: switch.fishes
-            name: Fish Tank
-            color: rgb(83,221,249)
             color_off: rgb(220,220,220)
 
       - type: horizontal-stack
@@ -100,12 +93,33 @@ cards:
             color: rgb(194, 113, 27)
             color_off: rgb(220,220,220)
 
+      - type: horizontal-stack
+        cards: 
+
           - type: entity-button
             entity: media_player.playstation_4
             tap_action: 
               action: toggle
             hold_action: 
               action: more-info
+
+          - type: custom:button-card
+            entity: switch.fishes
+            name: Fish Tank
+            color: rgb(83,221,249)
+            color_off: rgb(220,220,220)
+
+          - type: custom:button-card
+            entity: switch.laundry_light
+            name: Laundry
+            color: rgb(102,240,52)
+            color_off: rgb(220,220,220)
+
+          - type: custom:button-card
+            entity: switch.bedroom
+            name: Bedroom Light
+            color: rgb(249,217,87)
+            color_off: rgb(220,220,220)
 
       - type: horizontal-stack
         cards:
@@ -134,35 +148,20 @@ cards:
               action: toggle
             hold_action: 
               action: more-info
-            
-        #   - type: custom:button-card
-        #     entity: switch.fan
-        #     name: Christmas
-        #     color: rgb(12,242,96)
-        #     color_off: rgb(220,220,220)
-
-    #   - type: horizontal-stack
-    #     cards: 
 
       - type: horizontal-stack
         cards: 
 
           - type: custom:button-card
-            entity: switch.bedroom
-            name: Bedroom Light
-            color: rgb(249,217,87)
-            color_off: rgb(220,220,220)
-
-          - type: custom:button-card
-            entity: switch.laundry_light
-            name: Laundry
-            color: rgb(102,240,52)
-            color_off: rgb(220,220,220)
-
-          - type: custom:button-card
-            entity: switch.laundry_2
+            entity: switch.laundry_2 #garage light
             name: Garage Lt
             color: rgb(210, 160, 100)
+            color_off: rgb(220,220,220)
+
+          - type: custom:button-card
+            entity: switch.spare #garage audio
+            name: Garage Audio
+            color: rgb(80, 210, 100)
             color_off: rgb(220,220,220)
 
           - type: entity-button
@@ -175,6 +174,8 @@ cards:
             hold_action: 
               action: more-info
 
+    #   - type: horizontal-stack
+    #     cards: 
 
 ################################################
 ############## VERTICAL STACK #3 ###############
@@ -190,12 +191,13 @@ cards:
           - binary_sensor.garage_motion
           - binary_sensor.garage_sound
           - switch.garage_camera_recording
+          - binary_sensor.garage_control_online
 
-    #   - type: custom:simple-thermostat
-    #     entity: climate.thermostat
-    #     icon: mdi:thermostat
-    #     name: Thermostat
-    #     decimals: 0 
+      - type: picture-glance
+        camera_image: camera.back_yard
+        entities:
+          - binary_sensor.back_yard_motion_detected
+          - binary_sensor.back_yard_cam_recording
 
       - type: horizontal-stack
         cards:
@@ -206,7 +208,3 @@ cards:
           - type: light
             entity: light.nanoleaf
 
-        #   - type: entities
-        #     entities:
-        #       - type: cast
-        #         view: Overview

@@ -15,15 +15,6 @@
   host: 192.168.1.83
   turn_off:
     service: shell_command.turn_off_desktop
-
-#DEN Camera Motion
-- platform: command_line
-  switches:
-   #Switch for Foscam Motion Detection Recording
-   den_camera_recording:
-     command_on: !secret den_cmd_on
-     command_off: !secret den_cmd_off
-     friendly_name: Den Cam Record Motion
      
 #Garage Camera Motion
 - platform: command_line

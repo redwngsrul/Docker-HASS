@@ -4,7 +4,6 @@
 # whitelist folders with !, these will not be ignored
 !*.yaml
 !*.js
-!*.jpg
 !*.css
 !*.svg
 !*.html
@@ -32,3 +31,10 @@
 secrets.yaml
 known_devices.yaml
 entity_registry.yaml
+www/den_motion.jpg
+www/back_yard.jpg
+www/front_porch_motion.jpg
+www/garage_motion.jpg
+www/living_room_motion.jpg
+www/pic1.jpg
+www/pic3.jpg
