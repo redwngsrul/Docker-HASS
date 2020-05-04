@@ -57,7 +57,7 @@ logger:
     homeassistant.components.camera: error
 
 lovelace:
-  mode: yaml
+  mode: storage
   
 map:
 
@@ -128,11 +128,11 @@ tts:
 
 updater:
 
-vacuum:
-  - platform: roomba
-    host: 192.168.1.117
-    username: !secret roomba_user
-    password: !secret roomba_pw
+# vacuum:
+#   - platform: roomba
+#     host: 192.168.1.117
+#     username: !secret roomba_user
+#     password: !secret roomba_pw
 
 weather: !include yaml/weather.yaml
 

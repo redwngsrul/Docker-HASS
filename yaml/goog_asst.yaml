@@ -7,6 +7,18 @@ exposed_domains:
   - switch
   - cover
 entity_config:
+  switch.bedroom:
+    expose: true
+    name: Bedroom Light
+    room: Bedroom
+  switch.bottle_lamp_2:
+    expose: true
+    name: Bottle Lamp
+    room: Living Room
+  switch.den_lamp:
+    expose: true
+    name: Den Lamp
+    room: Den
   switch.subwoofer:
     expose: true
     name: Den Subwoofer
@@ -14,51 +26,39 @@ entity_config:
       - woofer
       - subwoofer
     room: Den
-  switch.den_lamp:
+  switch.desktop:
     expose: true
-    name: Den Lamp
-    room: Den
-  switch.bottle_lamp_2:
-    expose: true
-    name: Bottle Lamp
-    room: Living Room
-  switch.bedroom:
-    expose: true
-    name: Bedroom Light
-    room: Bedroom
-  switch.dining_room_light:
+    name: Desktop
+    room: Office
+  switch.dining_room:
     expose: true
     name: Dining Light
     aliases: 
       - Dining Lamp
     room: Dining Room
-  switch.playstation4:
-    expose: true
-    name: Playstation 4
-    aliases: 
-      - ps4
-    room: Den
-  switch.laundry_light:
-    expose: true
-    name: Laundry
-    room: Laundry Room
-  switch.fireplace_light:
+  switch.fireplace:
     expose: true
     name: Fireplace
     room: Den
+  switch.laundry:
+    expose: true
+    name: Laundry
+    room: Laundry Room
   switch.living_room:
     expose: true
     name: Home Lamp
-    room: Living Room
-  switch.desktop:
+    room: Living Room  
+  switch.fan:
     expose: true
-    name: Desktop
-    room: Office
+    name: Oil Lamp
+    aliases: 
+      - "Oil Warmer"
+    room: Living Room
   switch.neons:
     expose: true
     name: Neons
     room: Den
-  switch.fishes:
+  switch.fish_tank:
     expose: true
     name: Fish Tank
     room: Fish Tank
@@ -66,9 +66,6 @@ entity_config:
     expose: true
     name: Game Equipment
     room: Den
-  switch.fan:
-    expose: true
-    name: Fan Plug
 
   script.bedroom_tv_on:
     expose: true

@@ -22,15 +22,12 @@ cards:
     - entity: sensor.aeon_labs_zw100_multisensor_6_temperature
       name: Den ZW
       color: '#15e4eb'
-    - entity: sensor.vision_security_zp3111_multisensor_4in1_temperature_2
+    - entity: sensor.vision_security_zp3111_multisensor_4in1_temperature
       name: Living Rm ZW
       color: '#eb34e5'
     - entity: sensor.garage_temp
       name: Garage
       color: '#11923C'
-    # - entity: sensor.living_room_thermostat_target
-    #   name: Nest Target
-    #   color: '#F29E0C'
     show:
       icon: false
       state: false
@@ -61,7 +58,7 @@ cards:
     - entity: sensor.aeon_labs_zw100_multisensor_6_relative_humidity
       name: Den ZW
       color: '#15e4eb'
-    - entity: sensor.vision_security_zp3111_multisensor_4in1_relative_humidity_2
+    - entity: sensor.vision_security_zp3111_multisensor_4in1_relative_humidity
       name: Living Rm ZW
       color: '#eb34e5'
     show:

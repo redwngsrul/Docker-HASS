@@ -18,6 +18,7 @@ themes:
     primary-color: "#d32f2f"
     primary-text-color: "#cfcfcf"
     secondary-background-color: "#131313"
+    sidebar-background-color: "#202020"
     sidebar-text_-_background: "#62717b" 
 #     Colors based on variables, see above
     paper-card-header-color: "var(--paper-item-icon-color)" 

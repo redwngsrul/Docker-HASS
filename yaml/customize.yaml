@@ -185,17 +185,17 @@ switch.living_room:
   icon: mdi:lightbulb
 switch.bottle_lamp_2:
   icon: mdi:keg
-switch.dining_room_light:
+switch.dining_room:
   icon: mdi:food-fork-drink
 switch.bedroom:
   icon: mdi:ceiling-light
-switch.laundry_2:
+switch.garage:
   icon: mdi:garage
-switch.laundry_light:
+switch.laundry:
   icon: mdi:washing-machine
 switch.fan:
-  icon: mdi:pine-tree
-switch.fireplace_light:
+  icon: mdi:oil-lamp
+switch.fireplace:
   icon: mdi:fire
 switch.living_room_light:
   icon: mdi:lightbulb
@@ -203,7 +203,7 @@ switch.desktop:
   icon: mdi:windows
 switch.neons:
   icon: mdi:lava-lamp
-switch.fishes:
+switch.fish_tank:
   icon: mdi:fish
 switch.living_rm_camera_recording:
   icon: mdi:camera-enhance

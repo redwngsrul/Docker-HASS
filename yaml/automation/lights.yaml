@@ -20,7 +20,7 @@
             state: 'on'
   action:
     - service: switch.turn_on
-      entity_id: switch.dining_room_light
+      entity_id: switch.dining_room
 
 #turn off dining light weekdays    
 - alias: 'Dining Light OFF'
@@ -33,11 +33,11 @@
       at: '07:59:45'
   condition:
     condition: state
-    entity_id: switch.dining_room_light
+    entity_id: switch.dining_room
     state: 'on'
   action:
     - service: switch.turn_off
-      entity_id: switch.dining_room_light
+      entity_id: switch.dining_room
 
 #turn on bottle lamp @ 5am weekdays
 - alias: 'Bottle Lamp ON Workdays'
@@ -107,7 +107,7 @@
             state: 'on'
   action:
     - service: switch.turn_on
-      entity_id: switch.laundry_light
+      entity_id: switch.laundry
 
 #turn off laundry light @ 610am weekdays    
 - alias: 'Laundry Light OFF'
@@ -120,11 +120,11 @@
       at: '07:59:45'
   condition:
     condition: state
-    entity_id: switch.laundry_light
+    entity_id: switch.laundry
     state: 'on'
   action:
     - service: switch.turn_off
-      entity_id: switch.laundry_light
+      entity_id: switch.laundry
 
 # den lamp on 
 - alias: 'Den Lamp Vaca ON'

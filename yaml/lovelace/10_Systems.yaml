@@ -45,7 +45,7 @@ cards:
         entities:
           - sensor.ipv4_address_eth0
           - sensor.last_boot
-          - sensor.certificates
+          - sensor.cert_expiry_redwngsrul_duckdns_org_8123
           - type: section
             label: Speedtest
           - sensor.speedtest_download
@@ -110,4 +110,8 @@ cards:
             label: Sensors
           #- binary_sensor.aeon_labs_zw100_multisensor_6_sensor
           - sensor.aeon_labs_zw100_multisensor_6_luminance
-          - sensor.vision_security_zp3111_multisensor_4in1_luminance_2
+          - sensor.vision_security_zp3111_multisensor_4in1_luminance
+
+      - type: iframe
+        url: https://discordapp.com/widget?id=437378214399049728&theme=dark
+        aspect_ratio: 80%

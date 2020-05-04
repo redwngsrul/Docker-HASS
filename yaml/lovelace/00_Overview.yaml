@@ -34,6 +34,14 @@ cards:
           - binary_sensor.back_door_sensor
           - binary_sensor.living_rm_cam_recording
 
+      - type: horizontal-stack
+        cards:
+        
+          - type: thermostat
+            entity: climate.thermostat
+            
+          - type: light
+            entity: light.nanoleaf
 ################################################
 ############## VERTICAL STACK #2 ###############
 ################################################
@@ -58,7 +66,7 @@ cards:
             color_off: rgb(220,220,220)
 
           - type: custom:button-card
-            entity: switch.fireplace_light
+            entity: switch.fireplace
             name: Fireplace
             color: rgb(242,119,12)
             color_off: rgb(220,220,220)
@@ -104,13 +112,13 @@ cards:
               action: more-info
 
           - type: custom:button-card
-            entity: switch.fishes
+            entity: switch.fish_tank
             name: Fish Tank
             color: rgb(83,221,249)
             color_off: rgb(220,220,220)
 
           - type: custom:button-card
-            entity: switch.laundry_light
+            entity: switch.laundry
             name: Laundry
             color: rgb(102,240,52)
             color_off: rgb(220,220,220)
@@ -137,7 +145,7 @@ cards:
             color_off: rgb(220,220,220)
 
           - type: custom:button-card
-            entity: switch.dining_room_light
+            entity: switch.dining_room
             name: Dining Room
             color: rgb(237, 138, 88)
             color_off: rgb(220,220,220)
@@ -153,7 +161,13 @@ cards:
         cards: 
 
           - type: custom:button-card
-            entity: switch.laundry_2 #garage light
+            entity: switch.fan #oil warmer
+            name: Oil Warmer
+            color: rgb(100, 50, 168)
+            color_off: rgb(220,220,220)
+
+          - type: custom:button-card
+            entity: switch.garage #garage light
             name: Garage Lt
             color: rgb(210, 160, 100)
             color_off: rgb(220,220,220)
@@ -185,26 +199,15 @@ cards:
     cards:
 
       - type: picture-glance
-        camera_image: camera.garage_video
+        camera_image: camera.garage
         entities:
-          - binary_sensor.garage_camera_recording
-          - binary_sensor.garage_motion
-          - binary_sensor.garage_sound
-          - switch.garage_camera_recording
           - binary_sensor.garage_control_online
+          - binary_sensor.garage_motion_detected
+          - binary_sensor.garage_cam_recording
 
       - type: picture-glance
         camera_image: camera.back_yard
         entities:
           - binary_sensor.back_yard_motion_detected
           - binary_sensor.back_yard_cam_recording
-
-      - type: horizontal-stack
-        cards:
-        
-          - type: thermostat
-            entity: climate.thermostat
-            
-          - type: light
-            entity: light.nanoleaf
 

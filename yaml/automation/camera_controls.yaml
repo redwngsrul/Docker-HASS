@@ -13,8 +13,10 @@
       entity_id: camera.den_2
     - service: amcrest.enable_motion_recording
       entity_id: camera.back_yard
-    - service: switch.turn_on
-      entity_id: switch.garage_camera_recording
+    - service: amcrest.enable_motion_recording
+      entity_id: camera.garage
+    # - service: switch.turn_on
+    #   entity_id: switch.garage_camera_recording
         
 #Turn Camera Recordings OFF
 - alias: "Camera Recordings OFF"
@@ -33,5 +35,7 @@
       entity_id: camera.den_2
     - service: amcrest.disable_motion_recording
       entity_id: camera.back_yard
-    - service: switch.turn_off
-      entity_id: switch.garage_camera_recording
+    - service: amcrest.disable_motion_recording
+      entity_id: camera.garage
+    # - service: switch.turn_off
+    #   entity_id: switch.garage_camera_recording

@@ -16,14 +16,14 @@
   turn_off:
     service: shell_command.turn_off_desktop
      
-#Garage Camera Motion
-- platform: command_line
-  switches:
-   #Switch for Foscam Motion Detection Recording
-   garage_camera_recording:
-     command_on: !secret garage_cmd_on
-     command_off: !secret garage_cmd_off
-     friendly_name: Garage Cam Record Motion
+# #Garage Camera Motion
+# - platform: command_line
+#   switches:
+#   #Switch for Foscam Motion Detection Recording
+#   garage_camera_recording:
+#      command_on: !secret garage_cmd_on
+#      command_off: !secret garage_cmd_off
+#      friendly_name: Garage Cam Record Motion
  
 #Template Switch for Den Game Equipment
 - platform: template

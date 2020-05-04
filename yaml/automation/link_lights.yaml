@@ -2,11 +2,11 @@
   initial_state: false
   trigger:
     platform: state
-    entity_id: switch.bedroom, switch.dining_room_light
+    entity_id: switch.bedroom, switch.dining_room
     to: 'on'
   action:
     - service: switch.turn_on
-      entity_id: switch.dining_room_light
+      entity_id: switch.dining_room
     - service: switch.turn_on
       entity_id: switch.bedroom
 
@@ -14,10 +14,10 @@
   initial_state: false
   trigger:
     platform: state
-    entity_id: switch.bedroom, switch.dining_room_light
+    entity_id: switch.bedroom, switch.dining_room
     to: 'off'
   action:
     - service: switch.turn_off
-      entity_id: switch.dining_room_light
+      entity_id: switch.dining_room
     - service: switch.turn_off
       entity_id: switch.bedroom

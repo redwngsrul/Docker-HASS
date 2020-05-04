@@ -14,13 +14,13 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: switch.fishes
+        entity_id: switch.fish_tank
         state: 'off'
       - condition: time
         before: '22:30:00'
   action:
     - service: switch.turn_on
-      entity_id: switch.fishes
+      entity_id: switch.fish_tank
 
 #turn off tank lights at bedtime
 - alias: 'No Fish Lights at Bedtime'
@@ -35,8 +35,8 @@
     condition: or
     conditions:
       - condition: state
-        entity_id: switch.fishes
+        entity_id: switch.fish_tank
         state: 'on'
   action:
     - service: switch.turn_off
-      entity_id: switch.fishes
+      entity_id: switch.fish_tank
