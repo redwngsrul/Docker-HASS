@@ -130,9 +130,6 @@ living_room_tv_on:
 depart_work:
   alias: "Leaving for Work"
   sequence:
-    #- service: script.turn_on
-    #  data:
-    #    entity_id: script.living_room_tv_off
     - service: switch.turn_off
       data:
         entity_id: switch.dining_room_light

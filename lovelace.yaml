@@ -1,7 +1,0 @@
-title: My Home
-views:
-  - !include yaml/lovelace/00_Overview.yaml
-  - !include yaml/lovelace/15_Weather.yaml
-  - !include yaml/lovelace/10_Systems.yaml
-  - !include yaml/lovelace/20_Cast.yaml
-  - !include yaml/lovelace/30_Automations_Scripts.yaml

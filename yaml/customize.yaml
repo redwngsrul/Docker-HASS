@@ -215,6 +215,7 @@ switch.game_equipment:
   friendly_name: Game Equipment
   icon: mdi:projector-screen
 switch.spare:
+  friendly_name: Garage Audio
   icon: mdi:music-box-outline
 
 ########################################

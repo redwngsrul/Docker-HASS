@@ -5,58 +5,6 @@
   payload_on: 1
   payload_off: 0
 
-###################################################################################
-
-# - platform: rest
-#   name: "Garage Camera Recording"
-#   resource: !secret garage_address
-#   device_class: power
-#   scan_interval: 5
-#   value_template: >-
-#     {%- if "<record>1</record>" in value -%}
-#       {{ true }}
-#     {%- else -%}
-#       {{ false }}
-#     {%- endif -%}
-
-# - platform: rest
-#   name: "Garage Motion Recording"
-#   resource: !secret garage_state
-#   device_class: power
-#   scan_interval: 5
-#   value_template: >-
-#     {%- if "<linkage>8</linkage>" in value -%}
-#       {{ true }}
-#     {%- else -%}
-#       {{ false }}
-#     {%- endif -%}
-
-# - platform: rest
-#   name: "Garage Motion"
-#   resource: !secret garage_address
-#   device_class: motion
-#   scan_interval: 5
-#   value_template: >-
-#     {%- if "<motionDetectAlarm>2</motionDetectAlarm>" in value -%}
-#       {{ true }}
-#     {%- else -%}
-#       {{ false }}
-#     {%- endif -%}
-
-# - platform: rest
-#   name: "Garage Sound"
-#   resource: !secret garage_address
-#   device_class: sound
-#   scan_interval: 5
-#   value_template: >-
-#     {%- if "<soundAlarm>2</soundAlarm>" in value -%}
-#       {{ true }}
-#     {%- else -%}
-#       {{ false }}
-#     {%- endif -%}
-
-###################################################################################
-
 - platform: workday
   country: US
   province: OH
@@ -111,9 +59,3 @@
       friendly_name: 'Garage Cam Recording'
       value_template: "{{ states.camera.garage.attributes.motion_recording == 'on' }}"
       device_class: moving
-
-
-# # dummy sensor for floorplan card
-# - platform: mqtt
-#   state_topic: dummy/floorplan/sensor
-#   name: Floorplan

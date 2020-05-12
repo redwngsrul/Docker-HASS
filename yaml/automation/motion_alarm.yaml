@@ -4,8 +4,6 @@
     - platform: state
       entity_id: sensor.front_porch_motion_detected
       from: 'False'
-#      for:
-#        minutes: 5
   condition:
     condition: or
     conditions:

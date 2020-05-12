@@ -78,7 +78,6 @@ panel_iframe:
     url: !secret yaml_editor_url
 
 recorder:
-  purge_interval: 3
   purge_keep_days: 5
 
 script: !include yaml/scripts.yaml
@@ -127,12 +126,6 @@ tts:
     service_name: google_say
 
 updater:
-
-# vacuum:
-#   - platform: roomba
-#     host: 192.168.1.117
-#     username: !secret roomba_user
-#     password: !secret roomba_pw
 
 weather: !include yaml/weather.yaml
 

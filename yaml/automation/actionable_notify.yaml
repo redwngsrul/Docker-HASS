@@ -5,12 +5,32 @@
     from: 'closed'
     to: 'open'
     for: '00:30:00'
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: device_tracker.pixel_3
+        state: not_home
+      - condition: state
+        entity_id: device_tracker.pixel_3
+        state: Work
+      - condition: state
+        entity_id: device_tracker.pixel_3
+        state: "Jon's"
+      - condition: state
+        entity_id: device_tracker.pixel_3
+        state: "Zach's"
+      - condition: state
+        entity_id: device_tracker.pixel_3
+        state: "Mom & Dad's"
+      - condition: state
+        entity_id: device_tracker.pixel_3
+        state: "Derek & Ruby's"
   action:
     service: notify.mobile_app_pixel_3
     data:
       message: "The garage has been left open"
       data:
-        # image: https://www.home-assistant.io/images/merchandise/shirt-frontpage.png
         actions:
           - action: "close_garage" # The key you are sending for the event
             title: "Close Garage Door" # The button title
@@ -88,7 +108,3 @@
     service: notify.mobile_app_pixel_3
     data:
       message: "Motion Detected in the House!!!"
-    #   data:
-    #     actions:
-    #       - action: 
-    #         title: ""

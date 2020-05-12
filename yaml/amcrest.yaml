@@ -1,6 +1,6 @@
 - host: 192.168.1.87
   name: Living
-  username: admin
+  username: !secret amcrest_un
   password: !secret amcrest_pw
   stream_source: snapshot
   binary_sensors:
@@ -8,7 +8,7 @@
     
 - host: 192.168.1.101
   name: Garage
-  username: admin
+  username: !secret amcrest_un
   password: !secret amcrest_pw
   stream_source: snapshot
   binary_sensors:
@@ -16,7 +16,7 @@
 
 - host: 192.168.1.72
   name: Front Porch
-  username: admin
+  username: !secret amcrest_un
   password: !secret amcrest_pw
   stream_source: snapshot
   binary_sensors:
@@ -24,7 +24,7 @@
 
 - host: 192.168.1.110
   name: Back Yard
-  username: admin
+  username: !secret amcrest_un
   password: !secret amcrest_pw
   stream_source: snapshot
   binary_sensors:
@@ -32,7 +32,7 @@
 
 - host: 192.168.1.84
   name: "Den 2"
-  username: admin
+  username: !secret amcrest_un
   password: !secret amcrest_pw
   stream_source: snapshot
   binary_sensors:

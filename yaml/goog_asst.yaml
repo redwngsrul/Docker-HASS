@@ -1,5 +1,4 @@
 project_id: !secret goog_proj_id
-#api_key: !secret goog_api_key
 service_account: !include SERVICE_ACCOUNT.json
 expose_by_default: false
 exposed_domains:
@@ -66,30 +65,33 @@ entity_config:
     expose: true
     name: Game Equipment
     room: Den
+  switch.spare:
+    expose: true
+    name: Garage Audio
+    room: Garage
+  switch.garage:
+    expose: true
+    name: Garage Light
+    room: Garage
 
   script.bedroom_tv_on:
     expose: true
     name: Bedroom TV
-#    type: switch
     room: Bedroom
   script.den_video:
     expose: true
     name: Den Video
-#    type: switch
     room: Den
   script.living_room_tv_on:
     expose: true
     name: Living Room TV
-#    type: switch
     room: Living Room
   script.depart_work:
     expose: true
     name: Leaving for Work
-#    type: switch
   script.motion_sensing:
     expose: true
     name: Motion Sensing
-#    type: switch
   script.sleep_tmr:
     expose: true
     name: Sleep Timer
