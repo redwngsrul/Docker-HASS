@@ -1,0 +1,593 @@
+- id: '1590061088891'
+  alias: Android Notify Garage Open
+  description: ''
+  trigger:
+  - entity_id: cover.garage
+    for: 00:30:00
+    from: closed
+    platform: state
+    to: open
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: device_tracker.pixel_3
+      state: not_home
+    - condition: state
+      entity_id: device_tracker.pixel_3
+      state: Work
+    - condition: state
+      entity_id: device_tracker.pixel_3
+      state: Jon's
+    - condition: state
+      entity_id: device_tracker.pixel_3
+      state: Zach's
+    - condition: state
+      entity_id: device_tracker.pixel_3
+      state: Mom & Dad's
+    - condition: state
+      entity_id: device_tracker.pixel_3
+      state: Derek & Ruby's
+    - condition: state
+      entity_id: device_tracker.pixel_3
+      state: Colleen's
+  action:
+  - data:
+      data:
+        actions:
+        - action: close_garage
+          title: Close Garage Door
+      message: The garage has been left open
+    service: notify.mobile_app_pixel_3
+- id: '1590063296958'
+  alias: Garage Offline Notify
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.garage_control_online
+    for: 00:05:00
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      message: The garage went offline.
+      title: GARAGE OFFLINE ALERT!!!
+    service: notify.mobile_app_pixel_3
+- id: '1590063647022'
+  alias: Startup Theme
+  description: ''
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - data:
+      data:
+        name: darkred
+    service: frontend.set_theme
+- id: '1590064903061'
+  alias: Android Close Garage When Tapped
+  description: ''
+  trigger:
+  - event_data:
+      action: close_garage
+    event_type: mobile_app_notification_action
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    entity_id: cover.garage
+    service: cover.close_cover
+- id: '1590065194952'
+  alias: Android Notify Motion Detected
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.front_porch_motion_detected
+    from: 'False'
+    platform: state
+  - entity_id: binary_sensor.back_yard_motion_detected
+    from: 'False'
+    platform: state
+  - entity_id: sensor.aeon_labs_zw100_multisensor_6_burglar
+    from: '0'
+    platform: state
+  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control
+    from: '23'
+    platform: state
+  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control_2
+    from: '23'
+    platform: state
+  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_burglar
+    from: '0'
+    platform: state
+  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_burglar_2
+    from: '0'
+    platform: state
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: device_tracker.pixel_3
+      state: not_home
+    - condition: state
+      entity_id: device_tracker.pixel_3
+      state: Work
+    - condition: state
+      entity_id: device_tracker.pixel_3
+      state: Jon's
+    - condition: state
+      entity_id: device_tracker.pixel_3
+      state: Zach's
+    - condition: state
+      entity_id: device_tracker.pixel_3
+      state: Mom & Dad's
+    - condition: state
+      entity_id: device_tracker.pixel_3
+      state: Derek & Ruby's
+    - condition: state
+      entity_id: device_tracker.pixel_3
+      state: Colleen's
+  action:
+  - data:
+      message: Motion Detected in the House!!!
+    service: notify.mobile_app_pixel_3
+- id: '1590065278680'
+  alias: Camera Recordings ON
+  description: ''
+  trigger:
+  - entity_id: device_tracker.pixel_3
+    event: leave
+    platform: zone
+    zone: zone.home
+  condition: []
+  action:
+  - data: {}
+    entity_id: all
+    service: amcrest.enable_motion_recording
+- id: '1590065333625'
+  alias: Camera Recordings OFF
+  description: ''
+  trigger:
+  - entity_id: device_tracker.pixel_3
+    event: enter
+    platform: zone
+    zone: zone.home
+  condition: []
+  action:
+  - data: {}
+    entity_id: all
+    service: amcrest.disable_motion_recording
+- id: '1590089147873'
+  alias: Certificate Expiring
+  description: ''
+  trigger:
+  - below: '15'
+    entity_id: sensor.cert_expiry_redwngsrul_duckdns_org_8123
+    platform: numeric_state
+  condition: []
+  action:
+  - data:
+      message: Your certificates have less than 10 days before expiring. Please renew
+        now!
+      title: Certificates are Expiring!!!
+    service: notify.gmail
+  - data:
+      message: Your certificates have less than 10 days before expiring. Please renew
+        now!
+      title: Certificates are Expiring!!!
+    service: persistent_notification.create
+- id: '1590089543452'
+  alias: Ecobee Automatic Vacation
+  description: ''
+  trigger:
+  - entity_id: device_tracker.pixel_3
+    for: '24:00:00'
+    platform: state
+    to: not_home
+  - entity_id: device_tracker.pixel_3
+    platform: state
+    to: Jon's
+  - entity_id: device_tracker.pixel_3
+    platform: state
+    to: Zach's
+  - entity_id: device_tracker.pixel_3
+    platform: state
+    to: Mom & Dad's
+  - entity_id: device_tracker.pixel_3
+    platform: state
+    to: Derek & Ruby's
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation
+    state: 'off'
+  action:
+  - data:
+      message: Ecobee Automatic Vacation Mode Enabled
+    service: notify.mobile_app_pixel_3
+  - data:
+      cool_temp: 80
+      entity_id: climate.thermostat
+      heat_temp: 61
+      vacation_name: HASS
+    entity_id: climate.thermostat
+    service: ecobee.create_vacation
+  - data: {}
+    entity_id: input_boolean.vacation
+    service: input_boolean.turn_on
+- id: '1590089677038'
+  alias: Ecobee Cancel Vacation
+  description: ''
+  trigger:
+  - entity_id: device_tracker.pixel_3
+    platform: state
+    to: Home
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation
+    state: 'on'
+  action:
+  - data:
+      message: Ecobee Vacation Mode Cancelled
+    service: notify.mobile_app_pixel_3
+  - data:
+      entity_id: climate.thermostat
+      vacation_name: HASS
+    service: ecobee.delete_vacation
+- id: '1590089952187'
+  alias: Fish Tank Lights ON
+  description: ''
+  trigger:
+  - entity_id: device_tracker.pixel_3
+    for: 00:05:00
+    platform: state
+    to: home
+  - entity_id: sun.sun
+    platform: state
+    to: below_horizon
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: switch.fish_tank
+      state: 'off'
+    - before: '22:30:00'
+      condition: time
+  action:
+  - data: {}
+    entity_id: switch.fish_tank
+    service: switch.turn_on
+- id: '1590090127678'
+  alias: Lights Off at Bed
+  description: ''
+  trigger:
+  - event: sunrise
+    offset: +00:30:00
+    platform: sun
+  - at: '22:30:00'
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.fish_tank
+    service: switch.turn_off
+  - data: {}
+    entity_id: switch.fan
+    service: switch.turn_off
+  - data: {}
+    entity_id: switch.office_oil_warmer
+    service: switch.turn_off
+- id: '1590090252796'
+  alias: Leaf ON
+  description: ''
+  trigger:
+  - entity_id: device_tracker.pixel_3
+    for: 00:03:00
+    platform: state
+    to: home
+  condition:
+  - condition: state
+    entity_id: light.nanoleaf
+    state: 'off'
+  action:
+  - data:
+      brightness: 200
+    entity_id: light.nanoleaf
+    service: light.turn_on
+- id: '1590090345667'
+  alias: Leaf 75
+  description: ''
+  trigger:
+  - event: sunset
+    offset: -01:00:00
+    platform: sun
+  condition:
+  - condition: state
+    entity_id: light.nanoleaf
+    state: 'on'
+  action:
+  - data:
+      brightness: 175
+    entity_id: light.nanoleaf
+    service: light.turn_on
+- id: '1590090398617'
+  alias: Leaf 50
+  description: ''
+  trigger:
+  - event: sunset
+    offset: -00:30:00
+    platform: sun
+  condition:
+  - condition: state
+    entity_id: light.nanoleaf
+    state: 'on'
+  action:
+  - data:
+      brightness: 124
+    entity_id: light.nanoleaf
+    service: light.turn_on
+- id: '1590090440234'
+  alias: Leaf 33
+  description: ''
+  trigger:
+  - event: sunset
+    offset: +00:30:00
+    platform: sun
+  condition:
+  - condition: state
+    entity_id: light.nanoleaf
+    state: 'on'
+  action:
+  - data:
+      brightness: 81
+    entity_id: light.nanoleaf
+    service: light.turn_on
+- id: '1590090799176'
+  alias: Dining ON
+  description: ''
+  trigger:
+  - at: 05:00:00
+    platform: time
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: input_boolean.vacation
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: 'on'
+  action:
+  - data: {}
+    entity_id: switch.dining_room
+    service: switch.turn_on
+- id: '1590090873399'
+  alias: Dining OFF
+  description: ''
+  trigger:
+  - entity_id: device_tracker.pixel_3
+    from: home
+    platform: state
+  - at: 08:00:00
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.dining_room
+    service: switch.turn_off
+- id: '1590090971104'
+  alias: Bottle Lamp ON
+  description: ''
+  trigger:
+  - at: 05:00:00
+    platform: time
+  - event: sunset
+    offset: -01:00:00
+    platform: sun
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: input_boolean.vacation
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: 'on'
+  action:
+  - data: {}
+    entity_id: switch.bottle_lamp_2
+    service: switch.turn_on
+- id: '1590091100363'
+  alias: Bottle Lamp OFF
+  description: ''
+  trigger:
+  - entity_id: device_tracker.pixel_3
+    from: home
+    platform: state
+  - at: 08:00:00
+    platform: time
+  - at: '22:00:00'
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.bottle_lamp_2
+    service: switch.turn_off
+- id: '1590091177139'
+  alias: Laundry ON
+  description: ''
+  trigger:
+  - at: 05:30:00
+    platform: time
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: input_boolean.vacation
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: 'on'
+  action:
+  - data: {}
+    entity_id: switch.laundry
+    service: switch.turn_on
+- id: '1590091318651'
+  alias: Laundry OFF
+  description: ''
+  trigger:
+  - entity_id: device_tracker.pixel_3
+    from: home
+    platform: state
+  - at: 08:00:00
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.laundry
+    service: switch.turn_off
+- id: '1590091422139'
+  alias: Vaca ON
+  description: ''
+  trigger:
+  - event: sunset
+    offset: -00:30:00
+    platform: sun
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation
+    state: 'on'
+  action:
+  - data: {}
+    entity_id: switch.den_lamp
+    service: switch.turn_on
+- id: '1590091508595'
+  alias: Vaca Wind Down
+  description: ''
+  trigger:
+  - event: sunset
+    offset: +01:00:00
+    platform: sun
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation
+    state: 'on'
+  action:
+  - data: {}
+    entity_id: switch.den_lamp
+    service: switch.turn_off
+  - data: {}
+    entity_id: switch.neons
+    service: switch.turn_on
+- id: '1590091648217'
+  alias: Vaca OFF
+  description: ''
+  trigger:
+  - event: sunset
+    offset: +03:00:00
+    platform: sun
+  - at: '22:30:00'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation
+    state: 'on'
+  action:
+  - data: {}
+    entity_id: switch.neons
+    service: switch.turn_off
+- id: '1590092145859'
+  alias: Motion Alarm Notify
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.front_porch_motion_detected
+    from: 'False'
+    platform: state
+  - entity_id: binary_sensor.back_yard_motion_detected
+    from: 'False'
+    platform: state
+  - entity_id: sensor.aeon_labs_zw100_multisensor_6_burglar
+    from: '0'
+    platform: state
+  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_burglar
+    from: '0'
+    platform: state
+  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_burglar_2
+    from: '0'
+    platform: state
+  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control
+    from: '23'
+    platform: state
+  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control_2
+    from: '23'
+    platform: state
+  condition:
+  - condition: or
+    conditions:
+    - condition: zone
+      entity_id: device_tracker.pixel_3
+      zone: zone.colleen_s
+    - condition: zone
+      entity_id: device_tracker.pixel_3
+      zone: zone.derek_ruby_s
+    - condition: zone
+      entity_id: device_tracker.pixel_3
+      zone: zone.jon_s
+    - condition: zone
+      entity_id: device_tracker.pixel_3
+      zone: zone.zach_s
+    - condition: zone
+      entity_id: device_tracker.pixel_3
+      zone: zone.mom_dad_s
+    - condition: zone
+      entity_id: device_tracker.pixel_3
+      zone: zone.work
+    - condition: state
+      entity_id: device_tracker.pixel_3
+      state: not_home
+  action:
+  - data:
+      filename: /config/www/back_yard.jpg
+    entity_id: camera.back_yard
+    service: camera.snapshot
+  - data:
+      filename: /config/www/den_motion.jpg
+    entity_id: camera.den_2
+    service: camera.snapshot
+  - data:
+      filename: /config/www/front_porch_motion.jpg
+    entity_id: camera.front_porch
+    service: camera.snapshot
+  - data:
+      filename: /config/www/garage_motion.jpg
+    entity_id: camera.garage
+    service: camera.snapshot
+  - data:
+      filename: /config/www/living_room_motion.jpg
+    entity_id: camera.living
+    service: camera.snapshot
+  - data:
+      data:
+        images:
+        - /config/www/front_porch_motion.jpg
+        - /config/www/living_room_motion.jpg
+        - /config/www/garage_motion.jpg
+        - /config/www/den_motion.jpg
+        - /config/www/back_yard.jpg
+      message: Motion detected.
+      title: Motion detected!
+    service: notify.gmail

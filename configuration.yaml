@@ -1,17 +1,11 @@
 homeassistant:
-  name: Home
-  latitude: !secret latitude
-  longitude: !secret longitude
-  elevation: !secret elevation
-  unit_system: imperial
-  time_zone: America/Detroit
   auth_mfa_modules:
     - type: totp
   customize: !include yaml/customize.yaml
 
 amcrest: !include yaml/amcrest.yaml
 
-automation: !include_dir_merge_list yaml/automation
+automation: !include automations.yaml
 
 binary_sensor: !include yaml/binary_sensors.yaml
 
@@ -27,9 +21,6 @@ cover: !include yaml/cover.yaml
 
 discovery:
 
-ecobee:
-  api_key: !secret ecobee_key
-
 frontend: !include yaml/frontend.yaml
 
 google_assistant: !include yaml/goog_asst.yaml
@@ -39,13 +30,8 @@ history: !include yaml/history.yaml
 http:
   ssl_certificate: !secret sslcert 
   ssl_key: !secret sslkey
-  base_url: !secret urlname
 
 input_boolean: !include yaml/input_boolean.yaml
-
-input_number: !include yaml/input_slider.yaml
-
-input_select: !include yaml/input_select.yaml
 
 light: !include yaml/lights.yaml
 
@@ -65,11 +51,7 @@ media_player:
 
 mobile_app:
 
-mqtt: !include yaml/mqtt.yaml
-
 notify: !include yaml/notifiers.yaml
-
-owntracks:
 
 panel_iframe:
   configurator:
@@ -80,7 +62,7 @@ panel_iframe:
 recorder:
   purge_keep_days: 5
 
-script: !include yaml/scripts.yaml
+script: !include scripts.yaml
 
 sensor: !include yaml/sensors.yaml
 
@@ -104,23 +86,6 @@ sun:
 
 system_health:
 
-tplink:
-  discovery: false
-  switch:
-    - host: 192.168.1.106
-    - host: 192.168.1.109
-    - host: 192.168.1.108
-    - host: 192.168.1.113
-    - host: 192.168.1.105
-    - host: 192.168.1.114
-    - host: 192.168.1.111
-    - host: 192.168.1.65
-    - host: 192.168.1.67
-    - host: 192.168.1.90
-    - host: 192.168.1.93
-    - host: 192.168.1.96
-    - host: 192.168.1.102
-
 tts:
   - platform: google_translate
     service_name: google_say
@@ -128,8 +93,6 @@ tts:
 updater:
 
 weather: !include yaml/weather.yaml
-
-zone: !include yaml/zones.yaml
 
 zwave: 
   usb_path: /dev/ttyACM0

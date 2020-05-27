@@ -1,24 +1,9 @@
-- platform: yr
-  name: "Weather"
-  monitored_conditions:
-    - cloudiness
-    - humidity
-    - precipitation
-    - pressure
-    - symbol
-    - temperature
-    - windDirection
-    - windSpeed
-
 - platform: moon
 
 - platform: time_date
   display_options:
     - 'time'
     - 'date'
-
-- platform: cert_expiry
-  host: redwngsrul.duckdns.org
 
 - platform: systemmonitor
   resources:
@@ -50,10 +35,6 @@
 
 - platform: template
   sensors:
-    atmospheric_press:
-      friendly_name: 'Atmospheric Pressure'
-      value_template: '{{ ((states.sensor.weather_pressure.state | float) / 33.864) | round(1) }}'
-      unit_of_measurement: 'inHg'
     garage_status:
       friendly_name: 'Garage Status'
       value_template: '{{ states.cover.garage.state }}'
