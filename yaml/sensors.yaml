@@ -44,6 +44,12 @@
     nas_uptime:
       friendly_name: 'NAS Run Time'
       value_template: '{{ states.sensor.nasf34bde_status.attributes.Uptime }}'
+    weather_temp:
+      friendly_name: 'Weather Temp'
+      value_template: '{{ state_attr("weather.home","temperature") }}'
+    weather_humid:
+      friendly_name: 'Weather Humidity'
+      value_template: '{{ state_attr("weather.home","humidity") }}'
     zwave_den_batt:
       friendly_name: 'Den Z-Wave Battery'
       value_template: "{{ state_attr('zwave.aeon_labs_zw100_multisensor_6','battery_level') }}"

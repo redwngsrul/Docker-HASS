@@ -15,12 +15,7 @@
 !living_room_lircd.conf
 !www
 !www/custom-lovelace
-!www/custom-lovelace/compact-custom-header
-!www/custom_ui/floorplan/lib
-!www/custom_ui/floorplan
 !www/custom_ui
-!www/floorplan/lib
-!www/floorplan
 !www/moonphases
 !www/ps4cam
 !yaml

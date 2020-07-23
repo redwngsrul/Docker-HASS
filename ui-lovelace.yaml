@@ -9,13 +9,13 @@ resources:
     type: module
   - url: /local/floorplan/floorplan-card.js
     type: module
-  - url: /local/custom-lovelace/compact-custom-header/compact-custom-header.js #?v=1.3.0 #?disable_cch
-    type: module
+#   - url: /local/custom-lovelace/compact-custom-header/compact-custom-header.js #?v=1.3.0 #?disable_cch
+#     type: module
 
-cch:
-  voice: show
-  notifications: show
-  options: clock
-  clock_date: true
-  swipe: true
-  swipe_animate: flip
+# cch:
+#   voice: show
+#   notifications: show
+#   options: clock
+#   clock_date: true
+#   swipe: true
+#   swipe_animate: flip

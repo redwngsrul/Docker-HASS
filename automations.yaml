@@ -62,8 +62,7 @@
   condition: []
   action:
   - data:
-      data:
-        name: darkred
+      name: darkred
     service: frontend.set_theme
 - id: '1590064903061'
   alias: Android Close Garage When Tapped
@@ -78,59 +77,6 @@
   - data: {}
     entity_id: cover.garage
     service: cover.close_cover
-- id: '1590065194952'
-  alias: Android Notify Motion Detected
-  description: ''
-  trigger:
-  - entity_id: binary_sensor.front_porch_motion_detected
-    from: 'False'
-    platform: state
-  - entity_id: binary_sensor.back_yard_motion_detected
-    from: 'False'
-    platform: state
-  - entity_id: sensor.aeon_labs_zw100_multisensor_6_burglar
-    from: '0'
-    platform: state
-  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control
-    from: '23'
-    platform: state
-  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control_2
-    from: '23'
-    platform: state
-  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_burglar
-    from: '0'
-    platform: state
-  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_burglar_2
-    from: '0'
-    platform: state
-  condition:
-  - condition: or
-    conditions:
-    - condition: state
-      entity_id: device_tracker.pixel_3
-      state: not_home
-    - condition: state
-      entity_id: device_tracker.pixel_3
-      state: Work
-    - condition: state
-      entity_id: device_tracker.pixel_3
-      state: Jon's
-    - condition: state
-      entity_id: device_tracker.pixel_3
-      state: Zach's
-    - condition: state
-      entity_id: device_tracker.pixel_3
-      state: Mom & Dad's
-    - condition: state
-      entity_id: device_tracker.pixel_3
-      state: Derek & Ruby's
-    - condition: state
-      entity_id: device_tracker.pixel_3
-      state: Colleen's
-  action:
-  - data:
-      message: Motion Detected in the House!!!
-    service: notify.mobile_app_pixel_3
 - id: '1590065278680'
   alias: Camera Recordings ON
   description: ''
@@ -167,12 +113,12 @@
   condition: []
   action:
   - data:
-      message: Your certificates have less than 10 days before expiring. Please renew
+      message: Your certificates have less than 15 days before expiring. Please renew
         now!
       title: Certificates are Expiring!!!
     service: notify.gmail
   - data:
-      message: Your certificates have less than 10 days before expiring. Please renew
+      message: Your certificates have less than 15 days before expiring. Please renew
         now!
       title: Certificates are Expiring!!!
     service: persistent_notification.create
@@ -514,27 +460,26 @@
   alias: Motion Alarm Notify
   description: ''
   trigger:
-  - entity_id: binary_sensor.front_porch_motion_detected
+  - entity_id: binary_sensor.den_2_motion_detected
     from: 'False'
     platform: state
-  - entity_id: binary_sensor.back_yard_motion_detected
+  - entity_id: binary_sensor.garage_motion_detected
     from: 'False'
     platform: state
-  - entity_id: sensor.aeon_labs_zw100_multisensor_6_burglar
-    from: '0'
+  - entity_id: binary_sensor.living_motion_detected
+    from: 'False'
     platform: state
-  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_burglar
-    from: '0'
+  - entity_id: binary_sensor.back_door_sensor
     platform: state
-  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_burglar_2
-    from: '0'
+    to: 'on'
+  - entity_id: binary_sensor.den_multisensor
     platform: state
-  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control
-    from: '23'
+    to: 'on'
+  - entity_id: binary_sensor.front_door_motion_sensor
     platform: state
-  - entity_id: sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control_2
-    from: '23'
+  - entity_id: binary_sensor.front_door_sensor
     platform: state
+    to: 'on'
   condition:
   - condition: or
     conditions:
@@ -591,3 +536,6 @@
       message: Motion detected.
       title: Motion detected!
     service: notify.gmail
+  - data:
+      message: Motion Detected in the House!!!
+    service: notify.mobile_app_pixel_3

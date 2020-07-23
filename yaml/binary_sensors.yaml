@@ -32,7 +32,7 @@
 
     front_door_motion_sensor:
       friendly_name: 'Front Door Motion Sensor'
-      value_template: "{{ is_state('sensor.vision_security_zp3111_multisensor_4in1_alarm_level_2', '255') }}"
+      value_template: "{{ is_state('sensor.vision_security_zp3111_multisensor_4in1_alarm_level', '255') }}"
       device_class: motion
 
     back_yard_cam_recording:
