@@ -55,7 +55,7 @@
       value_template: "{{ states.camera.living.attributes.motion_recording == 'on' }}"
       device_class: moving
       
-    garage_cam_recording:
-      friendly_name: 'Garage Cam Recording'
-      value_template: "{{ states.camera.garage.attributes.motion_recording == 'on' }}"
-      device_class: moving
+    # garage_cam_recording:
+    #   friendly_name: 'Garage Cam Recording'
+    #   value_template: "{{ states.camera.garage.attributes.motion_recording == 'on' }}"
+    #   device_class: moving

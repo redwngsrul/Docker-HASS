@@ -6,19 +6,19 @@
   binary_sensors:
     - motion_detected
     
-- host: 192.168.1.101
-  name: Garage
-  username: !secret amcrest_un
-  password: !secret amcrest_pw
-  stream_source: snapshot
-  binary_sensors:
-    - motion_detected
+# - host: 192.168.1.101
+#   name: Garage
+#   username: !secret amcrest_un
+#   password: !secret amcrest_pw
+#   stream_source: snapshot
+#   binary_sensors:
+#     - motion_detected
 
 - host: 192.168.1.72
   name: Front Porch
   username: !secret amcrest_un
   password: !secret amcrest_pw
-  stream_source: snapshot
+  stream_source: mjpeg
   binary_sensors:
     - motion_detected
 
@@ -26,7 +26,7 @@
   name: Back Yard
   username: !secret amcrest_un
   password: !secret amcrest_pw
-  stream_source: snapshot
+  stream_source: mjpeg
   binary_sensors:
     - motion_detected
 

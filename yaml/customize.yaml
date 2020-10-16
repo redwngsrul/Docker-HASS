@@ -115,7 +115,7 @@ input_number.off_tmr_slider:
 ########################################
 
 media_player.playstation_4:
-  icon: mdi:playstation
+  icon: mdi:sony-playstation
 
 ########################################
 ############## Scripts #################
@@ -200,7 +200,7 @@ switch.fireplace:
 switch.living_room_light:
   icon: mdi:lightbulb
 switch.desktop:
-  icon: mdi:windows
+  icon: mdi:microsoft-windows
 switch.neons:
   icon: mdi:lava-lamp
 switch.fish_tank:

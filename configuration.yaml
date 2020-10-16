@@ -49,6 +49,8 @@ map:
 
 media_player:
 
+media_source:
+
 mobile_app:
 
 notify: !include yaml/notifiers.yaml

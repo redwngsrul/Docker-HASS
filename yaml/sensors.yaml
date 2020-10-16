@@ -17,7 +17,7 @@
 
 - platform: qnap
   host: redwngsrul.myqnapcloud.com
-  port: 443
+  port: 50443
   ssl: true
   username: !secret qnap_user
   password: !secret qnap_pw

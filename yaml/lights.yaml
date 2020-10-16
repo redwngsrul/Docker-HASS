@@ -1,3 +1,10 @@
   - platform: nanoleaf
     host: 192.168.1.94
     token: !secret leaf_token
+
+  - platform: mqtt
+    command_topic: "wled/01966b"
+    brightness_command_topic: "wled/01966b"
+    brightness_state_topic: "wled/01966b/g"
+    rgb_command_topic: "wled/01966b/col"
+    rgb_state_topic: "wled/01966b/c"

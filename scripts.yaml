@@ -131,3 +131,17 @@ motion_sensing:
   - service: automation.toggle
     data:
       entity_id: automation.den_lamp_off
+nzb_4mb_s:
+  alias: NZB 4MB/s
+  sequence:
+  - service: nzbget.set_speed
+    data:
+      speed: 4000
+  mode: single
+nzb_no_limit:
+  alias: NZB No Limit
+  sequence:
+  - service: nzbget.set_speed
+    data:
+      speed: 0
+  mode: single

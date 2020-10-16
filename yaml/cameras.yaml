@@ -1,1 +1,8 @@
 - platform: amcrest
+
+- platform: generic
+  name: Garage Video
+  still_image_url: !secret garage_stream_jpg
+  stream_source: !secret garage_stream
+  username: !secret cam_un
+  password: !secret cam_pw

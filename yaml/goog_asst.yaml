@@ -6,6 +6,10 @@ exposed_domains:
   - switch
   - cover
 entity_config:
+  switch.back_porch:
+    expose: true
+    name: Back Porch
+    room: Outside
   switch.bedroom:
     expose: true
     name: Bedroom Light
@@ -53,6 +57,10 @@ entity_config:
     aliases: 
       - "Oil Warmer"
     room: Living Room
+  switch.office_oil_warmer:
+    expose: true
+    name: Office Oil Warmer
+    room: Office
   switch.neons:
     expose: true
     name: Neons
@@ -82,10 +90,6 @@ entity_config:
     expose: true
     name: Den Video
     room: Den
-  script.living_room_tv_on:
-    expose: true
-    name: Living Room TV
-    room: Living Room
   script.depart_work:
     expose: true
     name: Leaving for Work
@@ -112,3 +116,9 @@ entity_config:
     expose: true
     name: Office Leaf
     room: Office
+  light.wled:
+    expose: true
+    name: ESP
+    aliases:
+      - LEDs
+      - "Light String"
