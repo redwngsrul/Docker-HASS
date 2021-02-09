@@ -1,13 +1,45 @@
 - platform: command_line
-  command: 'ping -c 1 192.168.1.99 | grep "1 packets received" | wc -l'
+  command: 'ping -c 1 192.168.50.86 | grep "1 packets received" | wc -l'
   name: 'Garage Control Online'
   device_class: connectivity
   payload_on: 1
   payload_off: 0
 
+# - name: Front Yard Person
+#   platform: mqtt
+#   state_topic: "frigate/front_yard/person"
+#   device_class: motion
+#   availability_topic: "frigate/available"
+
+# - name: Front Yard Car
+#   platform: mqtt
+#   state_topic: "frigate/front_yard/car"
+#   device_class: motion
+#   availability_topic: "frigate/available"
+
+- platform: ping
+  host: 192.168.50.88
+  name: "Desktop"
+  count: 1
+  scan_interval: 60
+
 - platform: workday
   country: US
   province: OH
+
+# - platform: mqtt
+#   state_topic: "zwave/Den/den_multisensor/113/0/Home_Security/Motion_sensor_status"
+#   value_template: "{{ value_json.value == 22 }}"
+#   name: "Den ZW Motion"
+#   device_class: motion
+#   qos: 1
+
+# - platform: mqtt
+#   state_topic: "zwave/Living_Room/frontdoor_multisensor/113/0/Home_Security/Motion_sensor_status"
+#   value_template: "{{ value_json.value == 255 }}"
+#   name: "Front Door ZW Motion"
+#   device_class: motion
+#   qos: 1
 
 - platform: template
   sensors:
@@ -15,25 +47,25 @@
       friendly_name: 'Vacation Monitor'
       value_template: "{{ is_state('input_boolean.vacation', 'on') }}" 
 
-    den_multisensor:
-      friendly_name: 'Den Motion'
-      value_template: "{{ is_state('sensor.aeon_labs_zw100_multisensor_6_burglar', '8') }}"
-      device_class: motion
+    # den_multisensor:
+    #   friendly_name: 'Den Motion'
+    #   value_template: "{{ is_state('sensor.aeon_labs_zw100_multisensor_6_burglar', '8') }}"
+    #   device_class: motion
 
-    front_door_sensor:
-      friendly_name: 'Front Door Sensor'
-      value_template: "{{ is_state('sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control_2', '22') }}"
-      device_class: door
+    # front_door_sensor:
+    #   friendly_name: 'Front Door Sensor'
+    #   value_template: "{{ is_state('sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control_2', '22') }}"
+    #   device_class: door
 
-    back_door_sensor:
-      friendly_name: 'Back Door Sensor'
-      value_template: "{{ is_state('sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control', '22') }}"
-      device_class: door
+    # back_door_sensor:
+    #   friendly_name: 'Back Door Sensor'
+    #   value_template: "{{ is_state('sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control', '22') }}"
+    #   device_class: door
 
-    front_door_motion_sensor:
-      friendly_name: 'Front Door Motion Sensor'
-      value_template: "{{ is_state('sensor.vision_security_zp3111_multisensor_4in1_alarm_level', '255') }}"
-      device_class: motion
+    # front_door_motion_sensor:
+    #   friendly_name: 'Front Door Motion Sensor'
+    #   value_template: "{{ is_state('sensor.vision_security_zp3111_multisensor_4in1_alarm_level', '255') }}"
+    #   device_class: motion
 
     back_yard_cam_recording:
       friendly_name: 'Back Yard Cam Recording'
@@ -49,13 +81,13 @@
       friendly_name: 'Front Porch Cam Recording'
       value_template: "{{ states.camera.front_porch.attributes.motion_recording == 'on' }}"
       device_class: moving
+      
+    garage_cam_recording:
+      friendly_name: 'Garage Cam Recording'
+      value_template: "{{ states.camera.garage.attributes.motion_recording == 'on' }}"
+      device_class: moving
 
     living_rm_cam_recording:
       friendly_name: 'Living Rm Cam Recording'
       value_template: "{{ states.camera.living.attributes.motion_recording == 'on' }}"
       device_class: moving
-      
-    # garage_cam_recording:
-    #   friendly_name: 'Garage Cam Recording'
-    #   value_template: "{{ states.camera.garage.attributes.motion_recording == 'on' }}"
-    #   device_class: moving

@@ -3,40 +3,40 @@
 #cert_renew: ./home/redwngsrul/dehydrated/dehydrated -c
 
 #receiver_power_toggle: mosquitto_pub -t home/OpenMQTTGateway/commands/IR_Raw -m 8590,4192,596,1526,602,470,598,1522,596,478,602,470,598,1524,594,478,602,1520,598,474,604,1518,600,472,598,1524,604,1518,602,470,598,1524,604,470,600,472,596,476,602,1520,600,1522,596,1526,602,470,600,474,596,478,602,1520,598,1522,596,478,602,470,598,474,604,1518,602,1520,598,1524,596 ; mosquitto_pub -t home/OpenMQTTGateway/commands/IR_NEC -m 2774153415 
-receiver_power_toggle: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=4 PIONEER REC_PWR_TOG
+receiver_power_toggle: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE --count=4 PIONEER REC_PWR_TOG
 #receiver_power_on: mosquitto_pub -t home/OpenMQTTGateway/commands/IR_Raw -m 8496,4202,574,1550,578,470,578,1546,572,476,572,478,572,1528,572,478,570,1554,574,474,574,1550,568,480,578,1546,572,1526,572,478,572,1552,576,474,576,474,574,1550,570,478,570,1554,574,1524,574,476,572,476,632,416,632,1492,626,422,626,1498,570,478,630,420,630,1494,574,1524,574,1550,578 ; mosquitto_pub -t home/OpenMQTTGateway/commands/IR_NEC -m 2774161575
-receiver_power_on: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=4 PIONEER REC_PWR_ON
+receiver_power_on: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE --count=4 PIONEER REC_PWR_ON
 #receiver_power_off: mosquitto_pub -t home/OpenMQTTGateway/commands/IR_Raw -m 8478,4220,576,1522,576,474,624,1498,630,420,628,422,626,1496,634,416,632,1492,628,422,626,1472,626,424,624,1498,630,1494,624,426,622,1500,628,422,626,1472,626,1498,630,420,630,1494,624,1500,628,422,628,422,626,424,626,424,626,424,624,1472,626,424,624,424,624,1498,630,1494,624,1500,628 ; mosquitto_pub -t home/OpenMQTTGateway/commands/IR_NEC -m 2774194215
-receiver_power_off: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=4 PIONEER REC_PWR_OFF
-receiver_volume_up: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=2 PIONEER REC_VOL_UP
-receiver_volume_down: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=2 PIONEER REC_VOL_DWN
-receiver_input_bd: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=2 PIONEER REC_INP_BD
-receiver_input_dvd: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=2 PIONEER REC_INP_DVD
-receiver_input_tv: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=2 PIONEER REC_INP_TV
-receiver_input_dvr: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=2 PIONEER REC_INP_DVR
-receiver_input_cd: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=2 PIONEER REC_INP_CD
-receiver_input_cdr: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=2 PIONEER REC_INP_CDR
+receiver_power_off: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE --count=4 PIONEER REC_PWR_OFF
+receiver_volume_up: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE --count=2 PIONEER REC_VOL_UP
+receiver_volume_down: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE --count=2 PIONEER REC_VOL_DWN
+receiver_input_bd: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE --count=2 PIONEER REC_INP_BD
+receiver_input_dvd: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE --count=2 PIONEER REC_INP_DVD
+receiver_input_tv: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE --count=2 PIONEER REC_INP_TV
+receiver_input_dvr: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE --count=2 PIONEER REC_INP_DVR
+receiver_input_cd: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE --count=2 PIONEER REC_INP_CD
+receiver_input_cdr: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE --count=2 PIONEER REC_INP_CDR
 #receiver_input_tuner: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=2 PIONEER INPUT_TUNER
-receiver_mute: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=2 PIONEER REC_MUTE
-receiver_signal_select: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=2 PIONEER REC_SIGNAL_SEL
+receiver_mute: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE --count=2 PIONEER REC_MUTE
+receiver_signal_select: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE --count=2 PIONEER REC_SIGNAL_SEL
 
-#projector_power_on: mosquitto_pub -t home/OpenMQTTGateway/commands/IR_Raw -m 8988,4478,590,538,592,1638,590,538,570,532,596,1634,594,1636,592,536,594,534,596,1636,592,536,562,1668,562,1668,570,532,596,532,588,1642,596,1634,594,534,594,1636,592,536,564,538,650,478,642,486,622,480,650,478,650,1580,588,538,590,1642,586,1642,596,1634,594,1636,592,1638,590,1640,588 
-projector_power_on: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=2 OPTOMA POWER_ON
-#projector_power_off: mosquitto_pub -t home/OpenMQTTGateway/commands/IR_Raw -m 9016,4476,592,536,562,1668,570,532,588,540,648,1582,596,1634,594,534,596,532,616,1614,564,536,592,1638,590,1640,588,540,588,540,620,1610,568,1662,566,562,566,1664,564,1666,564,1666,562,540,590,1642,596,530,588,540,620,1610,566,536,594,534,644,484,644,1584,594,534,564,1666,562,1668,562 
-projector_power_off: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE --count=2 OPTOMA POWER_OFF
-projector_hdmi1: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE OPTOMA HDMI1
-projector_hdmi2: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE OPTOMA HDMI2
-projector_vga1: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE OPTOMA VGA1
-projector_vga2: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE OPTOMA VGA2
-projector_video: ssh redwngsrul@192.168.1.68 irsend SEND_ONCE OPTOMA VIDEO
+# projector_power_on: mosquitto_pub -t home/OpenMQTTGateway/commands/IR_Raw -m 8988,4478,590,538,592,1638,590,538,570,532,596,1634,594,1636,592,536,594,534,596,1636,592,536,562,1668,562,1668,570,532,596,532,588,1642,596,1634,594,534,594,1636,592,536,564,538,650,478,642,486,622,480,650,478,650,1580,588,538,590,1642,586,1642,596,1634,594,1636,592,1638,590,1640,588 
+projector_power_on: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE --count=2 OPTOMA POWER_ON
+# projector_power_off: mosquitto_pub -t home/OpenMQTTGateway/commands/IR_Raw -m 9016,4476,592,536,562,1668,570,532,588,540,648,1582,596,1634,594,534,596,532,616,1614,564,536,592,1638,590,1640,588,540,588,540,620,1610,568,1662,566,562,566,1664,564,1666,564,1666,562,540,590,1642,596,530,588,540,620,1610,566,536,594,534,644,484,644,1584,594,534,564,1666,562,1668,562 
+projector_power_off: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE --count=2 OPTOMA POWER_OFF
+projector_hdmi1: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE OPTOMA HDMI1
+projector_hdmi2: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE OPTOMA HDMI2
+projector_vga1: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE OPTOMA VGA1
+projector_vga2: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE OPTOMA VGA2
+projector_video: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE OPTOMA VIDEO
 
-google_tv_power_on: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=4 GOOGLE_TV POWER_ON
-google_tv_power_off: ssh redwngsrul@92.168.1.91 irsend SEND_ONCE --count=4 GOOGLE_TV POWER_OFF
+# google_tv_power_on: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=4 GOOGLE_TV POWER_ON
+# google_tv_power_off: ssh redwngsrul@92.168.1.91 irsend SEND_ONCE --count=4 GOOGLE_TV POWER_OFF
 
-soundbar_power_toggle: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR POWER_TOGGLE
-soundbar_volume_up: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR VOL_UP
-soundbar_volume_down: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR VOL_DOWN
-soundbar_mute: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR MUTE
-soundbar_next_input: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR NEXT_INPUT
+# soundbar_power_toggle: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR POWER_TOGGLE
+# soundbar_volume_up: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR VOL_UP
+# soundbar_volume_down: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR VOL_DOWN
+# soundbar_mute: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR MUTE
+# soundbar_next_input: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR NEXT_INPUT
 
-bedroom_power_toggle: ssh redwngsrul@192.168.1.95 irsend SEND_ONCE --count=2 sharp.lircd.conf power
+# bedroom_power_toggle: ssh redwngsrul@192.168.1.95 irsend SEND_ONCE --count=2 sharp.lircd.conf power

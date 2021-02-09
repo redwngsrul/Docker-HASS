@@ -2,33 +2,6 @@ open_garage:
   sequence:
   - service: cover.open_cover
     entity_id: cover.garage
-sleep_tmr:
-  alias: Sleep 60
-  sequence:
-  - delay: 00:60:00
-  - data: {}
-    entity_id: media_player.alex_s_bedroom
-    service: media_player.turn_off
-  - service: shell_command.bedroom_power_toggle
-chromecast_off_tmr:
-  alias: Run Sleep Script
-  sequence:
-  - delay: 00:{{ states.input_number.off_tmr_slider.state | int }}:00
-  - data_template:
-      entity_id: "{% if is_state(\"input_select.select_cast_off\", \"Living Room CC\"\
-        ) %}\n  media_player.alexs_living_room\n{%-elif is_state(\"input_select.select_cast_off\"\
-        , \"Bedroom CC\") %}\n  media_player.alexs_bedroom\n{%-elif is_state(\"input_select.select_cast_off\"\
-        , \"Den CC Ultra\") %}\n  media_player.den_cc_ultra\n{%-elif is_state(\"input_select.select_cast_off\"\
-        , \"Google Home\") %}\n  media_player.alexs_google_home\n{%-elif is_state(\"\
-        input_select.select_cast_off\", \"Garage Audio\") %}\n  media_player.garage_audio\n\
-        {%-elif is_state(\"input_select.select_cast_off\", \"Den Audio\") %}\n  media_player.den_audio\n\
-        {%-elif is_state(\"input_select.select_cast_off\", \"All Speakers\") %}\n\
-        \  media_player.all_speakers\n{% else %}\n  \"None\"\n{% endif %}\n"
-    entity_id: media_player.alex_s_bedroom
-    service: media_player.turn_off
-  - data: {}
-    entity_id: script.chromecast_off_tmr
-    service: script.turn_off
 play_playstation4:
   alias: Play PS4
   sequence:
@@ -40,15 +13,14 @@ play_playstation4:
     service: switch.turn_on
   - service: shell_command.receiver_power_toggle
   - service: shell_command.projector_power_on
-  - delay:
-      seconds: 1
+  - delay: '1'
   - service: shell_command.projector_power_on
-  - delay:
-      seconds: 8
+  - delay: '1'
   - service: shell_command.receiver_input_bd
   - data: {}
     entity_id: input_boolean.game_equipment
     service: input_boolean.turn_on
+  mode: single
 den_video:
   alias: Den Video
   sequence:
@@ -74,21 +46,16 @@ play_turn_off:
     service: switch.turn_off
   - service: shell_command.receiver_power_toggle
   - service: shell_command.projector_power_off
-  - delay:
-      seconds: 1
+  - delay: '1'
   - service: shell_command.projector_power_off
-  - delay:
-      seconds: 1
+  - delay: '1'
   - service: shell_command.projector_power_off
-  - delay:
-      seconds: 1
+  - delay: '1'
   - service: shell_command.projector_power_off
-  - data: {}
-    entity_id: media_player.playstation_4
-    service: media_player.turn_off
   - data: {}
     entity_id: input_boolean.game_equipment
     service: input_boolean.turn_off
+  mode: single
 music_in_den:
   alias: Listen to Music in the Den
   sequence:
@@ -106,10 +73,6 @@ bedroom_tv_on:
   alias: Bedroom TV
   sequence:
   - service: shell_command.bedroom_power_toggle
-living_room_tv_on:
-  alias: Living Room TV
-  sequence:
-  - service: shell_command.google_tv_power_on
 depart_work:
   alias: Leaving for Work
   sequence:
@@ -117,11 +80,18 @@ depart_work:
     entity_id: switch.dining_room
     service: switch.turn_off
   - data: {}
-    entity_id: switch.bottle_lamp_2
+    entity_id: switch.bottle_lamp
     service: switch.turn_off
   - data: {}
     entity_id: cover.garage
     service: cover.open_cover
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.christmas_tree
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.sink_light
+  mode: single
 motion_sensing:
   alias: Motion Sensing
   sequence:

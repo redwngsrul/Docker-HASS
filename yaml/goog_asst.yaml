@@ -14,7 +14,7 @@ entity_config:
     expose: true
     name: Bedroom Light
     room: Bedroom
-  switch.bottle_lamp_2:
+  switch.bottle_lamp:
     expose: true
     name: Bottle Lamp
     room: Living Room
@@ -51,7 +51,7 @@ entity_config:
     expose: true
     name: Home Lamp
     room: Living Room  
-  switch.fan:
+  switch.oil_warmer:
     expose: true
     name: Oil Lamp
     aliases: 
@@ -59,8 +59,8 @@ entity_config:
     room: Living Room
   switch.office_oil_warmer:
     expose: true
-    name: Office Oil Warmer
-    room: Office
+    name: Bedroom Oil Warmer
+    room: Bedroom
   switch.neons:
     expose: true
     name: Neons
@@ -73,7 +73,7 @@ entity_config:
     expose: true
     name: Game Equipment
     room: Den
-  switch.spare:
+  switch.garage_audio:
     expose: true
     name: Garage Audio
     room: Garage
@@ -81,11 +81,19 @@ entity_config:
     expose: true
     name: Garage Light
     room: Garage
-
-  script.bedroom_tv_on:
+  switch.sink_light:
     expose: true
-    name: Bedroom TV
-    room: Bedroom
+    name: Sink Light
+    room: Kitchen
+  switch.christmas_tree:
+    expose: true
+    name: Christmas Tree
+    room: Living Room
+
+#  script.bedroom_tv_on:
+#    expose: true
+#    name: Bedroom TV
+#    room: Bedroom
   script.den_video:
     expose: true
     name: Den Video
@@ -96,29 +104,45 @@ entity_config:
   script.motion_sensing:
     expose: true
     name: Motion Sensing
-  script.sleep_tmr:
-    expose: true
-    name: Sleep Timer
+#  script.sleep_tmr:
+#    expose: true
+#    name: Sleep Timer
 
   cover.garage:
     expose: true
     name: Garage
     room: Garage
 
-  media_player.playstation_4:
+  camera.back_yard:
     expose: true
-    name: Playstation 4
-    aliases:
-      - ps4
+    name: Back Yard
+    room: Outside
+  camera.den_2:
+    expose: true
+    name: Den
     room: Den
+  camera.front_porch:
+    expose: true
+    name: Front Porch
+    room: Outside
+  camera.living:
+    expose: true
+    name: Living Room
+    room: Living Room
+#  media_player.playstation_4:
+#    expose: true
+#    name: Playstation 4
+#    aliases:
+#      - ps4
+#    room: Den
 
   light.nanoleaf:
     expose: true
     name: Office Leaf
     room: Office
-  light.wled:
-    expose: true
-    name: ESP
-    aliases:
-      - LEDs
-      - "Light String"
+#  light.wled:
+#    expose: true
+#    name: ESP
+#    aliases:
+#      - LEDs
+#      - "Light String"

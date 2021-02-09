@@ -183,8 +183,8 @@ switch.den_lamp:
   icon: mdi:lamp
 switch.living_room:
   icon: mdi:lightbulb
-switch.bottle_lamp_2:
-  icon: mdi:keg
+#switch.bottle_lamp_2:
+#  icon: mdi:keg
 switch.dining_room:
   icon: mdi:food-fork-drink
 switch.bedroom:

@@ -33,6 +33,72 @@
   unit_of_measurement: "°F"
   qos: 1
 
+# - platform: mqtt
+#   state_topic: "zwave/Den/den_multisensor/49/0/Air_temperature"
+#   value_template: "{{ value_json.value }}"
+#   name: "Den Temp"
+#   unit_of_measurement: "°F"
+#   qos: 1
+
+# - platform: mqtt
+#   state_topic: "zwave/Den/den_multisensor/49/0/Humidity"
+#   value_template: "{{ value_json.value }}"
+#   name: "Den Humidity"
+#   unit_of_measurement: "%"
+#   qos: 1
+
+# - platform: mqtt
+#   state_topic: "zwave/Den/den_multisensor/49/0/Illuminance"
+#   value_template: "{{ value_json.value }}"
+#   name: "Den Illuminance"
+#   unit_of_measurement: "Lux"
+#   qos: 1
+
+# - platform: mqtt
+#   state_topic: "zwave/Den/den_multisensor/128/0/level"
+#   value_template: "{{ value_json.value }}"
+#   name: "Den ZW Battery"
+#   unit_of_measurement: "%"
+#   qos: 1
+
+# - platform: mqtt
+#   state_topic: "zwave/Living_Room/frontdoor_multisensor/49/0/Air_temperature"
+#   value_template: "{{ (value_json.value * 1.8) + 32 }}"
+#   name: "Front Door Temp"
+#   unit_of_measurement: "°F"
+#   qos: 1
+
+# - platform: mqtt
+#   state_topic: "zwave/Living_Room/frontdoor_multisensor/49/0/Humidity"
+#   value_template: "{{ value_json.value }}"
+#   name: "Front Door Humidity"
+#   unit_of_measurement: "%"
+#   qos: 1
+
+# - platform: mqtt
+#   state_topic: "zwave/Living_Room/frontdoor_multisensor/49/0/Illuminance"
+#   value_template: "{{ value_json.value }}"
+#   name: "Front Door Illuminance"
+#   unit_of_measurement: "%"
+#   qos: 1
+
+# - platform: mqtt
+#   state_topic: "zwave/Living_Room/frontdoor_multisensor/128/0/level"
+#   value_template: "{{ value_json.value }}"
+#   name: "Front Door Multi ZW Battery"
+#   unit_of_measurement: "%"
+#   qos: 1
+
+# - platform: rest
+#   name: Frigate Debug
+#   resource: http://192.168.50.243:5000/debug/stats
+#   scan_interval: 5
+#   json_attributes:
+#     - front_yard
+#     - detection_fps
+#     - detectors
+#   value_template: 'OK'
+
 - platform: template
   sensors:
     garage_status:
@@ -46,26 +112,26 @@
       value_template: '{{ states.sensor.nasf34bde_status.attributes.Uptime }}'
     weather_temp:
       friendly_name: 'Weather Temp'
-      value_template: '{{ state_attr("weather.home","temperature") }}'
+      value_template: '{{ state_attr("weather.thermostat","temperature") }}'
     weather_humid:
       friendly_name: 'Weather Humidity'
-      value_template: '{{ state_attr("weather.home","humidity") }}'
-    zwave_den_batt:
-      friendly_name: 'Den Z-Wave Battery'
-      value_template: "{{ state_attr('zwave.aeon_labs_zw100_multisensor_6','battery_level') }}"
-      unit_of_measurement: '%'
-    zwave_frontdoormulti_batt:
-      friendly_name: 'Front Door Multi Z-Wave Battery'
-      value_template: "{{ state_attr('zwave.vision_security_zp3111_multisensor_4in1','battery_level') }}"
-      unit_of_measurement: '%'
-    zwave_frontdooropen_batt:
-      friendly_name: 'Front Door Z-Wave Battery'
-      value_template: "{{ state_attr('zwave.hank_electronics_ltd_hkzw_dws01_door_window_sensor_2','battery_level') }}"
-      unit_of_measurement: '%'
-    zwave_backdooropen_batt:
-      friendly_name: 'Back Door Z-Wave Battery'
-      value_template: "{{ state_attr('zwave.hank_electronics_ltd_hkzw_dws01_door_window_sensor','battery_level') }}"
-      unit_of_measurement: '%'
+      value_template: '{{ state_attr("weather.thermostat","humidity") }}'
+    # zwave_den_batt:
+    #   friendly_name: 'Den Z-Wave Battery'
+    #   value_template: "{{ state_attr('zwave.aeon_labs_zw100_multisensor_6','battery_level') }}"
+    #   unit_of_measurement: '%'
+    # zwave_frontdoormulti_batt:
+    #   friendly_name: 'Front Door Multi Z-Wave Battery'
+    #   value_template: "{{ state_attr('zwave.vision_security_zp3111_multisensor_4in1','battery_level') }}"
+    #   unit_of_measurement: '%'
+    # zwave_frontdooropen_batt:
+    #   friendly_name: 'Front Door Z-Wave Battery'
+    #   value_template: "{{ state_attr('zwave.hank_electronics_ltd_hkzw_dws01_door_window_sensor_2','battery_level') }}"
+    #   unit_of_measurement: '%'
+    # zwave_backdooropen_batt:
+    #   friendly_name: 'Back Door Z-Wave Battery'
+    #   value_template: "{{ state_attr('zwave.hank_electronics_ltd_hkzw_dws01_door_window_sensor','battery_level') }}"
+    #   unit_of_measurement: '%'
     moonphases:
       friendly_name: 'Moon Phases'
       value_template: '{{ states.sensor.moon.state }}'
@@ -87,5 +153,17 @@
         {% elif is_state('sensor.moon', 'waning_crescent') %}
           /local/moonphases/waning_crescent.jpg
         {% endif %}
+    # front_yard_fps: 
+    #   value_template: '{{ states.sensor.frigate_debug.attributes["front_yard"]["camera_fps"] }}'
+    #   unit_of_measurement: 'FPS'
+    # front_yard_skipped_fps: 
+    #   value_template: '{{ states.sensor.frigate_debug.attributes["front_yard"]["skipped_fps"] }}'
+    #   unit_of_measurement: 'FPS'
+    # front_yard_detection_fps: 
+    #   value_template: '{{ states.sensor.frigate_debug.attributes["front_yard"]["detection_fps"] }}'
+    #   unit_of_measurement: 'FPS'
+    # frigate_detection_fps: 
+    #   value_template: '{{ states.sensor.frigate_debug.attributes["detection_fps"] }}'
+    #   unit_of_measurement: 'FPS'
 
 - platform: version

@@ -1,4 +1,4 @@
-- host: 192.168.1.87
+- host: 192.168.50.82
   name: Living
   username: !secret amcrest_un
   password: !secret amcrest_pw
@@ -6,15 +6,15 @@
   binary_sensors:
     - motion_detected
     
-# - host: 192.168.1.101
-#   name: Garage
-#   username: !secret amcrest_un
-#   password: !secret amcrest_pw
-#   stream_source: snapshot
-#   binary_sensors:
-#     - motion_detected
+- host: 192.168.50.114
+  name: Garage
+  username: !secret amcrest_un
+  password: !secret amcrest_pw
+  stream_source: snapshot
+  binary_sensors:
+    - motion_detected
 
-- host: 192.168.1.72
+- host: 192.168.50.31
   name: Front Porch
   username: !secret amcrest_un
   password: !secret amcrest_pw
@@ -22,7 +22,7 @@
   binary_sensors:
     - motion_detected
 
-- host: 192.168.1.110
+- host: 192.168.50.76
   name: Back Yard
   username: !secret amcrest_un
   password: !secret amcrest_pw
@@ -30,7 +30,7 @@
   binary_sensors:
     - motion_detected
 
-- host: 192.168.1.84
+- host: 192.168.50.137
   name: "Den 2"
   username: !secret amcrest_un
   password: !secret amcrest_pw

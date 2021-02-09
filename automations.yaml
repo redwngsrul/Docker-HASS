@@ -1,5 +1,5 @@
 - id: '1590061088891'
-  alias: Android Notify Garage Open
+  alias: Garage Open Notify
   description: ''
   trigger:
   - entity_id: cover.garage
@@ -66,7 +66,7 @@
       name: darkred
     service: frontend.set_theme
 - id: '1590064903061'
-  alias: Android Close Garage When Tapped
+  alias: Garage Close When Tapped
   description: ''
   trigger:
   - event_data:
@@ -78,6 +78,7 @@
   - data: {}
     entity_id: cover.garage
     service: cover.close_cover
+  mode: single
 - id: '1590065278680'
   alias: Camera Recordings ON
   description: ''
@@ -101,11 +102,18 @@
     zone: zone.home
   condition: []
   action:
-  - data: {}
-    entity_id: all
-    service: amcrest.disable_motion_recording
+  - service: amcrest.disable_motion_recording
+    data: {}
+    entity_id: camera.den_2
+  - service: amcrest.disable_motion_recording
+    data: {}
+    entity_id: camera.living
+  - service: amcrest.disable_motion_recording
+    data: {}
+    entity_id: camera.garage
+  mode: single
 - id: '1590089147873'
-  alias: Certificate Expiring
+  alias: Certificates Expiring
   description: ''
   trigger:
   - below: '15'
@@ -123,8 +131,9 @@
         now!
       title: Certificates are Expiring!!!
     service: persistent_notification.create
+  mode: single
 - id: '1590089543452'
-  alias: Ecobee Automatic Vacation
+  alias: Ecobee Vacation
   description: ''
   trigger:
   - entity_id: device_tracker.pixel_3
@@ -143,13 +152,13 @@
   - entity_id: device_tracker.pixel_3
     platform: state
     to: Derek & Ruby's
-  condition:
-  - condition: state
+  - platform: state
     entity_id: input_boolean.vacation
-    state: 'off'
+    to: 'on'
+  condition: []
   action:
   - data:
-      message: Ecobee Automatic Vacation Mode Enabled
+      message: Ecobee Vacation Mode Enabled
     service: notify.mobile_app_pixel_3
   - data:
       cool_temp: 80
@@ -161,6 +170,7 @@
   - data: {}
     entity_id: input_boolean.vacation
     service: input_boolean.turn_on
+  mode: single
 - id: '1590089677038'
   alias: Ecobee Cancel Vacation
   description: ''
@@ -180,35 +190,20 @@
       entity_id: climate.thermostat
       vacation_name: HASS
     service: ecobee.delete_vacation
-- id: '1590089952187'
-  alias: Fish Tank Lights ON
-  description: ''
-  trigger:
-  - entity_id: device_tracker.pixel_3
-    for: 00:05:00
-    platform: state
-    to: home
-  - entity_id: sun.sun
-    platform: state
-    to: below_horizon
-  condition:
-  - before: '22:30'
-    condition: time
-  action:
-  - data: {}
-    entity_id: switch.fish_tank
-    service: switch.turn_on
-  mode: single
 - id: '1590090127678'
-  alias: Shutdown at Bed
+  alias: 5 - Bedtime
   description: ''
   trigger:
-  - event: sunrise
-    offset: +00:30:00
-    platform: sun
   - at: '22:30:00'
     platform: time
-  condition: []
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - sun
   action:
   - data: {}
     entity_id: switch.fish_tank
@@ -217,7 +212,7 @@
     entity_id: switch.neons
     service: switch.turn_off
   - data: {}
-    entity_id: switch.fan
+    entity_id: switch.oil_warmer
     service: switch.turn_off
   - data: {}
     entity_id: switch.office_oil_warmer
@@ -226,238 +221,76 @@
     entity_id: light.nanoleaf
     service: light.turn_off
   - data: {}
-    entity_id: light.wled
-    service: light.turn_off
-  mode: single
-- id: '1590090252796'
-  alias: Office Getting Home
-  description: ''
-  trigger:
-  - entity_id: device_tracker.pixel_3
-    for: 00:03:00
-    platform: state
-    to: home
-  condition: []
-  action:
-  - data:
-      brightness: 200
-    entity_id: light.nanoleaf
-    service: light.turn_on
-  - data: {}
-    entity_id: light.wled
-    service: light.turn_on
-  mode: single
-- id: '1590090345667'
-  alias: Leaf 75
-  description: ''
-  trigger:
-  - event: sunset
-    offset: -01:00:00
-    platform: sun
-  condition:
-  - condition: state
-    entity_id: light.nanoleaf
-    state: 'on'
-  action:
-  - data:
-      brightness: 175
-    entity_id: light.nanoleaf
-    service: light.turn_on
-- id: '1590090398617'
-  alias: Leaf 50
-  description: ''
-  trigger:
-  - event: sunset
-    offset: -00:30:00
-    platform: sun
-  condition:
-  - condition: state
-    entity_id: light.nanoleaf
-    state: 'on'
-  action:
-  - data:
-      brightness: 124
-    entity_id: light.nanoleaf
-    service: light.turn_on
-- id: '1590090440234'
-  alias: Leaf 33
-  description: ''
-  trigger:
-  - event: sunset
-    offset: +00:30:00
-    platform: sun
-  condition:
-  - condition: state
-    entity_id: light.nanoleaf
-    state: 'on'
-  action:
-  - data:
-      brightness: 81
-    entity_id: light.nanoleaf
-    service: light.turn_on
-- id: '1590090799176'
-  alias: Dining ON
-  description: ''
-  trigger:
-  - at: 06:30:00
-    platform: time
-  condition:
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: binary_sensor.workday_sensor
-      state: 'on'
-    - condition: not
-      conditions:
-      - condition: state
-        entity_id: binary_sensor.vacation_monitor
-        state: 'on'
-  action:
-  - data: {}
-    entity_id: switch.dining_room
-    service: switch.turn_on
-  mode: single
-- id: '1590090873399'
-  alias: Dining OFF
-  description: ''
-  trigger:
-  - entity_id: device_tracker.pixel_3
-    from: home
-    platform: state
-  - at: 08:00:00
-    platform: time
-  condition: []
-  action:
-  - data: {}
-    entity_id: switch.dining_room
+    entity_id: switch.bottle_lamp
     service: switch.turn_off
-- id: '1590090971104'
-  alias: Bottle Lamp ON
-  description: ''
-  trigger:
-  - at: 06:30:00
-    platform: time
-  - event: sunset
-    offset: -01:00:00
-    platform: sun
-  condition:
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: binary_sensor.workday_sensor
-      state: 'on'
-    - condition: not
-      conditions:
-      - condition: state
-        entity_id: binary_sensor.vacation_monitor
-        state: 'on'
-  action:
-  - data: {}
-    entity_id: switch.bottle_lamp_2
-    service: switch.turn_on
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.christmas_tree
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.sink_light
   mode: single
-- id: '1590091100363'
-  alias: Bottle Lamp OFF
-  description: ''
-  trigger:
-  - entity_id: device_tracker.pixel_3
-    from: home
-    platform: state
-  - at: 08:00:00
-    platform: time
-  - at: '22:00:00'
-    platform: time
-  condition: []
-  action:
-  - data: {}
-    entity_id: switch.bottle_lamp_2
-    service: switch.turn_off
-- id: '1590091177139'
-  alias: Laundry ON
-  description: ''
-  trigger:
-  - at: 07:00:00
-    platform: time
-  condition:
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: binary_sensor.workday_sensor
-      state: 'on'
-    - condition: not
-      conditions:
-      - condition: state
-        entity_id: binary_sensor.vacation_monitor
-        state: 'on'
-  action:
-  - data: {}
-    entity_id: switch.laundry
-    service: switch.turn_on
-  mode: single
-- id: '1590091318651'
-  alias: Laundry OFF
-  description: ''
-  trigger:
-  - entity_id: device_tracker.pixel_3
-    from: home
-    platform: state
-  - at: 08:00:00
-    platform: time
-  condition: []
-  action:
-  - data: {}
-    entity_id: switch.laundry
-    service: switch.turn_off
 - id: '1590091422139'
-  alias: Vaca ON
-  description: ''
+  alias: Vacation Lights
+  description: fake like someone is home during vacation
   trigger:
   - event: sunset
-    offset: -00:30:00
+    offset: -00:29:59
     platform: sun
-  condition:
-  - condition: state
-    entity_id: input_boolean.vacation
-    state: 'on'
-  action:
-  - data: {}
-    entity_id: switch.den_lamp
-    service: switch.turn_on
-- id: '1590091508595'
-  alias: Vaca Wind Down
-  description: ''
-  trigger:
-  - event: sunset
+  - platform: sun
+    event: sunset
     offset: +01:00:00
-    platform: sun
+  - platform: time
+    at: '22:30:00'
   condition:
   - condition: state
     entity_id: input_boolean.vacation
     state: 'on'
   action:
-  - data: {}
-    entity_id: switch.den_lamp
-    service: switch.turn_off
-  - data: {}
-    entity_id: switch.neons
-    service: switch.turn_on
-- id: '1590091648217'
-  alias: Vaca OFF
-  description: ''
-  trigger:
-  - event: sunset
-    offset: +03:00:00
-    platform: sun
-  - at: '22:30:00'
-    platform: time
-  condition:
-  - condition: state
-    entity_id: input_boolean.vacation
-    state: 'on'
-  action:
-  - data: {}
-    entity_id: switch.neons
-    service: switch.turn_off
+  - choose:
+    - conditions:
+      - condition: sun
+        after_offset: -00:30:00
+        before_offset: +01:00:00
+        before: sunset
+        after: sunset
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.den_lamp
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.bottle_lamp
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.sink_light
+    - conditions:
+      - condition: sun
+        after: sunset
+        after_offset: +01:00:00
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        entity_id: switch.den_lamp
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.neons
+    - conditions:
+      - condition: time
+        after: '22:29'
+        before: '22:31'
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        entity_id: switch.neons
+      - service: switch.turn_off
+        data: {}
+        entity_id: switch.bottle_lamp
+      - service: switch.turn_off
+        data: {}
+        entity_id: switch.sink_light
+    default: []
+  mode: single
 - id: '1590092145859'
   alias: Motion Alarm Notify
   description: ''
@@ -549,15 +382,9 @@
     at: 06:30:00
   condition: []
   action:
-  - device_id: c9a32ae9043f47fca023c2be12f07318
-    domain: switch
+  - service: switch.turn_on
+    data: {}
     entity_id: switch.back_porch
-    type: turn_on
-  - timeout: 00:10:00
-    wait_template: 00:05:00
-  - data: {}
-    entity_id: camera.back_yard
-    service: amcrest.enable_motion_recording
   mode: single
 - id: '1597746659782'
   alias: Back Porch OFF
@@ -571,4 +398,311 @@
   - service: switch.turn_off
     data: {}
     entity_id: switch.back_porch
+  mode: single
+- id: '1605802114888'
+  alias: 1 - Wake-up
+  description: ''
+  trigger:
+  - platform: time
+    at: 06:30:00
+  - platform: time
+    at: 07:00:00
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.vacation
+      state: 'off'
+  action:
+  - choose:
+    - conditions:
+      - condition: time
+        after: '6:29:59'
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.bottle_lamp
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.dining_room
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.sink_light
+    default: []
+  - choose:
+    - conditions:
+      - condition: time
+        after: '6:59:59'
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        entity_id: switch.laundry
+    default: []
+  mode: single
+- id: '1605802565595'
+  alias: 2 - Leave for Work
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: device_tracker.pixel_3
+    from: home
+    for: 00:05:00
+  - platform: time
+    at: 07:45:00
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    after: 06:30:00
+  action:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.bottle_lamp
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.dining_room
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.laundry
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.sink_light
+  mode: single
+- id: '1605803090452'
+  alias: 3 - Home from Work
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: device_tracker.pixel_3
+    to: home
+    for: 00:02:00
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.fish_tank
+  - choose:
+    - conditions:
+      - condition: sun
+        before: sunset
+        after: sunset
+        before_offset: -01:00:00
+      sequence:
+      - service: light.turn_on
+        data:
+          brightness: 254
+        entity_id: light.nanoleaf
+    - conditions:
+      - condition: sun
+        before: sunset
+        after: sunset
+        after_offset: -01:00:00
+        before_offset: -00:15:00
+      sequence:
+      - service: light.turn_on
+        data:
+          brightness: 191
+        entity_id: light.nanoleaf
+    - conditions:
+      - condition: sun
+        before: sunset
+        after: sunset
+        after_offset: -00:15:00
+        before_offset: +00:30:00
+      sequence:
+      - service: light.turn_on
+        data:
+          brightness: 127
+        entity_id: light.nanoleaf
+    - conditions:
+      - condition: sun
+        after: sunset
+        after_offset: +00:30:00
+      sequence:
+      - service: light.turn_on
+        data:
+          brightness: 64
+        entity_id: light.nanoleaf
+    default: []
+  mode: single
+- id: '1605803157200'
+  alias: 4 - Sundown
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -01:00:00
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.fish_tank
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.bottle_lamp
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.christmas_tree
+  mode: single
+- id: '1605803777753'
+  alias: Nanoleaf Wind Down
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -00:59:59
+  - platform: sun
+    event: sunset
+    offset: -00:14:59
+  - platform: sun
+    event: sunset
+    offset: +00:30:01
+  condition:
+  - condition: state
+    entity_id: light.nanoleaf
+    state: 'on'
+  action:
+  - choose:
+    - conditions:
+      - condition: sun
+        before: sunset
+        after: sunset
+        after_offset: -01:00:00
+        before_offset: -00:15:00
+      sequence:
+      - service: light.turn_on
+        data:
+          brightness: 191
+        entity_id: light.nanoleaf
+    - conditions:
+      - condition: sun
+        before: sunset
+        after: sunset
+        after_offset: -00:15:00
+        before_offset: +00:30:00
+      sequence:
+      - service: light.turn_on
+        data:
+          brightness: 127
+        entity_id: light.nanoleaf
+    - conditions:
+      - condition: sun
+        after: sunset
+        after_offset: +00:30:00
+      sequence:
+      - service: light.turn_on
+        data:
+          brightness: 64
+        entity_id: light.nanoleaf
+    default: []
+  mode: single
+- id: '1611503340161'
+  alias: 6 - Bedtime Weekend
+  description: ''
+  trigger:
+  - at: 00:30:00
+    platform: time
+  condition:
+  - condition: time
+    weekday:
+    - sat
+    - sun
+  action:
+  - data: {}
+    entity_id: switch.fish_tank
+    service: switch.turn_off
+  - data: {}
+    entity_id: switch.neons
+    service: switch.turn_off
+  - data: {}
+    entity_id: switch.oil_warmer
+    service: switch.turn_off
+  - data: {}
+    entity_id: switch.office_oil_warmer
+    service: switch.turn_off
+  - data: {}
+    entity_id: light.nanoleaf
+    service: light.turn_off
+  - data: {}
+    entity_id: switch.bottle_lamp
+    service: switch.turn_off
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.christmas_tree
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.sink_light
+  mode: single
+- id: '1612802696409'
+  alias: Roomba Bin Full Notify
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.roomba_bin_full
+    platform: state
+    to: 'on'
+    for: 00:05:00
+  condition: []
+  action:
+  - data:
+      message: Roomba Bin is FULL
+    service: notify.mobile_app_pixel_3
+  mode: single
+- id: '1612881794745'
+  alias: Z-Wave Low Battery Notify
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.den_zw_low_battery_level
+    platform: state
+    to: 'on'
+    for: 00:05:00
+  - entity_id: binary_sensor.front_door_low_battery_level
+    platform: state
+    to: 'on'
+    for: 00:05:00
+  - entity_id: binary_sensor.living_rm_low_battery_level
+    platform: state
+    to: 'on'
+    for: 00:05:00
+  - entity_id: binary_sensor.patio_door_low_battery_level_2
+    platform: state
+    to: 'on'
+    for: 00:05:00
+  condition: []
+  action:
+  - data:
+      message: Z-Wave Low Battery Alarm
+    service: notify.mobile_app_pixel_3
+  mode: single
+- id: '1612882010902'
+  alias: HASS Update Available
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.updater
+    to: 'on'
+    for: 00:05:00
+  condition: []
+  action:
+  - service: persistent_notification.create
+    data:
+      message: A new HASS update is available!
   mode: single
