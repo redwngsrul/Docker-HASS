@@ -7,14 +7,6 @@
   payload_on: "1"
   payload_off: "0"
   retain: true
-  
-#WOL
-# - platform: wake_on_lan
-#   mac: !secret desktop_mac_addr
-#   name: Desktop
-#   host: 192.168.50.88
-#   turn_off:
-#     service: shell_command.turn_off_desktop
  
 #Template Switch for Den Game Equipment
 - platform: template

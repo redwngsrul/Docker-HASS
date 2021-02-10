@@ -99,9 +99,3 @@ tts:
     service_name: google_say
 
 updater:
-
-# weather: !include yaml/weather.yaml
-
-# zwave: 
-#   usb_path: /dev/ttyACM0
-#   network_key: !secret zwave_key

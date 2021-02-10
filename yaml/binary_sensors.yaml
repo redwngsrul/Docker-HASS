@@ -27,45 +27,11 @@
   country: US
   province: OH
 
-# - platform: mqtt
-#   state_topic: "zwave/Den/den_multisensor/113/0/Home_Security/Motion_sensor_status"
-#   value_template: "{{ value_json.value == 22 }}"
-#   name: "Den ZW Motion"
-#   device_class: motion
-#   qos: 1
-
-# - platform: mqtt
-#   state_topic: "zwave/Living_Room/frontdoor_multisensor/113/0/Home_Security/Motion_sensor_status"
-#   value_template: "{{ value_json.value == 255 }}"
-#   name: "Front Door ZW Motion"
-#   device_class: motion
-#   qos: 1
-
 - platform: template
   sensors:
     vacation_monitor:
       friendly_name: 'Vacation Monitor'
       value_template: "{{ is_state('input_boolean.vacation', 'on') }}" 
-
-    # den_multisensor:
-    #   friendly_name: 'Den Motion'
-    #   value_template: "{{ is_state('sensor.aeon_labs_zw100_multisensor_6_burglar', '8') }}"
-    #   device_class: motion
-
-    # front_door_sensor:
-    #   friendly_name: 'Front Door Sensor'
-    #   value_template: "{{ is_state('sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control_2', '22') }}"
-    #   device_class: door
-
-    # back_door_sensor:
-    #   friendly_name: 'Back Door Sensor'
-    #   value_template: "{{ is_state('sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_access_control', '22') }}"
-    #   device_class: door
-
-    # front_door_motion_sensor:
-    #   friendly_name: 'Front Door Motion Sensor'
-    #   value_template: "{{ is_state('sensor.vision_security_zp3111_multisensor_4in1_alarm_level', '255') }}"
-    #   device_class: motion
 
     back_yard_cam_recording:
       friendly_name: 'Back Yard Cam Recording'

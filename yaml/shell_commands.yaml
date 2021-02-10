@@ -1,5 +1,3 @@
-#turn_off_desktop: net rpc shutdown -f -t 0 -C "HASS is shutting you down!" -I 192.168.1.121 -U !secret desktop_usr_pw
-
 #cert_renew: ./home/redwngsrul/dehydrated/dehydrated -c
 
 #receiver_power_toggle: mosquitto_pub -t home/OpenMQTTGateway/commands/IR_Raw -m 8590,4192,596,1526,602,470,598,1522,596,478,602,470,598,1524,594,478,602,1520,598,474,604,1518,600,472,598,1524,604,1518,602,470,598,1524,604,470,600,472,596,476,602,1520,600,1522,596,1526,602,470,600,474,596,478,602,1520,598,1522,596,478,602,470,598,474,604,1518,602,1520,598,1524,596 ; mosquitto_pub -t home/OpenMQTTGateway/commands/IR_NEC -m 2774153415 
@@ -29,14 +27,3 @@ projector_hdmi2: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE OPTOMA HDMI2
 projector_vga1: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE OPTOMA VGA1
 projector_vga2: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE OPTOMA VGA2
 projector_video: ssh redwngsrul@192.168.50.49 irsend SEND_ONCE OPTOMA VIDEO
-
-# google_tv_power_on: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=4 GOOGLE_TV POWER_ON
-# google_tv_power_off: ssh redwngsrul@92.168.1.91 irsend SEND_ONCE --count=4 GOOGLE_TV POWER_OFF
-
-# soundbar_power_toggle: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR POWER_TOGGLE
-# soundbar_volume_up: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR VOL_UP
-# soundbar_volume_down: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR VOL_DOWN
-# soundbar_mute: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR MUTE
-# soundbar_next_input: ssh redwngsrul@192.168.1.91 irsend SEND_ONCE --count=2 SOUNDBAR NEXT_INPUT
-
-# bedroom_power_toggle: ssh redwngsrul@192.168.1.95 irsend SEND_ONCE --count=2 sharp.lircd.conf power

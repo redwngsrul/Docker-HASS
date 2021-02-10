@@ -665,6 +665,9 @@
   - data:
       message: Roomba Bin is FULL
     service: notify.mobile_app_pixel_3
+  - service: persistent_notification.create
+    data:
+      message: Roomba Bin is FULL
   mode: single
 - id: '1612881794745'
   alias: Z-Wave Low Battery Notify
@@ -705,4 +708,17 @@
   - service: persistent_notification.create
     data:
       message: A new HASS update is available!
+  mode: single
+- id: '1612916563097'
+  alias: Alex loves Colleen
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.vacation_monitor
+    to: 'on'
+  condition: []
+  action:
+  - service: notify.mobile_app_sm_g975u
+    data:
+      message: Alex loves you!
   mode: single
