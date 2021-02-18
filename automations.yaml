@@ -427,6 +427,7 @@
         - wed
         - thu
         - fri
+        before: 06:59:00
       sequence:
       - service: switch.turn_on
         data: {}
@@ -721,4 +722,42 @@
   - service: notify.mobile_app_sm_g975u
     data:
       message: Alex loves you!
+  mode: single
+- id: '1613608343746'
+  alias: Bedroom ON
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.bedroom
+    to: 'on'
+  - platform: state
+    entity_id: light.bedroom_fan
+    to: 'on'
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.bedroom
+  - service: light.turn_on
+    data: {}
+    entity_id: light.bedroom_fan
+  mode: single
+- id: '1613608361591'
+  alias: Bedroom OFF
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.bedroom
+    to: 'off'
+  - platform: state
+    entity_id: light.bedroom_fan
+    to: 'off'
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.bedroom
+  - service: light.turn_off
+    data: {}
+    entity_id: light.bedroom_fan
   mode: single

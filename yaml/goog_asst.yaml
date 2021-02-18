@@ -10,10 +10,10 @@ entity_config:
     expose: true
     name: Back Porch
     room: Outside
-  switch.bedroom:
-    expose: true
-    name: Bedroom Light
-    room: Bedroom
+#   switch.bedroom:
+#     expose: true
+#     name: Bedroom Light
+#     room: Bedroom
   switch.bottle_lamp:
     expose: true
     name: Bottle Lamp
@@ -136,10 +136,19 @@ entity_config:
 #      - ps4
 #    room: Den
 
+  fan.bedroom_fan:
+    expose: true
+    name: Bedroom Fan
+    room: Bedroom
+
   light.nanoleaf:
     expose: true
     name: Office Leaf
     room: Office
+  light.bedroom_fan:
+    expose: true
+    name: Bedroom Light
+    room: Bedroom
 #  light.wled:
 #    expose: true
 #    name: ESP

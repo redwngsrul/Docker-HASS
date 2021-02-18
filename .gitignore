@@ -13,6 +13,8 @@
 !bedroom_lircd.conf
 !den_lircd.conf
 !living_room_lircd.conf
+!.storage
+!.storage/lovelace
 !www
 !www/custom-lovelace
 !www/custom_ui
@@ -21,6 +23,7 @@
 !yaml
 !yaml/automation
 !yaml/lovelace
+
 
 #ignore these files
 secrets.yaml

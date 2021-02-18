@@ -55,16 +55,6 @@ mobile_app:
 
 notify: !include yaml/notifiers.yaml
 
-panel_iframe:
-  configurator:
-    title: 'Yaml Editor'
-    icon: mdi:wrench
-    url: !secret yaml_editor_url
-  zwavejs:
-    title: 'Z-wave to MQTT'
-    icon: mdi:z-wave
-    url: 'http://192.168.50.243:8091'
-
 recorder:
   purge_keep_days: 5
 

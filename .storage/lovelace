@@ -1,0 +1,929 @@
+{
+    "version": 1,
+    "key": "lovelace",
+    "data": {
+        "config": {
+            "custom_header": {
+                "compact_mode": true,
+                "restrict_users": true,
+                "voice_hide": true
+            },
+            "title": "Home",
+            "views": [
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.front_porch",
+                                    "entities": [
+                                        {
+                                            "entity": "binary_sensor.front_porch_motion_detected"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.front_porch_cam_recording"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.front_door_access_control_window_door_is_open"
+                                        }
+                                    ],
+                                    "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                                    "type": "picture-glance"
+                                },
+                                {
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.living",
+                                    "entities": [
+                                        {
+                                            "entity": "binary_sensor.living_motion_detected"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.living_rm_cam_recording"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.living_room_occupancy"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.living_rm_motion_detection"
+                                        }
+                                    ],
+                                    "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                                    "type": "picture-glance"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "climate.thermostat",
+                                            "type": "thermostat"
+                                        },
+                                        {
+                                            "cards": [
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "button",
+                                                            "tap_action": {
+                                                                "action": "toggle"
+                                                            },
+                                                            "entity": "vacuum.roomba"
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "tap_action": {
+                                                                "action": "toggle"
+                                                            },
+                                                            "entity": "input_boolean.vacation",
+                                                            "icon": "mdi:car-lifted-pickup"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "gauge",
+                                                            "entity": "sensor.weather_temp",
+                                                            "min": 0,
+                                                            "max": 100,
+                                                            "unit": "\u00b0F"
+                                                        },
+                                                        {
+                                                            "type": "gauge",
+                                                            "entity": "sensor.garage_temp",
+                                                            "min": 0,
+                                                            "max": 100
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "vertical-stack"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.den_2",
+                                    "entities": [
+                                        {
+                                            "entity": "binary_sensor.den_2_motion_detected"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.den_cam_recording"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.den_zw_home_security_motion_detection"
+                                        }
+                                    ],
+                                    "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                                    "type": "picture-glance"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "switch.den_lamp",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button"
+                                        },
+                                        {
+                                            "entity": "switch.fireplace",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button"
+                                        },
+                                        {
+                                            "entity": "switch.neons",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "entity": "binary_sensor.desktop",
+                                            "icon": "mdi:microsoft-windows",
+                                            "name": "PC"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "switch.game_equipment",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "name": "Projector",
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button"
+                                        },
+                                        {
+                                            "entity": "switch.subwoofer",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button"
+                                        },
+                                        {
+                                            "entity": "switch.laundry",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "entity": "light.nanoleaf"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "entity": "switch.sink_light",
+                                            "icon": "mdi:wall-sconce-flat"
+                                        },
+                                        {
+                                            "entity": "switch.fish_tank",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "entity": "switch.oil_warmer"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "entity": "switch.christmas_tree"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "switch.living_room",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "name": "Living Rm",
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button",
+                                            "icon": "mdi:floor-lamp"
+                                        },
+                                        {
+                                            "entity": "switch.bottle_lamp",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button"
+                                        },
+                                        {
+                                            "entity": "switch.dining_room",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button"
+                                        },
+                                        {
+                                            "entity": "switch.back_porch",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "icon": "mdi:outdoor-lamp",
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button",
+                                            "entity": "light.bedroom_fan",
+                                            "name": "Bedroom Light"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "entity": "fan.bedroom_fan"
+                                        },
+                                        {
+                                            "entity": "switch.office_oil_warmer",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "icon": "mdi:candle",
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button",
+                                            "name": "Bedroom Oil Warmer"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.back_yard",
+                                    "entities": [
+                                        {
+                                            "entity": "binary_sensor.back_yard_motion_detected"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.back_yard_cam_recording"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.patio_door_access_control_window_door_is_open_2"
+                                        }
+                                    ],
+                                    "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                                    "type": "picture-glance"
+                                },
+                                {
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.garage",
+                                    "entities": [
+                                        {
+                                            "entity": "binary_sensor.garage_motion_detected"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.garage_cam_recording"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.garage_control_online"
+                                        }
+                                    ],
+                                    "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                                    "type": "picture-glance"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "cover.garage",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button"
+                                        },
+                                        {
+                                            "entity": "switch.garage_audio",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button",
+                                            "icon": "mdi:cast-audio"
+                                        },
+                                        {
+                                            "entity": "switch.garage",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "name": "Garage Lt",
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button",
+                                            "icon": "mdi:garage-variant"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "person.alex"
+                                        },
+                                        {
+                                            "entity": "person.colleen"
+                                        }
+                                    ],
+                                    "type": "entities"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        }
+                    ],
+                    "path": "main",
+                    "title": "Main"
+                },
+                {
+                    "path": "weather",
+                    "title": "Weather",
+                    "theme": "darkorange",
+                    "badges": [
+                        {
+                            "entity": "device_tracker.pixel_3"
+                        },
+                        {
+                            "entity": "sun.sun"
+                        },
+                        {
+                            "entity": "sensor.moonphases"
+                        }
+                    ],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "decimals": 1,
+                                    "entities": [
+                                        {
+                                            "color": "#0C04F7",
+                                            "entity": "sensor.thermostat_temperature",
+                                            "name": "Thermostat"
+                                        },
+                                        {
+                                            "color": "#EBEBEB",
+                                            "entity": "sensor.bedroom_temperature",
+                                            "name": "Bedroom"
+                                        },
+                                        {
+                                            "color": "#fc9803",
+                                            "entity": "sensor.living_room_temperature",
+                                            "name": "Living Room"
+                                        },
+                                        {
+                                            "color": "#15e4eb",
+                                            "entity": "sensor.den_zw_air_temperature",
+                                            "name": "Den ZW"
+                                        },
+                                        {
+                                            "color": "#fc03e8",
+                                            "entity": "sensor.living_rm_air_temperature",
+                                            "name": "Front Door"
+                                        },
+                                        {
+                                            "color": "#11923C",
+                                            "entity": "sensor.garage_temp",
+                                            "name": "Garage"
+                                        },
+                                        {
+                                            "color": "#b82916",
+                                            "entity": "sensor.weather_temp",
+                                            "name": "Weather"
+                                        }
+                                    ],
+                                    "height": 250,
+                                    "line_width": 3,
+                                    "name": "Temperatures *F",
+                                    "points_per_hour": 30,
+                                    "show": {
+                                        "fill": true,
+                                        "icon": false,
+                                        "labels": true,
+                                        "state": false
+                                    },
+                                    "style": "ha-card {\nmargin-right: 5px;\nmargin-bottom: 5px;\n}\n",
+                                    "type": "custom:mini-graph-card"
+                                },
+                                {
+                                    "type": "weather-forecast",
+                                    "entity": "weather.thermostat"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "decimals": 1,
+                                    "entities": [
+                                        {
+                                            "color": "#0C04F7",
+                                            "entity": "sensor.thermostat_humidity",
+                                            "name": "Thermostat"
+                                        },
+                                        {
+                                            "color": "#15e4eb",
+                                            "entity": "sensor.den_zw_humidity",
+                                            "name": "Den ZW"
+                                        },
+                                        {
+                                            "color": "#fc03e8",
+                                            "entity": "sensor.living_rm_humidity",
+                                            "name": "Front Door"
+                                        },
+                                        {
+                                            "color": "#b82916",
+                                            "entity": "sensor.weather_humid",
+                                            "name": "Weather"
+                                        }
+                                    ],
+                                    "height": 200,
+                                    "line_width": 3,
+                                    "name": "Humidities %",
+                                    "points_per_hour": 10,
+                                    "show": {
+                                        "fill": true,
+                                        "icon": false,
+                                        "labels": true,
+                                        "state": false
+                                    },
+                                    "style": "ha-card {\nmargin-right: 5px;\nmargin-bottom: 5px;\n}\n",
+                                    "type": "custom:mini-graph-card"
+                                },
+                                {
+                                    "type": "entities",
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.bedroom_temperature"
+                                        },
+                                        {
+                                            "entity": "sensor.living_room_temperature"
+                                        },
+                                        {
+                                            "entity": "sensor.living_rm_air_temperature"
+                                        },
+                                        {
+                                            "entity": "sensor.thermostat_temperature"
+                                        },
+                                        {
+                                            "entity": "sensor.den_zw_air_temperature"
+                                        },
+                                        {
+                                            "entity": "sensor.garage_temp"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        }
+                    ]
+                },
+                {
+                    "path": "systems",
+                    "title": "Systems",
+                    "visible": [
+                        {
+                            "user": "c693ff121d9a44b6b1e29c7a7dd6cdad"
+                        }
+                    ],
+                    "theme": "PmxMononight",
+                    "badges": [
+                        {
+                            "entity": "sensor.current_version"
+                        },
+                        {
+                            "entity": "sensor.pixel_3_battery_level"
+                        }
+                    ],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "decimals": 1,
+                                    "entities": [
+                                        {
+                                            "color": "#e52222",
+                                            "entity": "sensor.memory_use_percent",
+                                            "name": "Memory Use"
+                                        },
+                                        {
+                                            "color": "#11923C",
+                                            "entity": "sensor.processor_use",
+                                            "name": "CPU Use"
+                                        }
+                                    ],
+                                    "height": 200,
+                                    "line_width": 3,
+                                    "name": "Home Assistant",
+                                    "points_per_hour": 30,
+                                    "show": {
+                                        "fill": true,
+                                        "icon": false,
+                                        "labels": true,
+                                        "state": false
+                                    },
+                                    "style": "ha-card {\nmargin-right: 5px;\nmargin-bottom: 5px;\n}\n",
+                                    "type": "custom:mini-graph-card"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.ipv4_address_eth0"
+                                        },
+                                        {
+                                            "entity": "sensor.last_boot"
+                                        },
+                                        {
+                                            "entity": "sensor.cert_expiry_timestamp_redwngsrul_duckdns_org_8123"
+                                        },
+                                        {
+                                            "label": "Speedtest",
+                                            "type": "section"
+                                        },
+                                        {
+                                            "entity": "sensor.speedtest_download"
+                                        },
+                                        {
+                                            "entity": "sensor.speedtest_upload"
+                                        },
+                                        {
+                                            "entity": "sensor.speedtest_ping"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "HASS System",
+                                    "type": "entities"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "decimals": 1,
+                                    "entities": [
+                                        {
+                                            "color": "#e52222",
+                                            "entity": "sensor.nasf34bde_cpu_usage",
+                                            "name": "CPU"
+                                        },
+                                        {
+                                            "color": "#11923C",
+                                            "entity": "sensor.nasf34bde_memory_usage",
+                                            "name": "Memory"
+                                        }
+                                    ],
+                                    "height": 250,
+                                    "line_width": 3,
+                                    "name": "QNAP",
+                                    "points_per_hour": 120,
+                                    "show": {
+                                        "fill": true,
+                                        "icon": false,
+                                        "labels": true,
+                                        "state": false
+                                    },
+                                    "style": "ha-card {\nmargin-right: 5px;\nmargin-bottom: 5px;\n}\n",
+                                    "type": "custom:mini-graph-card"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.nasf34bde_status"
+                                        },
+                                        {
+                                            "entity": "sensor.nas_uptime"
+                                        },
+                                        {
+                                            "entity": "sensor.nasf34bde_volume_used_datavol1"
+                                        },
+                                        {
+                                            "entity": "sensor.nasf34bde_volume_used_datavol2"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "QNAP System",
+                                    "type": "entities"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.front_door_battery_level"
+                                        },
+                                        {
+                                            "entity": "sensor.living_rm_battery_level"
+                                        },
+                                        {
+                                            "entity": "sensor.patio_door_battery_level_2"
+                                        },
+                                        {
+                                            "entity": "sensor.den_zw_battery_level"
+                                        },
+                                        {
+                                            "label": "Sensors",
+                                            "type": "section"
+                                        },
+                                        {
+                                            "entity": "sensor.den_zw_illuminance"
+                                        },
+                                        {
+                                            "entity": "sensor.living_rm_illuminance"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "Z-Wave",
+                                    "type": "entities"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        }
+                    ]
+                },
+                {
+                    "path": "cast",
+                    "title": "Cast",
+                    "theme": "BlueNight",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "type": "media-control",
+                                    "entity": "media_player.bedroom_tv"
+                                },
+                                {
+                                    "type": "media-control",
+                                    "entity": "media_player.bedroom_clock"
+                                },
+                                {
+                                    "type": "media-control",
+                                    "entity": "media_player.alex_s_google_home"
+                                },
+                                {
+                                    "type": "media-control",
+                                    "entity": "media_player.living_room_tv"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "type": "media-control",
+                                    "entity": "media_player.den_tv"
+                                },
+                                {
+                                    "type": "media-control",
+                                    "entity": "media_player.den_home"
+                                },
+                                {
+                                    "type": "media-control",
+                                    "entity": "media_player.garage_audio"
+                                },
+                                {
+                                    "type": "media-control",
+                                    "entity": "media_player.all_speakers"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "entities",
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.nzbget_download_paused"
+                                        },
+                                        {
+                                            "entity": "sensor.nzbget_speed"
+                                        },
+                                        {
+                                            "entity": "sensor.nzbget_queue_size"
+                                        }
+                                    ],
+                                    "title": "NZBGet Downloads"
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "entity": "switch.nzbget_download",
+                                            "icon": "mdi:download"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "entity": "script.nzb_4mb_s",
+                                            "icon": "mdi:gauge-low"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "entity": "script.nzb_no_limit",
+                                            "icon": "mdi:gauge-full"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Z-Wave",
+                    "panel": true,
+                    "path": "z-wave",
+                    "visible": [
+                        {
+                            "user": "c693ff121d9a44b6b1e29c7a7dd6cdad"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "iframe",
+                            "url": "http://192.168.50.243:8091/",
+                            "aspect_ratio": "100%"
+                        }
+                    ]
+                },
+                {
+                    "title": "Configurator",
+                    "path": "configurator",
+                    "panel": true,
+                    "visible": [
+                        {
+                            "user": "c693ff121d9a44b6b1e29c7a7dd6cdad"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "iframe",
+                            "url": "https://192.168.50.243:3218",
+                            "aspect_ratio": "100%"
+                        }
+                    ]
+                },
+                {
+                    "title": "Node Red",
+                    "path": "node-red",
+                    "visible": [
+                        {
+                            "user": "c693ff121d9a44b6b1e29c7a7dd6cdad"
+                        }
+                    ],
+                    "panel": true,
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "iframe",
+                            "url": "http://192.168.50.243:1880",
+                            "aspect_ratio": "90%"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
